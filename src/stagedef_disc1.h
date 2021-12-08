@@ -50,7 +50,7 @@
 		//Characters
 		{Char_BF_New,    FIXED_DEC(105,1),  FIXED_DEC(100,1)},
 		{Char_Tank_New, FIXED_DEC(-120,1),  FIXED_DEC(100,1)},
-		{Char_GF_New,      FIXED_DEC(0,1),  FIXED_DEC(-15,1)},
+		{Char_GF_New,      FIXED_DEC(0,1),  FIXED_DEC(-700,1)},
 
 		//Stage background
 		Back_Dummy_New,
