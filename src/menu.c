@@ -514,10 +514,10 @@ void Menu_Tick(void)
 				FIXED_DEC(97,100),
 			};
 			fixed_t logo_scale = logo_scales[(menu.page_state.title.logo_bump * 24) >> FIXED_SHIFT];
-			u32 x_rad = (logo_scale * (230 >> 1)) >> FIXED_SHIFT;
-			u32 y_rad = (logo_scale * (140 >> 1)) >> FIXED_SHIFT;
+			u32 x_rad = (logo_scale * (200 >> 1)) >> FIXED_SHIFT;
+			u32 y_rad = (logo_scale * (120 >> 1)) >> FIXED_SHIFT;
 			
-			RECT logo_src = {0, 0, 176, 112};
+			RECT logo_src = {0, 0, 246, 160};
 			RECT logo_dst = {
 				100 - x_rad + (SCREEN_WIDEADD2 >> 1),
 				68 - y_rad,
@@ -539,14 +539,14 @@ void Menu_Tick(void)
 				u8 press_g = (58  + ((press_lerp * (255 - 58))  >> 8)) >> 1;
 				u8 press_b = (206 + ((press_lerp * (255 - 206)) >> 8)) >> 1;
 				
-				RECT press_src = {0, 112, 256, 32};
-				Gfx_BlitTexCol(&menu.tex_title, &press_src, (SCREEN_WIDTH - 256) / 2, SCREEN_HEIGHT - 48, press_r, press_g, press_b);
+				RECT press_src = {0, 203, 256, 21};
+				Gfx_BlitTexCol(&menu.tex_title, &press_src, (SCREEN_WIDTH - 256) / 2, SCREEN_HEIGHT - 32, press_r, press_g, press_b);
 			}
 			else
 			{
 				//Flash white
-				RECT press_src = {0, (animf_count & 1) ? 144 : 112, 256, 32};
-				Gfx_BlitTex(&menu.tex_title, &press_src, (SCREEN_WIDTH - 256) / 2, SCREEN_HEIGHT - 48);
+				RECT press_src = {0, (animf_count & 1) ? 203 : 235, 256, 21};
+				Gfx_BlitTex(&menu.tex_title, &press_src, (SCREEN_WIDTH - 256) / 2, SCREEN_HEIGHT - 32);
 			}
 			
 			//Draw Girlfriend

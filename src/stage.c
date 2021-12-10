@@ -26,6 +26,7 @@
 #define STAGE_PERFECT //Play all notes perfectly
 //#define STAGE_NOHUD //Disable the HUD
 
+
 //#define STAGE_FREECAM //Freecam
 
 static const fixed_t note_x[8] = {
@@ -203,6 +204,7 @@ static u16 Stage_GetSectionStart(Section *section)
 	if (prev == NULL)
 		return 0;
 	return prev->end;
+
 }
 
 //Section scroll structure

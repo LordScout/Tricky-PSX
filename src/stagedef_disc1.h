@@ -37,7 +37,7 @@
 		{Char_GF_New,      FIXED_DEC(0,1),  FIXED_DEC(-15,1)},
 
 		//Stage background
-		Back_Dummy_New,
+		Back_Week2_New,
 
 		//Song info
 		{FIXED_DEC(2,1),FIXED_DEC(25,10),FIXED_DEC(3,1)},
@@ -50,10 +50,10 @@
 		//Characters
 		{Char_BF_New,    FIXED_DEC(105,1),  FIXED_DEC(100,1)},
 		{Char_Tank_New, FIXED_DEC(-120,1),  FIXED_DEC(100,1)},
-		{Char_GF_New,      FIXED_DEC(0,1),  FIXED_DEC(-700,1)},
+		{Char_GF_New,      FIXED_DEC(250,1),  FIXED_DEC(-250,1)},
 
 		//Stage background
-		Back_Dummy_New,
+		Back_Week2_New,
 
 		//Song info
 		{FIXED_DEC(34,10),FIXED_DEC(34,10),FIXED_DEC(34,10)},

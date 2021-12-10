@@ -31,43 +31,134 @@ void Back_Week22_DrawFG(StageBack* back)
 	fx = stage.camera.x;
 	fy = stage.camera.y;
 
+	if (stage.stage_id == StageId_1_2 && stage.song_step >= 128 && stage.song_step <= 130)
+	{
+		RECT suffer_src = { 0, 57, 85, 24};
+		RECT_FIXED suffer_dst = {
+			FIXED_DEC(-40,1) - fx,
+			FIXED_DEC(0,1) - fy,
+			FIXED_DEC(85,1),
+			FIXED_DEC(24,1)
+		};
+
+		Stage_DrawTex(&this->tex_cut0, &suffer_src, &suffer_dst, stage.camera.bzoom);
+	}
+
+	if (stage.stage_id == StageId_1_2 && stage.song_step >= 220 && stage.song_step <= 222)
+	{
+		RECT incorrect1_src = { 0, 110, 135, 28 };
+		RECT_FIXED incorrect1_dst = {
+			FIXED_DEC(-50,1) - fx,
+			FIXED_DEC(-50,1) - fy,
+			FIXED_DEC(135,1),
+			FIXED_DEC(28,1)
+		};
+
+		Stage_DrawTex(&this->tex_cut0, &incorrect1_src, &incorrect1_dst, stage.camera.bzoom);
+	}
+
+	if (stage.stage_id == StageId_1_2 && stage.song_step >= 272 && stage.song_step <= 274)
+	{
+		RECT invalid_src = { 5, 139, 87, 24 };
+		RECT_FIXED invalid_dst = {
+			FIXED_DEC(-50,1) - fx,
+			FIXED_DEC(0,1) - fy,
+			FIXED_DEC(87,1),
+			FIXED_DEC(24,1)
+		};
+
+		Stage_DrawTex(&this->tex_cut0, &invalid_src, &invalid_dst, stage.camera.bzoom);
+	}
+
+	if (stage.stage_id == StageId_1_2 && stage.song_step >= 280 && stage.song_step <= 282)
+	{
+		RECT error_src = { 0, 83, 72, 24};
+		RECT_FIXED error_dst = {
+			FIXED_DEC(-40,1) - fx,
+			FIXED_DEC(15,1) - fy,
+			FIXED_DEC(72,1),
+			FIXED_DEC(24,1)
+		};
+
+		Stage_DrawTex(&this->tex_cut0, &error_src, &error_dst, stage.camera.bzoom);
+	}
+
+	if (stage.stage_id == StageId_1_2 && stage.song_step >= 316 && stage.song_step <= 318)
+	{
+		RECT suffer1_src = { 0, 57, 85, 24 };
+		RECT_FIXED suffer1_dst = {
+			FIXED_DEC(-80,1) - fx,
+			FIXED_DEC(-50,1) - fy,
+			FIXED_DEC(85,1),
+			FIXED_DEC(24,1)
+		};
+
+		Stage_DrawTex(&this->tex_cut0, &suffer1_src, &suffer1_dst, stage.camera.bzoom);
+	}
+
+	if (stage.stage_id == StageId_1_2 && stage.song_step >= 396 && stage.song_step <= 398)
+	{
+		RECT terrible_src = { 104, 225, 106, 24};
+		RECT_FIXED terrible_dst = {
+			FIXED_DEC(-80,1) - fx,
+			FIXED_DEC(-15,1) - fy,
+			FIXED_DEC(106,1),
+			FIXED_DEC(24,1)
+		};
+
+		Stage_DrawTex(&this->tex_cut0, &terrible_src, &terrible_dst, stage.camera.bzoom);
+	}
+
+	if (stage.stage_id == StageId_1_2 && stage.song_step >= 410 && stage.song_step <= 414)
+	{
+		RECT waste_src = { 0, 223, 79, 24 };
+		RECT_FIXED waste_dst = {
+			FIXED_DEC(-130,1) - fx,
+			FIXED_DEC(50,1) - fy,
+			FIXED_DEC(79, 1),
+			FIXED_DEC(24,1)
+		};
+
+		Stage_DrawTex(&this->tex_cut0, &waste_src, &waste_dst, stage.camera.bzoom);
+	}
+
 	if (stage.stage_id == StageId_1_2 && stage.song_step >= 2172 && stage.song_step <= 2214)
 	{
-		RECT cutscene0_src = { 0, 0, 249, 26 };
-		RECT_FIXED cutscene0_dst = {
+		RECT youclown_src = { 0, 0, 249, 26 };
+		RECT_FIXED youclown_dst = {
 			FIXED_DEC(-180,1) - fx,
 			FIXED_DEC(50,1) - fy,
 			FIXED_DEC(256,1),
 			FIXED_DEC(26,1)
 		};
 
-		Stage_DrawTex(&this->tex_cut0, &cutscene0_src, &cutscene0_dst, stage.camera.bzoom);
+		Stage_DrawTex(&this->tex_cut0, &youclown_src, &youclown_dst, stage.camera.bzoom);
 	}
 
 	if (stage.stage_id == StageId_1_2 && stage.song_step >= 2230 && stage.song_step <= 2260)
 	{
-		RECT cutscene1_src = { 0, 110, 135, 28};
-		RECT_FIXED cutscene1_dst = {
+		RECT incorrect_src = { 0, 110, 135, 28};
+		RECT_FIXED incorrect_dst = {
 			FIXED_DEC(-140,1) - fx,
 			FIXED_DEC(50,1) - fy,
 			FIXED_DEC(131,1),
 			FIXED_DEC(24,1)
 		};
 
-		Stage_DrawTex(&this->tex_cut0, &cutscene1_src, &cutscene1_dst, stage.camera.bzoom);
+		Stage_DrawTex(&this->tex_cut0, &incorrect_src, &incorrect_dst, stage.camera.bzoom);
 	}
 
 	if (stage.stage_id == StageId_1_2 && stage.song_step >= 2294 && stage.song_step <= 2330)
 	{
-		RECT cutscene2_src = { 0, 25, 256, 28 };
-		RECT_FIXED cutscene2_dst = {
+		RECT clownyou_src = { 0, 25, 256, 28 };
+		RECT_FIXED clownyou_dst = {
 			FIXED_DEC(-160,1) - fx,
 			FIXED_DEC(70,1) - fy,
 			FIXED_DEC(248,1),
 			FIXED_DEC(24,1)
 		};
 
-		Stage_DrawTex(&this->tex_cut0, &cutscene2_src, &cutscene2_dst, stage.camera.bzoom);
+		Stage_DrawTex(&this->tex_cut0, &clownyou_src, &clownyou_dst, stage.camera.bzoom);
 	}
 
 }
