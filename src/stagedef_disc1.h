@@ -17,7 +17,7 @@
 	{ //StageId_Clwn_2 (Madness)
 		//Characters
 		{Char_BF_New,    FIXED_DEC(105,1),  FIXED_DEC(100,1)},
-		{Char_Tank_New, FIXED_DEC(-100,1),  FIXED_DEC(90,1)},
+		{Char_Pico_New, FIXED_DEC(-100,1),  FIXED_DEC(90,1)},
 		{Char_GF_New,      FIXED_DEC(0,1),  FIXED_DEC(-15,1)},
 
 		//Stage background
@@ -33,11 +33,11 @@
 	{ //StageId_Clwn_3 (Hellclown)
 		//Characters
 		{Char_BF_New,    FIXED_DEC(105,1),  FIXED_DEC(100,1)},
-		{Char_Tank_New, FIXED_DEC(-120,1),  FIXED_DEC(100,1)},
+		{Char_Pico_New, FIXED_DEC(-120,1),  FIXED_DEC(100,1)},
 		{Char_GF_New,      FIXED_DEC(0,1),  FIXED_DEC(-15,1)},
 
 		//Stage background
-		Back_Week2_New,
+		Back_Week22_New,
 
 		//Song info
 		{FIXED_DEC(2,1),FIXED_DEC(25,10),FIXED_DEC(3,1)},
@@ -49,7 +49,7 @@
 	{ //StageId_Clwn_4 (Expurgation)
 		//Characters
 		{Char_BF_New,    FIXED_DEC(105,1),  FIXED_DEC(100,1)},
-		{Char_Tank_New, FIXED_DEC(-120,1),  FIXED_DEC(100,1)},
+		{Char_Pico_New, FIXED_DEC(-120,1),  FIXED_DEC(100,1)},
 		{Char_GF_New,      FIXED_DEC(250,1),  FIXED_DEC(-250,1)},
 
 		//Stage background
@@ -70,7 +70,7 @@
 		{Char_GF_New,       FIXED_DEC(0,1),  FIXED_DEC(-15,1)},
 		
 		//Stage background
-		Back_Week2_New,
+		Back_Week22_New,
 		
 		//Song info
 		{FIXED_DEC(1,1),FIXED_DEC(17,10),FIXED_DEC(24,10)},
@@ -327,7 +327,7 @@
 	{ //StageId_7_1 (Ugh)
 		//Characters
 		{Char_BF_New,    FIXED_DEC(105,1),  FIXED_DEC(100,1)},
-		{Char_Tank_New, FIXED_DEC(-120,1),  FIXED_DEC(100,1)},
+		{Char_Pico_New, FIXED_DEC(-120,1),  FIXED_DEC(100,1)},
 		{Char_GF_New,      FIXED_DEC(0,1),  FIXED_DEC(-15,1)},
 		
 		//Stage background
@@ -343,7 +343,7 @@
 	{ //StageId_7_2 (Guns)
 		//Characters
 		{Char_BF_New,    FIXED_DEC(105,1),  FIXED_DEC(100,1)},
-		{Char_Tank_New, FIXED_DEC(-120,1),  FIXED_DEC(100,1)},
+		{Char_Pico_New, FIXED_DEC(-120,1),  FIXED_DEC(100,1)},
 		{Char_GF_New,      FIXED_DEC(0,1),  FIXED_DEC(-15,1)},
 		
 		//Stage background
@@ -441,7 +441,7 @@
 	{ //StageId_Clwn_1 (Improbable Outset)
 		//Characters
 		{Char_BF_New,    FIXED_DEC(105,1),  FIXED_DEC(100,1)},
-		{Char_Tank_New, FIXED_DEC(-120,1),  FIXED_DEC(100,1)},
+		{Char_Pico_New, FIXED_DEC(-120,1),  FIXED_DEC(100,1)},
 		{Char_GF_New,      FIXED_DEC(0,1),  FIXED_DEC(-15,1)},
 		
 		//Stage background
@@ -457,7 +457,7 @@
 	{ //StageId_Clwn_2 (Madness)
 		//Characters
 		{Char_BF_New,    FIXED_DEC(105,1),  FIXED_DEC(100,1)},
-		{Char_Tank_New, FIXED_DEC(-120,1),  FIXED_DEC(100,1)},
+		{Char_Pico_New, FIXED_DEC(-120,1),  FIXED_DEC(100,1)},
 		{Char_GF_New,      FIXED_DEC(0,1),  FIXED_DEC(-15,1)},
 		
 		//Stage background
@@ -473,7 +473,7 @@
 	{ //StageId_Clwn_3 (Hellclown)
 		//Characters
 		{Char_BF_New,    FIXED_DEC(105,1),  FIXED_DEC(100,1)},
-		{Char_Tank_New, FIXED_DEC(-120,1),  FIXED_DEC(100,1)},
+		{Char_Pico_New, FIXED_DEC(-120,1),  FIXED_DEC(100,1)},
 		{Char_GF_New,      FIXED_DEC(0,1),  FIXED_DEC(-15,1)},
 		
 		//Stage background
@@ -489,7 +489,7 @@
 	{ //StageId_Clwn_4 (Expurgation)
 		//Characters
 		{Char_BF_New,    FIXED_DEC(105,1),  FIXED_DEC(100,1)},
-		{Char_Tank_New, FIXED_DEC(-120,1),  FIXED_DEC(100,1)},
+		{Char_Pico_New, FIXED_DEC(-120,1),  FIXED_DEC(100,1)},
 		{Char_GF_New,      FIXED_DEC(0,1),  FIXED_DEC(-15,1)},
 		
 		//Stage background

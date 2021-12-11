@@ -23,7 +23,7 @@
 #include "object/splash.h"
 
 //Stage constants
-#define STAGE_PERFECT //Play all notes perfectly
+//#define STAGE_PERFECT //Play all notes perfectly
 //#define STAGE_NOHUD //Disable the HUD
 
 
@@ -133,7 +133,7 @@ static void Stage_ScrollCamera(void)
 
 		//Shake in Improbable Cutscene
 
-		if (stage.stage_id == StageId_1_1 && stage.song_step >= 1416 && stage.song_step <= 1476)
+		if (stage.stage_id == StageId_1_1 && stage.song_step >= 1420 && stage.song_step <= 1480)
 		{
 			stage.camera.x += RandomRange(FIXED_DEC(-4, 10), FIXED_DEC(4, 10));
 			stage.camera.y += RandomRange(FIXED_DEC(-4, 100), FIXED_DEC(4, 100));
