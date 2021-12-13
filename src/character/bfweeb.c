@@ -348,9 +348,9 @@ Character *Char_BFWeeb_New(fixed_t x, fixed_t y)
 	
 	this->character.health_i = 7;
 	
-	this->character.focus_x = FIXED_DEC(-34,1);
-	this->character.focus_y = FIXED_DEC(-40,1);
-	this->character.focus_zoom = FIXED_DEC(2,1);
+	this->character.focus_x = FIXED_DEC(-50, 1);
+	this->character.focus_y = FIXED_DEC(-80, 1);
+	this->character.focus_zoom = FIXED_DEC(1, 1);
 	
 	//Load art
 	this->arc_main = IO_Read("\\CHAR\\BFWEEB.ARC;1");

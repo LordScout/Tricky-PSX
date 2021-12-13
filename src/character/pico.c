@@ -98,8 +98,8 @@ static const CharFrame char_pico_frame[] = {
 
 
 	{Pico_ArcMain_Right0, {  0,   0, 236, 137}, { 85, 128}}, //24 Right 1
-	{Pico_ArcMain_Right1, {  0,   0, 236, 139}, { 80, 130}}, //25 Right 2
-	{Pico_ArcMain_Right2, {  0,   0, 226, 144}, { 76, 135}}, //26 Right 1
+	{Pico_ArcMain_Right1, {  0,   0, 226, 139}, { 80, 130}}, //25 Right 2
+	{Pico_ArcMain_Right2, {  0,   0, 219, 144}, { 76, 135}}, //26 Right 1
 	{Pico_ArcMain_Right3, {  0,   0, 216, 144}, { 73, 135}}, //27 Right 2
 	{Pico_ArcMain_Right4, {  0,   0, 218, 143}, { 75, 133}}, //28 Right 1
 	{Pico_ArcMain_Right5, {  0,   0, 220, 143}, { 76, 133}}, //29 Right 2
@@ -108,13 +108,13 @@ static const CharFrame char_pico_frame[] = {
 
 static const Animation char_pico_anim[CharAnim_Max] = {
 	{1, (const u8[]) { 0, 0, 1, 1, 0,  2, 2, 1, 3, 3, 2, 4, 4, 3, 5, 5, 4, 5, ASCR_BACK, 15 }}, //CharAnim_Idle
-	{2, (const u8[]) { 6, 7, 8, 9, 10, 11, ASCR_BACK, 2 }},         //CharAnim_Left
+	{2, (const u8[]) { 6, 7, 8, 9, 10, 11, ASCR_BACK, 3 }},         //CharAnim_Left
 	{0, (const u8[]) { ASCR_CHGANI, CharAnim_Idle }},   //CharAnim_LeftAlt
-	{2, (const u8[]) { 12, 13, 14, 15, 16, 17, ASCR_BACK, 2 }},         //CharAnim_Down
+	{2, (const u8[]) { 12, 13, 14, 15, 16, 17, ASCR_BACK, 3 }},         //CharAnim_Down
 	{0, (const u8[]) { ASCR_CHGANI, CharAnim_Idle }},   //CharAnim_DownAlt
-	{2, (const u8[]) { 18, 19, 20, 21, 22, 23, ASCR_BACK, 2 }},         //CharAnim_Up
+	{2, (const u8[]) { 18, 19, 20, 21, 22, 23, ASCR_BACK, 3 }},         //CharAnim_Up
 	{0, (const u8[]) { ASCR_CHGANI, CharAnim_Idle }},   //CharAnim_UpAlt
-	{2, (const u8[]) { 24, 25, 26, 27, 28, 29, ASCR_BACK, 2 }},         //CharAnim_Right
+	{2, (const u8[]) { 24, 25, 26, 27, 28, 29, ASCR_BACK, 3 }},         //CharAnim_Right
 	{0, (const u8[]) { ASCR_CHGANI, CharAnim_Idle }},   //CharAnim_RightAlt 
 };
 

@@ -833,12 +833,13 @@ void Menu_Tick(void)
 				StageId stage;
 				u32 col;
 				const char *text;
+				boolean difficulty;
 			} menu_options[] = {
 				//{StageId_4_4, "TEST"},
-				{StageId_1_1, 0x125301, "IMPROBABLE OUTSET"},
-				{StageId_1_2, 0xa60005, "MADNESS"},
-				{StageId_1_3, 0xff0008, "HELLCLOWN"},
-				{StageId_1_4, 0x3c3a3a, "EXPURGATION"},
+				{StageId_1_1, 0x125301, "IMPROBABLE OUTSET", true},
+				{StageId_1_2, 0xa61b00, "MADNESS", true},
+				{StageId_1_3, 0xff2021, "HELLCLOWN", true},
+				{StageId_1_4, 0x3c3a3a, "EXPURGATION", false},
 			};
 			
 			//Initialize page
@@ -860,7 +861,8 @@ void Menu_Tick(void)
 			);
 			
 			//Draw difficulty selector
-			Menu_DifficultySelector(SCREEN_WIDTH - 100, SCREEN_HEIGHT2 - 48);
+			if (menu_options[menu.select].difficulty)
+				Menu_DifficultySelector(SCREEN_WIDTH - 100, SCREEN_HEIGHT2 - 48);
 			
 			//Handle option and selection
 			if (menu.next_page == menu.page && Trans_Idle())
@@ -1468,7 +1470,7 @@ void Menu_Tick(void)
 				const char *text;
 			} menu_options[] = {
 				//{StageId_4_4, "TEST"},
-				{true,  StageId_1_4, "TUTORIAL"},
+				{false,  StageId_1_4, "TUTORIAL"},
 				{true,  StageId_1_1, "BOPEEBO"},
 				{true,  StageId_1_2, "FRESH"},
 				{true,  StageId_1_3, "DADBATTLE"},
@@ -1497,7 +1499,7 @@ void Menu_Tick(void)
 				{true,  StageId_Clwn_1, "IMPROBABLE OUTSET"},
 				{true,  StageId_Clwn_2, "MADNESS"},
 				{true,  StageId_Clwn_3, "HELLCLOWN"},
-				{false, StageId_Clwn_4, "EXPURGATION"},
+				{true, StageId_Clwn_4, "EXPURGATION"},
 				{false, StageId_2_4, "CLUCKED"},
 			};
 			

@@ -16,6 +16,7 @@ typedef struct
 	StageBack back;
 	
 	//Textures
+	Gfx_Tex tex_back2; //Window
 	Gfx_Tex tex_back1; //Window
 	Gfx_Tex tex_back0;
 
@@ -140,15 +141,26 @@ void Back_Week2_DrawBG(StageBack *back)
 	fy = stage.camera.y;
 	
 	//Draw window
-	RECT window_src = {0, 0, 256, 123};
+	RECT window_src = {0, 0, 256, 226};
 	RECT_FIXED window_dst = {
-		FIXED_DEC(-400,1) - fx,
-		FIXED_DEC(-200,1) - fy,
-		FIXED_DEC(896,1),
-		FIXED_DEC(475,1)
+		FIXED_DEC(-500,1) - fx,
+		FIXED_DEC(-165,1) - fy,
+		FIXED_DEC(512,1),
+		FIXED_DEC(400,1)
 	};
 	
 	Stage_DrawTex(&this->tex_back1, &window_src, &window_dst, stage.camera.bzoom);
+
+	//Draw window
+	RECT window1_src = { 0, 0, 256, 226};
+	RECT_FIXED window1_dst = {
+		FIXED_DEC(3,1) - fx,
+		FIXED_DEC(-165,1) - fy,
+		FIXED_DEC(512,1),
+		FIXED_DEC(400,1)
+	};
+
+	Stage_DrawTex(&this->tex_back2, &window1_src, &window1_dst, stage.camera.bzoom);
 	
 	#if SCREEN_WIDTH > 320
 		RECT backl_src = {0, 0, 1, 256};
@@ -195,6 +207,7 @@ StageBack *Back_Week2_New(void)
 	
 	//Load background textures
 	IO_Data arc_back = IO_Read("\\WEEK2\\BACK.ARC;1");
+	Gfx_LoadTex(&this->tex_back2, Archive_Find(arc_back, "back2.tim"), 0);
 	Gfx_LoadTex(&this->tex_back1, Archive_Find(arc_back, "back1.tim"), 0);
 	Gfx_LoadTex(&this->tex_back0, Archive_Find(arc_back, "back0.tim"), 0);
 	Gfx_LoadTex(&this->tex_cut0, Archive_Find(arc_back, "cut0.tim"), 0);

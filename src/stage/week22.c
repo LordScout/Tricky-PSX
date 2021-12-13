@@ -83,6 +83,19 @@ void Back_Week22_DrawFG(StageBack* back)
 		Stage_DrawTex(&this->tex_cut0, &error_src, &error_dst, stage.camera.bzoom);
 	}
 
+	if (stage.stage_id == StageId_1_2 && stage.song_step >= 597 && stage.song_step <= 600)
+	{
+		RECT error9_src = { 0, 83, 72, 24 };
+		RECT_FIXED error9_dst = {
+			FIXED_DEC(-40,1) - fx,
+			FIXED_DEC(15,1) - fy,
+			FIXED_DEC(72,1),
+			FIXED_DEC(24,1)
+		};
+
+		Stage_DrawTex(&this->tex_cut0, &error9_src, &error9_dst, stage.camera.bzoom);
+	}
+
 	if (stage.stage_id == StageId_1_2 && stage.song_step >= 316 && stage.song_step <= 318)
 	{
 		RECT suffer1_src = { 0, 57, 85, 24 };
@@ -122,6 +135,20 @@ void Back_Week22_DrawFG(StageBack* back)
 		Stage_DrawTex(&this->tex_cut0, &waste_src, &waste_dst, stage.camera.bzoom);
 	}
 
+	if (stage.stage_id == StageId_1_2 && stage.song_step >= 542 && stage.song_step <= 544)
+	{
+		RECT correction_src = {96, 57, 145, 24 };
+		RECT_FIXED correction_dst = {
+			FIXED_DEC(-110,1) - fx,
+			FIXED_DEC(40,1) - fy,
+			FIXED_DEC(145, 1),
+			FIXED_DEC(24,1)
+		};
+
+		Stage_DrawTex(&this->tex_cut0, &correction_src, &correction_dst, stage.camera.bzoom);
+	}
+
+
 	if (stage.stage_id == StageId_1_2 && stage.song_step >= 2172 && stage.song_step <= 2214)
 	{
 		RECT youclown_src = { 0, 0, 249, 26 };
@@ -135,7 +162,7 @@ void Back_Week22_DrawFG(StageBack* back)
 		Stage_DrawTex(&this->tex_cut0, &youclown_src, &youclown_dst, stage.camera.bzoom);
 	}
 
-	if (stage.stage_id == StageId_1_2 && stage.song_step >= 2230 && stage.song_step <= 2260)
+	if (stage.stage_id == StageId_1_2 && stage.song_step >= 606 && stage.song_step <= 608) 
 	{
 		RECT incorrect_src = { 0, 110, 135, 28};
 		RECT_FIXED incorrect_dst = {
@@ -146,6 +173,97 @@ void Back_Week22_DrawFG(StageBack* back)
 		};
 
 		Stage_DrawTex(&this->tex_cut0, &incorrect_src, &incorrect_dst, stage.camera.bzoom);
+	}
+
+	if (stage.stage_id == StageId_1_2 && stage.song_step >= 670 && stage.song_step <= 673)
+	{
+		RECT mistake_src = { 0, 192, 100, 24 };
+		RECT_FIXED mistake_dst = {
+			FIXED_DEC(-150,1) - fx,
+			FIXED_DEC(10,1) - fy,
+			FIXED_DEC(100, 1),
+			FIXED_DEC(24,1)
+		};
+
+		Stage_DrawTex(&this->tex_cut0, &mistake_src, &mistake_dst, stage.camera.bzoom);
+	}
+
+	if (stage.stage_id == StageId_1_2 && stage.song_step >= 720 && stage.song_step <= 724)
+	{
+		RECT improbable_src = { 103, 139, 147, 24 };
+		RECT_FIXED improbable_dst = {
+			FIXED_DEC(-150,1) - fx,
+			FIXED_DEC(10,1) - fy,
+			FIXED_DEC(147, 1),
+			FIXED_DEC(24,1)
+		};
+
+		Stage_DrawTex(&this->tex_cut0, &improbable_src, &improbable_dst, stage.camera.bzoom);
+	}
+
+	if (stage.stage_id == StageId_1_2 && stage.song_step >= 769 && stage.song_step <= 773)
+	{
+		RECT insufficient_src = { 86, 84, 156, 24 };
+		RECT_FIXED insufficient_dst = {
+			FIXED_DEC(-80,1) - fx,
+			FIXED_DEC(20,1) - fy,
+			FIXED_DEC(156, 1),
+			FIXED_DEC(24,1)
+		};
+
+		Stage_DrawTex(&this->tex_cut0, &insufficient_src, &insufficient_dst, stage.camera.bzoom);
+	}
+
+	if (stage.stage_id == StageId_1_2 && stage.song_step >= 776 && stage.song_step <= 779)
+	{
+		RECT suffer2_src = { 0, 57, 85, 24 };
+		RECT_FIXED suffer2_dst = {
+			FIXED_DEC(-100,1) - fx,
+			FIXED_DEC(-30,1) - fy,
+			FIXED_DEC(85,1),
+			FIXED_DEC(24,1)
+		};
+
+		Stage_DrawTex(&this->tex_cut0, &suffer2_src, &suffer2_dst, stage.camera.bzoom);
+	}
+
+	if (stage.stage_id == StageId_1_2 && stage.song_step >= 800 && stage.song_step <= 804)
+	{
+		RECT waste1_src = { 0, 223, 79, 24 };
+		RECT_FIXED waste1_dst = {
+			FIXED_DEC(-130,1) - fx,
+			FIXED_DEC(50,1) - fy,
+			FIXED_DEC(79, 1),
+			FIXED_DEC(24,1)
+		};
+
+		Stage_DrawTex(&this->tex_cut0, &waste1_src, &waste1_dst, stage.camera.bzoom);
+	}
+
+	if (stage.stage_id == StageId_1_2 && stage.song_step >= 812 && stage.song_step <= 815)
+	{
+		RECT incorrect2_src = { 0, 110, 135, 28 };
+		RECT_FIXED incorrect2_dst = {
+			FIXED_DEC(-80,1) - fx,
+			FIXED_DEC(0,1) - fy,
+			FIXED_DEC(135,1),
+			FIXED_DEC(28,1)
+		};
+
+		Stage_DrawTex(&this->tex_cut0, &incorrect2_src, &incorrect2_dst, stage.camera.bzoom);
+	}
+
+	if (stage.stage_id == StageId_1_2 && stage.song_step >= 2230 && stage.song_step <= 2260)
+	{
+	RECT incorrect9_src = { 0, 110, 135, 28 };
+	RECT_FIXED incorrect9_dst = {
+		FIXED_DEC(-140,1) - fx,
+		FIXED_DEC(50,1) - fy,
+		FIXED_DEC(131,1),
+		FIXED_DEC(24,1)
+	};
+
+	Stage_DrawTex(&this->tex_cut0, &incorrect9_src, &incorrect9_dst, stage.camera.bzoom);
 	}
 
 	if (stage.stage_id == StageId_1_2 && stage.song_step >= 2294 && stage.song_step <= 2330)
@@ -161,6 +279,19 @@ void Back_Week22_DrawFG(StageBack* back)
 		Stage_DrawTex(&this->tex_cut0, &clownyou_src, &clownyou_dst, stage.camera.bzoom);
 	}
 
+
+	if (stage.stage_id == StageId_1_4 && stage.song_step >= 2128 && stage.song_step <= 2140)
+	{
+		RECT hank_src = { 110, 195, 141, 28 };
+		RECT_FIXED hank_dst = {
+			FIXED_DEC(-160,1) - fx,
+			FIXED_DEC(30,1) - fy,
+			FIXED_DEC(282,1),
+			FIXED_DEC(56,1)
+		};
+
+		Stage_DrawTex(&this->tex_cut0, &hank_src, &hank_dst, stage.camera.bzoom);
+	}
 }
 
 //Week 2 background functions
@@ -173,15 +304,26 @@ void Back_Week22_DrawBG(StageBack *back)
 	fy = stage.camera.y;
 	
 	//Draw window
-	RECT window_src = {0, 0, 256, 123};
+	RECT window_src = { 0, 0, 256, 226 };
 	RECT_FIXED window_dst = {
-		FIXED_DEC(-400,1) - fx,
-		FIXED_DEC(-200,1) - fy,
-		FIXED_DEC(896,1),
-		FIXED_DEC(475,1)
+		FIXED_DEC(-500,1) - fx,
+		FIXED_DEC(-175,1) - fy,
+		FIXED_DEC(512,1),
+		FIXED_DEC(400,1)
 	};
-	
-	Stage_DrawTex(&this->tex_back1, &window_src, &window_dst, stage.camera.bzoom);
+
+	Stage_DrawTex(&this->tex_back0, &window_src, &window_dst, stage.camera.bzoom);
+
+	//Draw window
+	RECT window1_src = { 0, 0, 256, 226 };
+	RECT_FIXED window1_dst = {
+		FIXED_DEC(3,1) - fx,
+		FIXED_DEC(-175,1) - fy,
+		FIXED_DEC(512,1),
+		FIXED_DEC(400,1)
+	};
+
+	Stage_DrawTex(&this->tex_back1, &window1_src, &window1_dst, stage.camera.bzoom);
 	
 	#if SCREEN_WIDTH > 320
 		RECT backl_src = {0, 0, 1, 256};
@@ -228,6 +370,7 @@ StageBack *Back_Week22_New(void)
 	
 	//Load background textures
 	IO_Data arc_back = IO_Read("\\WEEK22\\BACK.ARC;1");
+	Gfx_LoadTex(&this->tex_back1, Archive_Find(arc_back, "back2.tim"), 0);
 	Gfx_LoadTex(&this->tex_back1, Archive_Find(arc_back, "back1.tim"), 0);
 	Gfx_LoadTex(&this->tex_back0, Archive_Find(arc_back, "back0.tim"), 0);
 	Gfx_LoadTex(&this->tex_cut0, Archive_Find(arc_back, "cut0.tim"), 0);

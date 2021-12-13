@@ -32,9 +32,9 @@
 	},
 	{ //StageId_Clwn_3 (Hellclown)
 		//Characters
-		{Char_BF_New,    FIXED_DEC(105,1),  FIXED_DEC(100,1)},
-		{Char_Pico_New, FIXED_DEC(-120,1),  FIXED_DEC(100,1)},
-		{Char_GF_New,      FIXED_DEC(0,1),  FIXED_DEC(-15,1)},
+		{Char_BFWeeb_New,    FIXED_DEC(105,1),  FIXED_DEC(100,1)},
+		{Char_Dad_New, FIXED_DEC(-120,1),  FIXED_DEC(100,1)},
+		{Char_GFWeeb_New,      FIXED_DEC(0,1),  FIXED_DEC(60,1)},
 
 		//Stage background
 		Back_Week22_New,
@@ -53,7 +53,7 @@
 		{Char_GF_New,      FIXED_DEC(250,1),  FIXED_DEC(-250,1)},
 
 		//Stage background
-		Back_Week2_New,
+		Back_Week22_New,
 
 		//Song info
 		{FIXED_DEC(34,10),FIXED_DEC(34,10),FIXED_DEC(34,10)},
