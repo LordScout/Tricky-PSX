@@ -34,7 +34,7 @@ typedef struct
 
 //Henchmen animation and rects
 static const CharFrame henchmen_frame[10] = {
-	{0, {  0,   0,  99,  99}, { 71,  98}}, //0 left 1
+	{0, {  0,   0,  61,  55}, { 71,  98}}, //0 left 1
 	{0, { 99,   0,  99,  98}, { 71,  97}}, //1 left 2
 	{0, {  0,  99,  98,  97}, { 69,  95}}, //2 left 3
 	{0, { 98,  98,  62,  89}, { 42,  88}}, //3 left 4

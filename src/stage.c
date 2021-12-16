@@ -153,6 +153,7 @@ static void Stage_ScrollCamera(void)
 			stage.camera.y += RandomRange(FIXED_DEC(-40, 10), FIXED_DEC(40, 10));
 		}
 
+		//Shake in Hellclown
 		if (stage.stage_id == StageId_1_3 && stage.song_step >= 2)
 		{
 			stage.camera.x += RandomRange(FIXED_DEC(-10, 10), FIXED_DEC(10, 10));

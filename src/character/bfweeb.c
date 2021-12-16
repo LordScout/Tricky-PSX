@@ -78,7 +78,7 @@ static const CharFrame char_bfweeb_frame[] = {
 	{BFWeeb_ArcMain_Weeb0, {123,   0,  41,  41}, { 23,  37}}, //3 idle 4
 	{BFWeeb_ArcMain_Weeb0, {165,  0,  41,  41}, { 23,  37}}, //4 idle 5
 	{BFWeeb_ArcMain_Weeb0, {0,   40,  41,  41}, { 23,  37}}, //5 idle 4
-	{BFWeeb_ArcMain_Weeb0, { 42,  41,  42,  41}, { 23,  36}}, //6 idle 5
+	{BFWeeb_ArcMain_Weeb0, { 42,  40,  42,  41}, { 23,  36}}, //6 idle 5
 	
 	{BFWeeb_ArcMain_Weeb0, { 86,  42,  37,  40}, { 21,  36}}, //7 left 1
 	{BFWeeb_ArcMain_Weeb0, {124,  43,  36,  40}, { 21,  36}}, //8 left 2
