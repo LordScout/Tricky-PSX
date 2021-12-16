@@ -38,7 +38,6 @@ static SkullFragment char_bfweeb_skull[15] = {
 enum
 {
 	BFWeeb_ArcMain_Weeb0,
-	BFWeeb_ArcMain_Weeb1,
 	
 	BFWeeb_ArcMain_Max,
 };
@@ -73,40 +72,54 @@ typedef struct
 
 //Boyfriend Weeb player definitions
 static const CharFrame char_bfweeb_frame[] = {
-	{BFWeeb_ArcMain_Weeb0, {  0,   0,  60,  55}, { 35,  52}}, //0 idle 1
-	{BFWeeb_ArcMain_Weeb0, { 61,   0,  61,  56}, { 35,  53}}, //1 idle 2
-	{BFWeeb_ArcMain_Weeb0, {123,   0,  59,  58}, { 33,  55}}, //2 idle 3
-	{BFWeeb_ArcMain_Weeb0, {183,   0,  58,  59}, { 31,  56}}, //3 idle 4
-	{BFWeeb_ArcMain_Weeb0, {  0,  56,  58,  58}, { 32,  55}}, //4 idle 5
+	{BFWeeb_ArcMain_Weeb0, {  0,   0,  39,  39}, { 22,  35}}, //0 idle 1
+	{BFWeeb_ArcMain_Weeb0, { 40,   0,  40,  39}, { 23,  35}}, //1 idle 2
+	{BFWeeb_ArcMain_Weeb0, { 81,   0,  41,  40}, { 23,  36}}, //2 idle 3
+	{BFWeeb_ArcMain_Weeb0, {123,   0,  41,  41}, { 23,  37}}, //3 idle 4
+	{BFWeeb_ArcMain_Weeb0, {165,  0,  41,  41}, { 23,  37}}, //4 idle 5
+	{BFWeeb_ArcMain_Weeb0, {0,   40,  41,  41}, { 23,  37}}, //5 idle 4
+	{BFWeeb_ArcMain_Weeb0, { 42,  41,  42,  41}, { 23,  36}}, //6 idle 5
 	
-	{BFWeeb_ArcMain_Weeb0, { 59,  57,  54,  57}, { 34,  53}}, //5 left 1
-	{BFWeeb_ArcMain_Weeb0, {114,  59,  55,  57}, { 33,  53}}, //6 left 2
+	{BFWeeb_ArcMain_Weeb0, { 86,  42,  37,  40}, { 21,  36}}, //7 left 1
+	{BFWeeb_ArcMain_Weeb0, {124,  43,  37,  40}, { 21,  36}}, //8 left 2
+	{BFWeeb_ArcMain_Weeb0, {161,  43,  38,  40}, { 21,  36}}, //9 left 2
 	
-	{BFWeeb_ArcMain_Weeb0, {170,  60,  55,  52}, { 31,  48}}, //7 down 1
-	{BFWeeb_ArcMain_Weeb0, {  0, 115,  54,  53}, { 31,  49}}, //8 down 2
+	{BFWeeb_ArcMain_Weeb0, { 77,  81,  37,  36}, { 19,  33}}, //10 down 1
+	{BFWeeb_ArcMain_Weeb0, {115,  83,  36,  36}, { 19,  32}}, //11 down 2
+	{BFWeeb_ArcMain_Weeb0, {152,  84,  37,  36}, { 19,  32}}, //12 down 2
 	
-	{BFWeeb_ArcMain_Weeb0, { 55, 116,  57,  64}, { 26,  60}}, //9 up 1
-	{BFWeeb_ArcMain_Weeb0, {113, 117,  58,  63}, { 27,  59}}, //10 up 2
+	{BFWeeb_ArcMain_Weeb0, { 78, 120,  37,  45}, { 17,  38}}, //13 up 1
+	{BFWeeb_ArcMain_Weeb0, {116, 121,  36,  44}, { 17,  38}}, //14 up 2
+	{BFWeeb_ArcMain_Weeb0, {153, 121,  38,  44}, { 18,  38}}, //15 up 2
 	
-	{BFWeeb_ArcMain_Weeb0, {172, 113,  57,  56}, { 22,  52}}, //11 right 1
-	{BFWeeb_ArcMain_Weeb0, {  0, 169,  55,  56}, { 22,  52}}, //12 right 2
+	{BFWeeb_ArcMain_Weeb0, { 76, 166,  41,  40}, { 17,  37}}, //16 right 1
+	{BFWeeb_ArcMain_Weeb0, {118, 166,  41,  40}, { 16,  36}}, //17 right 2
+
+	{BFWeeb_ArcMain_Weeb0, {  0,  82,  37,  41}, { 20,  37}}, //18 miss left 
+	{BFWeeb_ArcMain_Weeb0, { 39,  83,  37,  42}, { 20,  38}}, //19 miss left 
+	{BFWeeb_ArcMain_Weeb0, {  0, 124,  38,  37}, { 19,  34}}, //20 miss down 
+	{BFWeeb_ArcMain_Weeb0, { 39, 126,  38,  37}, { 19,  34}}, //21 miss down 
+	{BFWeeb_ArcMain_Weeb0, {  0, 162,  37,  43}, { 18,  37}}, //22 miss up 
+	{BFWeeb_ArcMain_Weeb0, { 39, 164,  36,  43}, { 18,  38}}, //23 miss up 
+	{BFWeeb_ArcMain_Weeb0, {160, 166,  40,  42}, { 17,  39}}, //24 miss right 
+	{BFWeeb_ArcMain_Weeb0, {201, 166,  40,  42}, { 18,  39}}, //25 miss right 
 };
 
 static const Animation char_bfweeb_anim[PlayerAnim_Max] = {
-	{2, (const u8[]){ 0,  1,  2,  3, 4, ASCR_BACK, 1}}, //CharAnim_Idle
-	{2, (const u8[]){ 5,  6, ASCR_BACK, 1}},            //CharAnim_Left
+	{2, (const u8[]){ 0,  1,  2,  3, 4, 5, 6, ASCR_BACK, 1}}, //CharAnim_Idle
+	{2, (const u8[]){ 7, 8, 9, ASCR_BACK, 1}},            //CharAnim_Left
 	{0, (const u8[]){ASCR_CHGANI, CharAnim_Idle}},      //CharAnim_LeftAlt
-	{2, (const u8[]){ 7,  8, ASCR_BACK, 1}},            //CharAnim_Down
+	{2, (const u8[]){ 10, 11, 12, ASCR_BACK, 1}},            //CharAnim_Down
 	{0, (const u8[]){ASCR_CHGANI, CharAnim_Idle}},      //CharAnim_DownAlt
-	{2, (const u8[]){ 9, 10, ASCR_BACK, 1}},            //CharAnim_Up
+	{2, (const u8[]){ 13, 14, 15, ASCR_BACK, 1}},            //CharAnim_Up
 	{0, (const u8[]){ASCR_CHGANI, CharAnim_Idle}},      //CharAnim_UpAlt
-	{2, (const u8[]){11, 12, ASCR_BACK, 1}},            //CharAnim_Right
+	{2, (const u8[]){16, 17, ASCR_BACK, 1}},            //CharAnim_Right
 	{0, (const u8[]){ASCR_CHGANI, CharAnim_Idle}},      //CharAnim_RightAlt
 	
-	{0, (const u8[]){ASCR_CHGANI, CharAnim_Idle}},      //PlayerAnim_LeftMiss
-	{0, (const u8[]){ASCR_CHGANI, CharAnim_Idle}},      //PlayerAnim_DownMiss
-	{0, (const u8[]){ASCR_CHGANI, CharAnim_Idle}},      //PlayerAnim_UpMiss
-	{0, (const u8[]){ASCR_CHGANI, CharAnim_Idle}},      //PlayerAnim_RightMiss
+	{2, (const u8[]){ 18, 19, ASCR_BACK, 1 }},      //PlayerAnim_LeftMiss
+	{2, (const u8[]){ 20, 21, ASCR_BACK, 1 }},      //PlayerAnim_DownMiss
+	{2, (const u8[]){ 22, 23, ASCR_BACK, 1 }},      //PlayerAnim_UpMiss
+	{2, (const u8[]){ 24, 25, ASCR_BACK, 1 }},      //PlayerAnim_RightMiss
 	
 	{2, (const u8[]){20, 21, 22, ASCR_BACK, 1}},        //PlayerAnim_Peace
 	{2, (const u8[]){ASCR_CHGANI, CharAnim_Idle}},      //PlayerAnim_Sweat
@@ -344,9 +357,9 @@ Character *Char_BFWeeb_New(fixed_t x, fixed_t y)
 	Character_Init((Character*)this, x, y);
 	
 	//Set character information
-	this->character.spec = 0; //CHAR_SPEC_MISSANIM;
+	this->character.spec = CHAR_SPEC_MISSANIM;
 	
-	this->character.health_i = 7;
+	this->character.health_i = 5;
 	
 	this->character.focus_x = FIXED_DEC(-50, 1);
 	this->character.focus_y = FIXED_DEC(-80, 1);
@@ -359,7 +372,6 @@ Character *Char_BFWeeb_New(fixed_t x, fixed_t y)
 	
 	const char **pathp = (const char *[]){
 		"weeb0.tim",  //BFWeeb_ArcMain_Weeb0
-		"weeb1.tim",  //BFWeeb_ArcMain_Weeb1
 		NULL
 	};
 	IO_Data *arc_ptr = this->arc_ptr;

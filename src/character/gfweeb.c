@@ -18,7 +18,6 @@ enum
 {
 	GFWeeb_ArcMain_BopLeft,
 	GFWeeb_ArcMain_BopRight,
-	GFWeeb_ArcMain_Cry,
 	
 	GFWeeb_Arc_Max,
 };
@@ -41,33 +40,36 @@ typedef struct
 
 //GF character definitions
 static const CharFrame char_gfweeb_frame[] = {
-	{GFWeeb_ArcMain_BopLeft, {  0,   0, 98, 96}, { 32,  73}}, //0 bop left 1
-	{GFWeeb_ArcMain_BopLeft, {  0,   0, 98, 96}, { 32,  73}}, //0 bop left 1
-	{GFWeeb_ArcMain_BopLeft, { 99,   0, 98, 96}, { 32,  73}}, //1 bop left 2
-	{GFWeeb_ArcMain_BopLeft, { 99,   0, 98, 96}, { 32,  73}}, //1 bop left 2
-	{GFWeeb_ArcMain_BopLeft, {  0,  97, 103, 93}, { 35,  70}}, //2 bop left 3
-	{GFWeeb_ArcMain_BopLeft, {104,  97, 98, 96}, { 32,  73}}, //3 bop left 4
+	{GFWeeb_ArcMain_BopLeft, {  0,   0, 69, 63}, { 36,  31}}, //0 bop left 1
+	{GFWeeb_ArcMain_BopLeft, { 70,   0, 71, 63}, { 37,  31}}, //1 bop left 1
+	{GFWeeb_ArcMain_BopLeft, { 142,   0, 71, 63}, { 35,  31}}, //2 bop left 2
+	{GFWeeb_ArcMain_BopLeft, {  0,  65, 70, 63}, { 35,  31}}, //3 bop left 2
+	{GFWeeb_ArcMain_BopLeft, { 71,  66, 70, 63}, { 35,  30}}, //4 bop left 3
+	{GFWeeb_ArcMain_BopLeft, {144,  65, 70, 63}, { 35,  31}}, //5 bop left 4
+	{GFWeeb_ArcMain_BopLeft, {  0, 129, 70, 63}, { 36,  31}}, //6 bop left 1
+	{GFWeeb_ArcMain_BopLeft, { 71, 129, 70, 64}, { 36,  32}}, //7 bop left 2
+	{GFWeeb_ArcMain_BopLeft, { 142, 129, 70, 64}, { 36,  32}}, //8 bop left 2
 	
-	{GFWeeb_ArcMain_BopRight, {  0,   0, 98, 96}, { 32,  73}}, //6 bop right 1
-	{GFWeeb_ArcMain_BopRight, { 99,   0, 98, 93}, { 32,  70}}, //7 bop right 2
-	{GFWeeb_ArcMain_BopRight, {  0,  97, 102, 92}, { 34,  69}}, //8 bop right 3
-	{GFWeeb_ArcMain_BopRight, {  0,  97, 102, 92}, { 34,  69}}, //8 bop right 3
-	{GFWeeb_ArcMain_BopRight, {103, 93,  98, 96}, { 32,  74}}, //9 bop right 4
-	{GFWeeb_ArcMain_BopRight, {103, 93,  98, 96}, { 32,  74}}, //9 bop right 4
-	
-	{GFWeeb_ArcMain_Cry, {  6,   0,  98, 95}, { 32,  71}}, //12 cry
-	{GFWeeb_ArcMain_Cry, {  6,   0,  98, 95}, { 32,  71}}, //13 cry
+	{GFWeeb_ArcMain_BopRight, {  0,   0, 70, 64}, { 36,  32}}, //9 bop right 1
+	{GFWeeb_ArcMain_BopRight, { 71,   0, 70, 63}, { 36,  31}}, //10 bop right 2
+	{GFWeeb_ArcMain_BopRight, { 142,  0, 71, 63}, { 36,  31}}, //11 bop right 3
+	{GFWeeb_ArcMain_BopRight, {  0,  66, 70, 63}, { 36,  31}}, //12 bop right 3
+	{GFWeeb_ArcMain_BopRight, { 71,  64,  70, 63}, { 36,  31}}, //13 bop right 4
+	{GFWeeb_ArcMain_BopRight, {142, 64,  70, 63}, { 37,  31}}, //14 bop right 4
+	{GFWeeb_ArcMain_BopRight, { 0, 130, 70, 63}, { 37,  31}}, //15 bop right 3
+	{GFWeeb_ArcMain_BopRight, { 71, 128, 70, 63}, { 37,  31}}, //16 bop right 3
+	{GFWeeb_ArcMain_BopRight, {142, 128, 69, 63}, { 35,  31}}, //16 bop right 3
 };
 
 static const Animation char_gfweeb_anim[CharAnim_Max] = {
 	{0, (const u8[]) { ASCR_CHGANI, CharAnim_Left }},                           //CharAnim_Idle
-	{1, (const u8[]) { 0,  1,  1,  2,  3, 3,  4, 5, ASCR_BACK, 1 }}, //CharAnim_Left
+	{1, (const u8[]) { 0,  1,  1,  2,  3, 3,  4, 5, 6, 7, 8, ASCR_BACK, 1 }}, //CharAnim_Left
 	{0, (const u8[]) { ASCR_CHGANI, CharAnim_Left }},                           //CharAnim_LeftAlt
-	{2, (const u8[]) { 12, 13, ASCR_REPEAT }},                                  //CharAnim_Down
+	{2, (const u8[]) { 17, ASCR_REPEAT }},                                  //CharAnim_Down
 	{0, (const u8[]) { ASCR_CHGANI, CharAnim_Left }},                           //CharAnim_DownAlt
 	{0, (const u8[]) { ASCR_CHGANI, CharAnim_Left }},                           //CharAnim_Up
 	{0, (const u8[]) { ASCR_CHGANI, CharAnim_Left }},                           //CharAnim_UpAlt
-	{1, (const u8[]) { 6,  6,  7,  7,  8,  8,  9, 10, 10, 11, 11, ASCR_BACK, 1 }}, //CharAnim_Right
+	{1, (const u8[]) { 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, ASCR_BACK, 1 }}, //CharAnim_Right
 	{0, (const u8[]) { ASCR_CHGANI, CharAnim_Left }},                               //CharAnim_RightAlt
 };
 
@@ -172,7 +174,6 @@ Character *Char_GFWeeb_New(fixed_t x, fixed_t y)
 	const char **pathp = (const char *[]){
 		"bopleft.tim",  //GF_ArcMain_BopLeft
 		"bopright.tim", //GF_ArcMain_BopRight
-		"cry.tim",      //GF_ArcMain_Cry
 		NULL
 	};
 	IO_Data *arc_ptr = this->arc_ptr;

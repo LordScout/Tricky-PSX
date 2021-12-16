@@ -66,7 +66,7 @@
 	{ //StageId_2_1 (Spookeez)
 		//Characters
 		{Char_BF_New,      FIXED_DEC(56,1),   FIXED_DEC(85,1)},
-		{Char_Spook_New,  FIXED_DEC(-90,1),   FIXED_DEC(85,1)},
+		{Char_Pico_New,  FIXED_DEC(-90,1),   FIXED_DEC(85,1)},
 		{Char_GF_New,       FIXED_DEC(0,1),  FIXED_DEC(-15,1)},
 		
 		//Stage background
@@ -82,7 +82,7 @@
 	{ //StageId_2_2 (South)
 		//Characters
 		{Char_BF_New,      FIXED_DEC(56,1),   FIXED_DEC(85,1)},
-		{Char_Spook_New,  FIXED_DEC(-90,1),   FIXED_DEC(85,1)},
+		{Char_Pico_New,  FIXED_DEC(-90,1),   FIXED_DEC(85,1)},
 		{Char_GF_New,       FIXED_DEC(0,1),  FIXED_DEC(-15,1)},
 		
 		//Stage background
@@ -98,7 +98,7 @@
 	{ //StageId_2_3 (Monster)
 		//Characters
 		{Char_BF_New,      FIXED_DEC(56,1),   FIXED_DEC(85,1)},
-		{Char_Spook_New,  FIXED_DEC(-90,1),   FIXED_DEC(85,1)},
+		{Char_Pico_New,  FIXED_DEC(-90,1),   FIXED_DEC(85,1)},
 		{Char_GF_New,       FIXED_DEC(0,1),  FIXED_DEC(-15,1)},
 		
 		//Stage background
@@ -278,7 +278,7 @@
 	{ //StageId_6_1 (Senpai)
 		//Characters
 		{Char_BFWeeb_New,  FIXED_DEC(52,1),  FIXED_DEC(50,1)},
-		{Char_Senpai_New, FIXED_DEC(-60,1),  FIXED_DEC(50,1)},
+		{Char_Tank_New, FIXED_DEC(-60,1),  FIXED_DEC(50,1)},
 		{Char_GFWeeb_New,   FIXED_DEC(-25,1),  FIXED_DEC(10,1)},
 		
 		//Stage background
@@ -294,7 +294,7 @@
 	{ //StageId_6_2 (Roses)
 		//Characters
 		{Char_BFWeeb_New,   FIXED_DEC(52,1),  FIXED_DEC(50,1)},
-		{Char_SenpaiM_New, FIXED_DEC(-60,1),  FIXED_DEC(50,1)},
+		{Char_Tank_New, FIXED_DEC(-60,1),  FIXED_DEC(50,1)},
 		{Char_GFWeeb_New,   FIXED_DEC(-25,1),  FIXED_DEC(10,1)},
 		
 		//Stage background
@@ -310,7 +310,7 @@
 	{ //StageId_6_3 (Thorns)
 		//Characters
 		{Char_BFWeeb_New,  FIXED_DEC(52,1),  FIXED_DEC(50,1)},
-		{Char_SenpaiP_New, FIXED_DEC(-60,1),  FIXED_DEC(50,1)},
+		{Char_Tank_New, FIXED_DEC(-60,1),  FIXED_DEC(50,1)},
 		{Char_GFWeeb_New,   FIXED_DEC(-25,1),  FIXED_DEC(10,1)},
 		
 		//Stage background
@@ -327,7 +327,7 @@
 	{ //StageId_7_1 (Ugh)
 		//Characters
 		{Char_BF_New,    FIXED_DEC(105,1),  FIXED_DEC(100,1)},
-		{Char_Pico_New, FIXED_DEC(-120,1),  FIXED_DEC(100,1)},
+		{Char_Tank_New, FIXED_DEC(-120,1),  FIXED_DEC(100,1)},
 		{Char_GF_New,      FIXED_DEC(0,1),  FIXED_DEC(-15,1)},
 		
 		//Stage background
@@ -505,7 +505,7 @@
 	{ //StageId_2_4 (Clucked)
 		//Characters
 		{Char_BF_New,       FIXED_DEC(60,1),  FIXED_DEC(100,1)},
-		{Char_Clucky_New, FIXED_DEC(-120,1),  FIXED_DEC(100,1)},
+		{Char_Tank_New, FIXED_DEC(-120,1),  FIXED_DEC(100,1)},
 		{Char_GF_New,        FIXED_DEC(0,1),    FIXED_DEC(0,1)},
 		
 		//Stage background

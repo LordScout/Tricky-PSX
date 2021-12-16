@@ -862,7 +862,7 @@ void Menu_Tick(void)
 			
 			//Draw difficulty selector
 			if (menu_options[menu.select].difficulty)
-				Menu_DifficultySelector(SCREEN_WIDTH - 100, SCREEN_HEIGHT2 - 48);
+				Menu_DifficultySelector(SCREEN_WIDTH - 100, SCREEN_HEIGHT2 - 32);
 			
 			//Handle option and selection
 			if (menu.next_page == menu.page && Trans_Idle())
