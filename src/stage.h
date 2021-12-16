@@ -239,6 +239,7 @@ typedef struct
 	s16 song_step;
 	
 	u8 gf_speed; //Typically 4 steps, changes in Fresh
+	u8 MTicky_speed; 
 	
 	PlayerState player_state[2];
 	s32 max_score;

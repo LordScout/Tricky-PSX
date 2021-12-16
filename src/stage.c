@@ -23,8 +23,13 @@
 #include "object/splash.h"
 
 //Stage constants
-#define STAGE_PERFECT //Play all notes perfectly
+//#define STAGE_PERFECT //Play all notes perfectly
 //#define STAGE_NOHUD //Disable the HUD
+
+int shake = 0;
+int botthing = 0;
+
+
 
 
 //#define STAGE_FREECAM //Freecam
@@ -46,23 +51,18 @@ static const u16 note_key[] = {INPUT_LEFT, INPUT_DOWN, INPUT_UP, INPUT_RIGHT};
 
 //Stage definitions
 #include "character/bf.h"
-#include "character/bfweeb.h"
-#include "character/dad.h"
-#include "character/pico.h"
-#include "character/mom.h"
-#include "character/xmasp.h"
-#include "character/tank.h"
+#include "character/bfph3.h"
+#include "character/hellc.h"
+#include "character/madc.h"
+#include "character/clown.h"
 #include "character/gf.h"
-#include "character/gfweeb.h"
+#include "character/mticky.h"
+#include "character/gfph3.h"
 
 #include "stage/dummy.h"
-#include "stage/week1.h"
-#include "stage/week2.h"
-#include "stage/week22.h"
-#include "stage/week3.h"
-#include "stage/week4.h"
-#include "stage/week5.h"
-#include "stage/week7.h"
+#include "stage/weekt.h"
+#include "stage/weekt2.h"
+#include "stage/weekt3.h"
 
 static const StageDef stage_defs[StageId_Max] = {
 	#include "stagedef_disc1.h"
@@ -154,10 +154,11 @@ static void Stage_ScrollCamera(void)
 		}
 
 		//Shake in Hellclown
-		if (stage.stage_id == StageId_1_3 && stage.song_step >= 2)
+		if (shake == 1)
 		{
-			stage.camera.x += RandomRange(FIXED_DEC(-10, 10), FIXED_DEC(10, 10));
-			stage.camera.y += RandomRange(FIXED_DEC(-10, 10), FIXED_DEC(10, 10));
+			shake = 0;
+			stage.camera.x += RandomRange(FIXED_DEC(-40, 10), FIXED_DEC(50, 10));
+			stage.camera.y += RandomRange(FIXED_DEC(-40, 10), FIXED_DEC(50, 10));
 		}
 
 	#endif
@@ -342,6 +343,9 @@ static void Stage_NoteCheck(PlayerState *this, u8 type)
 			this->character->set_anim(this->character, note_anims[type & 0x3][(note->type & NOTE_FLAG_ALT_ANIM) != 0]);
 			u8 hit_type = Stage_HitNote(this, type, stage.note_scroll - note_fp);
 			this->arrow_hitan[type & 0x3] = stage.step_time;
+
+			if (this->character->spec & CHAR_SPEC_SHAKE && stage.stage_id == StageId_1_3)
+			   shake = 1;
 			
 			#ifdef PSXF_NETWORK
 				if (stage.mode >= StageMode_Net1)
@@ -480,6 +484,10 @@ static void Stage_SustainCheck(PlayerState *this, u8 type)
 		
 		Stage_StartVocal();
 		this->health += 230;
+
+		if (this->character->spec & CHAR_SPEC_SHAKE && stage.stage_id == StageId_1_3)
+			   shake = 1;
+
 		this->arrow_hitan[type & 0x3] = stage.step_time;
 			
 		#ifdef PSXF_NETWORK
@@ -514,7 +522,8 @@ static void Stage_SustainCheck(PlayerState *this, u8 type)
 static void Stage_ProcessPlayer(PlayerState *this, Pad *pad, boolean playing)
 {
 	//Handle player note presses
-	#ifndef STAGE_PERFECT
+	if (botthing != 1)
+	{
 		if (playing)
 		{
 			u8 i = (this->character == stage.opponent) ? NOTE_FLAG_OPPONENT : 0;
@@ -545,10 +554,10 @@ static void Stage_ProcessPlayer(PlayerState *this, Pad *pad, boolean playing)
 			this->pad_held = this->character->pad_held = 0;
 			this->pad_press = 0;
 		}
-	#endif
-	
-	#ifdef STAGE_PERFECT
+	}
 		//Do perfect note checks
+		if (botthing == 1)
+		{
 		if (playing)
 		{
 			u8 i = (this->character == stage.opponent) ? NOTE_FLAG_OPPONENT : 0;
@@ -608,7 +617,7 @@ static void Stage_ProcessPlayer(PlayerState *this, Pad *pad, boolean playing)
 			this->pad_held = this->character->pad_held = 0;
 			this->pad_press = 0;
 		}
-	#endif
+}
 }
 
 //Stage drawing functions
@@ -1478,6 +1487,21 @@ void Stage_Tick(void)
 			//Get song position
 			boolean playing;
 			fixed_t next_scroll;
+
+			
+            #ifdef STAGE_PERFECT
+            botthing = 1;
+
+            #else
+			{
+			if ((stage.stage_id == StageId_1_1 && stage.song_step >= 1424) || (stage.stage_id == StageId_1_2 && stage.song_step >= 2170))
+			botthing = 1;
+
+           else
+		    	botthing = 0;
+			}
+
+			#endif
 			
 			#ifdef PSXF_NETWORK
 			if (!Network_IsReady())
@@ -1688,11 +1712,16 @@ void Stage_Tick(void)
 						{
 							//Opponent hits note
 							Stage_StartVocal();
-							if (note->type & NOTE_FLAG_SUSTAIN)
+
+							if (stage.mode != StageMode_Swap && stage.stage_id == StageId_1_3)
+							  shake = 1;
+
+							 if (note->type & NOTE_FLAG_SUSTAIN)
 								opponent_snote = note_anims[note->type & 0x3][(note->type & NOTE_FLAG_ALT_ANIM) != 0];
 							else
 								opponent_anote = note_anims[note->type & 0x3][(note->type & NOTE_FLAG_ALT_ANIM) != 0];
 							note->type |= NOTE_FLAG_HIT;
+
 						}
 					}
 					

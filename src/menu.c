@@ -22,7 +22,7 @@
 #include "loadscr.h"
 
 #include "stage.h"
-#include "character/gf.h"
+#include "character/mticky.h"
 
 //Menu messages
 static const char* funny_messages[][12] = {
@@ -70,6 +70,10 @@ static struct
 		{
 			fixed_t back_r, back_g, back_b;
 		} freeplay;
+		struct
+		{
+			fixed_t back_r, back_g, back_b;
+		} credits;
 	#ifdef PSXF_NETWORK
 		struct
 		{
@@ -104,7 +108,7 @@ static struct
 	Gfx_Tex tex_back, tex_ng, tex_credits0, tex_credits1, tex_story, tex_title;
 	FontData font_bold, font_arial;
 	
-	Character *gf; //Title Girlfriend
+	Character *tricky; //Title Tricky
 } menu;
 
 #ifdef PSXF_NETWORK
@@ -269,10 +273,10 @@ void Menu_Load(MenuPage page)
 	FontData_Load(&menu.font_bold, Font_Bold);
 	FontData_Load(&menu.font_arial, Font_Arial);
 
-	menu.gf = Char_GF_New(FIXED_DEC(62, 1), FIXED_DEC(-12, 1));
+	menu.tricky = Char_MTicky_New(FIXED_DEC(-30, 1), FIXED_DEC(10, 1));
 	stage.camera.x = stage.camera.y = FIXED_DEC(0, 1);
 	stage.camera.bzoom = FIXED_UNIT;
-	stage.gf_speed = 4;
+	stage.MTicky_speed = 4;
 
 	//Initialize menu state
 	menu.select = menu.next_select = 0;
@@ -309,7 +313,7 @@ void Menu_Load(MenuPage page)
 void Menu_Unload(void)
 {
 	//Free title Girlfriend
-	Character_Free(menu.gf);
+	Character_Free(menu.tricky);
 }
 
 void Menu_ToStage(StageId id, StageDiff diff, boolean story)
@@ -550,7 +554,7 @@ void Menu_Tick(void)
 			}
 			
 			//Draw Girlfriend
-			menu.gf->tick(menu.gf);
+			menu.tricky->tick(menu.tricky);
 
 			//background color
 			Gfx_SetClear(75, 0, 0);
@@ -946,33 +950,42 @@ void Menu_Tick(void)
 			static const struct
 			{
 				StageId stage;
+				u32 col;
 				const char *text;
 				boolean difficulty;
 			} menu_options[] = {
-				{StageId_Kapi_1, "LORD SCOUT", false},
-				{StageId_Kapi_2, "  TRICKY PSX PORT", false},
-				{StageId_Clwn_1, "CUCKYDEV", false},
-				{StageId_Clwn_2, "	PSXFUNKIN", false},
-				{StageId_Clwn_2, "BANBUDS", false},
-				{StageId_Clwn_1, "	DIRECTOR AND ARTIST", false},
-				{StageId_Clwn_1, "ROZEBUD", false},
-				{StageId_Clwn_1, "	MUSICIAN AND CODER", false},
-				{StageId_Clwn_1, "KADEDEV", false},
-				{StageId_Clwn_1, "   PROGRAMMING", false},
-				{StageId_Clwn_2, "CVAL", false},
-				{StageId_Clwn_1, "	CHARTING", false},
-				{StageId_Clwn_1, "YINGYANG48", false},
-				{StageId_Clwn_1, "	COMPOSER", false},
-				{StageId_Clwn_1, "JADS", false},
-				{StageId_Clwn_1, "   COMPOSER", false},
-				{StageId_Clwn_1, "MORO", false},
-				{StageId_Clwn_1, "	ARTIST", false},
-				{StageId_Clwn_1, "TSURARAN", false},
-				{StageId_Clwn_1, "   MENU MUSIC", false},
-				{StageId_Clwn_1, "SPECIAL THANKS", false},
-				{StageId_Kapi_1, "	IGORSOU3000", false},
-				{StageId_Kapi_2, "	KRINKLES", false},
-				{StageId_Clwn_1, "  TOM FULP", false},
+				{StageId_Clwn_2, 0x080b95, "TRICKY PSX PORT", false},
+				{StageId_Kapi_1, 0x080b95, "LORD SCOUT", false},
+				{StageId_Clwn_1, 0x080b95, "", false},
+				{StageId_Kapi_2, 0xc003ab,"PSXFUNKIN", false},
+				{StageId_Kapi_1, 0xc003ab,"CUCKYDEV", false},
+				{StageId_Clwn_1, 0x080b95, "", false},
+				{StageId_Kapi_2, 0x423c41,"DIRECTOR AND ARTIST", false},
+				{StageId_Kapi_1, 0x423c41,"BANBUDS", false},
+				{StageId_Clwn_1, 0x080b95, "", false},
+				{StageId_Kapi_2, 0x016e07,"MUSICIAN AND CODER", false},
+				{StageId_Kapi_1, 0x016e07,"ROZEBUD", false},
+				{StageId_Clwn_1, 0x080b95, "", false},
+				{StageId_Kapi_2, 0xb20716,"PROGRAMMING", false},
+				{StageId_Kapi_1, 0xb20716,"KADEDEV", false},
+				{StageId_Clwn_1, 0x080b95, "", false},
+				{StageId_Kapi_2, 0xffffff,"CHARTING", false},
+				{StageId_Kapi_1, 0xffffff,"CVAL", false},
+				{StageId_Clwn_1, 0x080b95, "", false},
+				{StageId_Kapi_2, 0xc5ab0d,"COMPOSER", false},
+				{StageId_Clwn_1, 0xc5ab0d,"YINGYANG48", false},
+				{StageId_Kapi_1, 0xc5ab0d,"JADS", false},
+				{StageId_Clwn_1, 0x080b95, "", false},
+				{StageId_Kapi_2, 0x0dbfc5,"ARTIST", false},
+				{StageId_Kapi_1, 0x0dbfc5,"MORO", false},
+				{StageId_Clwn_1, 0x080b95, "", false},
+				{StageId_Kapi_2, 0x180c1d,"MENU MUSIC", false},
+				{StageId_Kapi_1, 0x180c1d,"TSURARAN", false},
+				{StageId_Clwn_1, 0x080b95, "", false},
+				{StageId_Kapi_2, 0xba6315,"SPECIAL THANKS", false},
+				{StageId_Clwn_1, 0xba6315,"IGORSOU3000", false},
+				{StageId_Clwn_2, 0xba6315,"KRINKLES", false},
+				{StageId_Clwn_1, 0xba6315,"TOM FULP", false},
 			};
 			
 			//Initialize page
@@ -980,6 +993,9 @@ void Menu_Tick(void)
 			{
 				menu.scroll = COUNT_OF(menu_options) * FIXED_DEC(24 + SCREEN_HEIGHT2,1);
 				menu.page_param.stage.diff = StageDiff_Normal;
+				menu.page_state.credits.back_r = FIXED_DEC(255, 1);
+				menu.page_state.credits.back_g = FIXED_DEC(255, 1);
+				menu.page_state.credits.back_b = FIXED_DEC(255, 1);
 			}
 			
 			//Draw page label
@@ -1000,14 +1016,20 @@ void Menu_Tick(void)
 				//Change option
 				if (pad_state.press & PAD_UP)
 				{
-					if (menu.select > 0)
+					if (menu.select > 0 && menu_options[menu.select].stage == StageId_Kapi_2)
+					menu.select = menu.select - 2;
+
+					else if (menu.select > 0)
 						menu.select--;
 					else
 						menu.select = COUNT_OF(menu_options) - 1;
 				}
 				if (pad_state.press & PAD_DOWN)
 				{
-					if (menu.select < COUNT_OF(menu_options) - 1)
+					if (menu.select < COUNT_OF(menu_options) - 1 && menu_options[menu.select].stage == StageId_Kapi_1)
+					menu.select = menu.select + 2;
+
+					else if (menu.select < COUNT_OF(menu_options) - 1)
 						menu.select++;
 					else
 						menu.select = 0;
@@ -1038,17 +1060,26 @@ void Menu_Tick(void)
 				//Draw text
 				menu.font_bold.draw(&menu.font_bold,
 					Menu_LowerIf(menu_options[i].text, menu.select != i),
-					48 + (y >> 2),
+					160,
 					SCREEN_HEIGHT2 + y - 8,
-					FontAlign_Left
+					FontAlign_Center
 				);
 			}
 			
 			//Draw background
+			fixed_t tgt_r = (fixed_t)((menu_options[menu.select].col >> 16) & 0xFF) << FIXED_SHIFT;
+			fixed_t tgt_g = (fixed_t)((menu_options[menu.select].col >> 8) & 0xFF) << FIXED_SHIFT;
+			fixed_t tgt_b = (fixed_t)((menu_options[menu.select].col >> 0) & 0xFF) << FIXED_SHIFT;
+
+			menu.page_state.credits.back_r += (tgt_r - menu.page_state.credits.back_r) >> 4;
+			menu.page_state.credits.back_g += (tgt_g - menu.page_state.credits.back_g) >> 4;
+			menu.page_state.credits.back_b += (tgt_b - menu.page_state.credits.back_b) >> 4;
 			Menu_DrawBack(
 				true,
 				8,
-				50 >> 1, 50 >> 1, 50 >> 1,
+				menu.page_state.credits.back_r >> (FIXED_SHIFT + 1),
+				menu.page_state.credits.back_g >> (FIXED_SHIFT + 1),
+				menu.page_state.credits.back_b >> (FIXED_SHIFT + 1),
 				0, 0, 0
 			);
 			break;

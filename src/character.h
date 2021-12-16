@@ -16,6 +16,7 @@
 //Character specs
 typedef u8 CharSpec;
 #define CHAR_SPEC_MISSANIM (1 << 0) //Has miss animations
+#define CHAR_SPEC_SHAKE (2 << 0) //Has shake
 
 //Character enums
 typedef enum
