@@ -81,7 +81,7 @@ static const CharFrame char_bfweeb_frame[] = {
 	{BFWeeb_ArcMain_Weeb0, { 42,  41,  42,  41}, { 23,  36}}, //6 idle 5
 	
 	{BFWeeb_ArcMain_Weeb0, { 86,  42,  37,  40}, { 21,  36}}, //7 left 1
-	{BFWeeb_ArcMain_Weeb0, {124,  43,  37,  40}, { 21,  36}}, //8 left 2
+	{BFWeeb_ArcMain_Weeb0, {124,  43,  36,  40}, { 21,  36}}, //8 left 2
 	{BFWeeb_ArcMain_Weeb0, {161,  43,  38,  40}, { 21,  36}}, //9 left 2
 	
 	{BFWeeb_ArcMain_Weeb0, { 77,  81,  37,  36}, { 19,  33}}, //10 down 1
@@ -92,7 +92,7 @@ static const CharFrame char_bfweeb_frame[] = {
 	{BFWeeb_ArcMain_Weeb0, {116, 121,  36,  44}, { 17,  38}}, //14 up 2
 	{BFWeeb_ArcMain_Weeb0, {153, 121,  38,  44}, { 18,  38}}, //15 up 2
 	
-	{BFWeeb_ArcMain_Weeb0, { 76, 166,  41,  40}, { 17,  37}}, //16 right 1
+	{BFWeeb_ArcMain_Weeb0, { 76, 166,  41,  40}, { 17,  36}}, //16 right 1
 	{BFWeeb_ArcMain_Weeb0, {118, 166,  41,  40}, { 16,  36}}, //17 right 2
 
 	{BFWeeb_ArcMain_Weeb0, {  0,  82,  37,  41}, { 20,  37}}, //18 miss left 
@@ -361,8 +361,8 @@ Character *Char_BFWeeb_New(fixed_t x, fixed_t y)
 	
 	this->character.health_i = 5;
 	
-	this->character.focus_x = FIXED_DEC(-50, 1);
-	this->character.focus_y = FIXED_DEC(-80, 1);
+	this->character.focus_x = FIXED_DEC(-30, 1);
+	this->character.focus_y = FIXED_DEC(-60, 1);
 	this->character.focus_zoom = FIXED_DEC(1, 1);
 	
 	//Load art

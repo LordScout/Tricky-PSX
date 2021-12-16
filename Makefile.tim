@@ -97,7 +97,7 @@ iso/week22/back.arc: iso/week22/back0.tim iso/week22/back1.tim iso/week22/back2.
 iso/week3/back.arc: iso/week3/back0.tim iso/week3/back1.tim iso/week3/back2.tim iso/week3/back3.tim iso/week3/back4.tim iso/week3/back5.tim
 
 # Week 4
-iso/week4/back.arc: iso/week4/back0.tim iso/week4/back1.tim iso/week4/back2.tim iso/week4/back3.tim
+iso/week4/back.arc: iso/week4/back1.tim iso/week4/back2.tim
 iso/week4/hench.arc: iso/week4/hench0.tim iso/week4/hench1.tim
 
 # Week 5

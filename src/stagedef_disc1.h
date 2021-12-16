@@ -28,16 +28,16 @@
 		1, 2,
 		XA_Fresh, 2,
 
-		StageId_1_3, 0,
+		StageId_1_2, 0,
 	},
 	{ //StageId_Clwn_3 (Hellclown)
 		//Characters
 		{Char_BFWeeb_New,    FIXED_DEC(105,1),  FIXED_DEC(100,1)},
-		{Char_Dad_New, FIXED_DEC(-120,1),  FIXED_DEC(100,1)},
-		{Char_GFWeeb_New,      FIXED_DEC(0,1),  FIXED_DEC(60,1)},
+		{Char_Dad_New, FIXED_DEC(-90,1),  FIXED_DEC(100,1)},
+		{Char_GFWeeb_New,      FIXED_DEC(50,1),  FIXED_DEC(55,1)},
 
 		//Stage background
-		Back_Week22_New,
+		Back_Week4_New,
 
 		//Song info
 		{FIXED_DEC(2,1),FIXED_DEC(25,10),FIXED_DEC(3,1)},
