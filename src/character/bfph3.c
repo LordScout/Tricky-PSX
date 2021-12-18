@@ -80,7 +80,7 @@ static const CharFrame char_bfph3_frame[] = {
 	{BFPH3_ArcMain_BF0, {123,   0,  41,  41}, { 23,  37}}, //3 idle 4
 	{BFPH3_ArcMain_BF0, {165,  0,  41,  41}, { 23,  37}}, //4 idle 5
 	{BFPH3_ArcMain_BF0, {0,   40,  41,  41}, { 23,  37}}, //5 idle 4
-	{BFPH3_ArcMain_BF0, { 42,  40,  42,  41}, { 23,  36}}, //6 idle 5
+	{BFPH3_ArcMain_BF0, { 42,  40,  42,  41}, { 23,  37}}, //6 idle 5
 	
 	{BFPH3_ArcMain_BF0, { 86,  42,  37,  40}, { 21,  36}}, //7 left 1
 	{BFPH3_ArcMain_BF0, {124,  43,  36,  40}, { 21,  36}}, //8 left 2
@@ -381,7 +381,7 @@ Character *Char_BFPH3_New(fixed_t x, fixed_t y)
 	
 	this->character.focus_x = FIXED_DEC(-30, 1);
 	this->character.focus_y = FIXED_DEC(-60, 1);
-	this->character.focus_zoom = FIXED_DEC(1, 1);
+	this->character.focus_zoom = FIXED_DEC(10, 10);
 	
 	//Load art
 	this->arc_main = IO_Read("\\CHAR\\BFPH3.ARC;1");

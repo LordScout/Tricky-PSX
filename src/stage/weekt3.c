@@ -33,23 +33,31 @@ typedef struct
 } Back_WeekT3;
 
 //Henchmen animation and rects
-static const CharFrame henchmen_frame[10] = {
-	{0, {  0,   0,  61,  55}, { 71,  98}}, //0 left 1
-	{0, { 99,   0,  99,  98}, { 71,  97}}, //1 left 2
-	{0, {  0,  99,  98,  97}, { 69,  95}}, //2 left 3
-	{0, { 98,  98,  62,  89}, { 42,  88}}, //3 left 4
-	{0, {160,  98,  62,  89}, { 42,  88}}, //4 left 5
+static const CharFrame henchmen_frame[18] = {
+	{0, {  0,   0,  61,  55}, { 37,  46}}, //0 left 1
+	{0, { 62,   0,  62,  55}, { 37,  45}}, //1 left 2
+	{0, {125,   0,  60,  55}, { 37,  46}}, //2 left 3
+	{0, {186,   0,  61,  54}, { 39,  46}}, //3 left 4
+	{0, {  0,  56,  62,  55}, { 37,  46}}, //4 left 5
+	{0, { 64,  57,  62,  55}, { 37,  46}}, //5 left 5
 	
-	{1, {  0,   0, 101, 103}, { 35, 101}}, //5 right 1
-	{1, {101,   0,  99, 101}, { 33, 100}}, //6 right 2
-	{1, {  0, 103,  99, 101}, { 33,  99}}, //7 right 3
-	{1, { 99, 101,  64,  90}, { 26,  89}}, //8 right 4
-	{1, {163, 101,  64,  90}, { 26,  89}}, //9 right 5
+	{1, {  0,   0, 61, 55}, { 37,  46}}, //6 right 1
+	{1, { 67,   0, 52, 55}, { 37,  45}}, //7 right 2
+	{1, {133,   0,  65, 53}, { 37,  43}}, //8 right 3
+	{1, {  0,  56,  64,  57}, { 37,  47}}, //9 right 4
+	{1, { 66,  58,  66,  57}, { 37,  47}}, //10 right 5
+	{1, {134,  55,  65,  54}, { 37,  44}}, //11 right 1
+	{1, {  0, 114,  64,  57}, { 37,  47}}, //12 right 2
+	{1, { 66, 116,  65,  57}, { 36,  48}}, //13 right 3
+	{1, {132, 110,  65,  54}, { 37,  44}}, //14 right 4
+	{1, {  0, 173,  64,  57}, { 37,  47}}, //15 right 5
+	{1, { 68, 173,  65,  58}, { 37,  48}}, //16 right 4
+	{1, {133, 164,  64,  54}, { 37,  44}}, //17 right 5
 };
 
 static const Animation henchmen_anim[2] = {
-	{2, (const u8[]){0, 1, 1, 2, 2, 3, 4, ASCR_BACK, 1}}, //Left
-	{2, (const u8[]){5, 6, 6, 7, 7, 8, 9, ASCR_BACK, 1}}, //Right
+	{2, (const u8[]){ 3, 3, 3, 4, 5, 0, 1, 2, 3, 3, 3, 3, 4, 5, 0, 1, 3, ASCR_BACK, 1}}, //Left
+	{1, (const u8[]){6, 6, 7, 8, 8, 9, 9, 10, 10, 11, 11, 12, 12, 13, 13, 14, 14, 15, 15, 16, 16, 17, 17, ASCR_BACK, 1}}, //Right
 };
 
 //Henchmen functions
@@ -104,7 +112,7 @@ void Back_WeekT3_DrawBG(StageBack *back)
 	}
 	Animatable_Animate(&this->hench_animatable, (void*)this, WeekT3_Henchmen_SetFrame);
 	
-	WeekT3_Henchmen_Draw(this,  FIXED_DEC(50,1) - fx, FIXED_DEC(30,1) - fy);
+	WeekT3_Henchmen_Draw(this,  FIXED_DEC(50,1) - fx, FIXED_DEC(20,1) - fy);
 
 	//Draw sunset
 	fx = stage.camera.x;
@@ -113,9 +121,9 @@ void Back_WeekT3_DrawBG(StageBack *back)
 	RECT sunset_src = {0, 0, 256, 256};
 	RECT_FIXED sunset_dst = {
 		FIXED_DEC(-410,1) - fx,
-		FIXED_DEC(-100,1) - fy,
+		FIXED_DEC(-120,1) - fy,
 		FIXED_DEC(450,1),
-		FIXED_DEC(315,1)
+		FIXED_DEC(340,1)
 	};
 	
 	Stage_DrawTex(&this->tex_back1, &sunset_src, &sunset_dst, stage.camera.bzoom);
@@ -123,9 +131,9 @@ void Back_WeekT3_DrawBG(StageBack *back)
 	RECT sunset1_src = { 0, 0, 256, 256 };
 	RECT_FIXED sunset1_dst = {
 		FIXED_DEC(-50,1) - fx,
-		FIXED_DEC(-100,1) - fy,
+		FIXED_DEC(-120,1) - fy,
 		FIXED_DEC(450,1),
-		FIXED_DEC(315,1)
+		FIXED_DEC(340,1)
 	};
 
 	Stage_DrawTex(&this->tex_back2, &sunset1_src, &sunset1_dst, stage.camera.bzoom);
