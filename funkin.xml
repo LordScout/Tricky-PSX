@@ -83,7 +83,6 @@
 			<dir name = "char">
 				<!-- Boyfriend assets -->
 				<file name = "bf.arc" type = "data" source = "iso/bf/main.arc"/>
-				<file name = "bfugh.arc" type = "data" source = "iso/bf/bfugh.arc"/>
 				<file name = "bfdead.arc" type = "data" source = "iso/bf/dead.arc"/>
 				<file name = "bfph3.arc" type = "data" source = "iso/bf/ph3.arc"/>
 				
