@@ -45,29 +45,29 @@ typedef struct
 
 //MTicky character definitions
 static const CharFrame char_MTicky_frame[] = {
-	{MTicky_ArcMain_Ticky0, {  0,   0, 256, 128}, { 40,  69}}, //0
-	{MTicky_ArcMain_Ticky0, {  0, 128, 256, 128}, { 40,  73}}, //1
-	{MTicky_ArcMain_Ticky1, {  0,   0, 256, 128}, { 40,  69}}, //2 
-	{MTicky_ArcMain_Ticky1, {  0, 128, 256, 128}, { 40,  73}}, //3
-	{MTicky_ArcMain_Ticky2, {  0,   0, 256, 128}, { 40,  69}}, //4
-	{MTicky_ArcMain_Ticky2, {  0, 128, 256, 128}, { 40,  73}}, //5
-	{MTicky_ArcMain_Ticky3, {  0,   0, 256, 128}, { 40,  69}}, //6 
-	{MTicky_ArcMain_Ticky3, {  0, 128, 256, 128}, { 40,  73}}, //7
-	{MTicky_ArcMain_Ticky4, {  0,   0, 256, 128}, { 40,  69}}, //8 
-	{MTicky_ArcMain_Ticky4, {  0, 128, 256, 128}, { 40,  73}}, //9
-	{MTicky_ArcMain_Ticky5, {  0,   0, 256, 128}, { 40,  69}}, //10
-	{MTicky_ArcMain_Ticky5, {  0, 128, 256, 128}, { 40,  73}}, //11
+	{MTicky_ArcMain_Ticky0, {  0,   0, 207, 111}, { 102, 111}}, //0
+	{MTicky_ArcMain_Ticky0, {  0, 112, 200, 113}, { 99, 113}}, //1
+	{MTicky_ArcMain_Ticky1, {  0,   0, 194, 116}, { 96, 116}}, //2 
+	{MTicky_ArcMain_Ticky1, {  0, 117, 195, 118}, { 96, 118}}, //3
+	{MTicky_ArcMain_Ticky2, {  0,   0, 195, 120}, { 96, 120}}, //4
+	{MTicky_ArcMain_Ticky2, {  1, 122, 194, 121}, { 96, 121}}, //5
+	{MTicky_ArcMain_Ticky3, {  0,   0, 195, 122}, { 96, 122}}, //6 
+	{MTicky_ArcMain_Ticky3, {  0, 123, 195, 122}, { 96, 122}}, //7
+	{MTicky_ArcMain_Ticky4, {  0,   0, 195, 122}, { 96, 121}}, //8 
+	{MTicky_ArcMain_Ticky4, {  0, 123, 195, 122}, { 96, 120}}, //9
+	{MTicky_ArcMain_Ticky5, {  0,   0, 195, 114}, { 96, 114}}, //10
+	{MTicky_ArcMain_Ticky5, {  0, 115, 207, 111}, {102, 111}}, //11
 	
-	{MTicky_ArcMain_Ticky6, {  0,   0, 256, 128}, { 40,  69}}, //12 
-	{MTicky_ArcMain_Ticky6, {  0, 128, 256, 128}, { 40,  73}}, //13
-	{MTicky_ArcMain_Ticky7, {  0,   0, 256, 128}, { 40,  69}}, //14
-	{MTicky_ArcMain_Ticky7, {  0, 128, 256, 128}, { 40,  73}}, //15
-	{MTicky_ArcMain_Ticky8, {  0,   0, 256, 128}, { 40,  69}}, //16 
-	{MTicky_ArcMain_Ticky8, {  0, 128, 256, 128}, { 40,  73}}, //17
-	{MTicky_ArcMain_Ticky9, {  0,   0, 256, 128}, { 40,  69}}, //18 
-	{MTicky_ArcMain_Ticky9, {  0, 128, 256, 128}, { 40,  73}}, //19
-	{MTicky_ArcMain_Ticky10, {  0,   0, 256, 128}, { 40,  69}}, //20 
-	{MTicky_ArcMain_Ticky10, {  0, 128, 256, 128}, { 40,  73}}, //21
+	{MTicky_ArcMain_Ticky6, {  0,   0, 201, 113}, { 99, 113}}, //12 
+	{MTicky_ArcMain_Ticky6, {  0, 114, 194, 116}, { 96, 116}}, //13
+	{MTicky_ArcMain_Ticky7, {  0,   0, 195, 120}, { 96, 120}}, //14
+	{MTicky_ArcMain_Ticky7, {  0, 121, 195, 120}, { 96, 120}}, //15
+	{MTicky_ArcMain_Ticky8, {  0,   0, 194, 121}, { 96, 121}}, //16 
+	{MTicky_ArcMain_Ticky8, {  0, 122, 195, 122}, { 96, 122}}, //17
+	{MTicky_ArcMain_Ticky9, {  0,   0, 195, 121}, { 96, 121}}, //18 
+	{MTicky_ArcMain_Ticky9, {  0, 122, 195, 122}, { 96, 122}}, //19
+	{MTicky_ArcMain_Ticky10, {  0,   0, 194, 121}, { 96, 121}}, //20 
+	{MTicky_ArcMain_Ticky10, {  0, 122, 194, 114}, { 96, 114}}, //21
 };
 
 static const Animation char_MTicky_anim[CharAnim_Max] = {

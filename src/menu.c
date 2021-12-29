@@ -269,7 +269,7 @@ void Menu_Load(MenuPage page)
 	FontData_Load(&menu.font_bold, Font_Bold);
 	FontData_Load(&menu.font_arial, Font_Arial);
 
-	menu.tricky = Char_MTicky_New(FIXED_DEC(-30, 1), FIXED_DEC(30, 1));
+	menu.tricky = Char_MTicky_New(FIXED_DEC(40, 1), FIXED_DEC(80, 1));
 	stage.camera.x = stage.camera.y = FIXED_DEC(0, 1);
 	stage.camera.bzoom = FIXED_UNIT;
 	stage.MTicky_speed = 4;
