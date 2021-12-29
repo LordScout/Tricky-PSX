@@ -34,25 +34,25 @@ typedef struct
 
 //Henchmen animation and rects
 static const CharFrame henchmen_frame[18] = {
-	{0, {  0,   0,  61,  55}, { 37,  46}}, //0 left 1
-	{0, { 62,   0,  62,  55}, { 37,  45}}, //1 left 2
-	{0, {125,   0,  60,  55}, { 37,  46}}, //2 left 3
-	{0, {186,   0,  61,  54}, { 39,  46}}, //3 left 4
-	{0, {  0,  56,  62,  55}, { 37,  46}}, //4 left 5
-	{0, { 64,  57,  62,  55}, { 37,  46}}, //5 left 5
+	{0, {  0,   0,  61,  55}, { 20,  55}}, //0 left 1
+	{0, { 62,   0,  62,  55}, { 20,  55}}, //1 left 2
+	{0, {125,   0,  60,  55}, { 20,  55}}, //2 left 3
+	{0, {186,   0,  61,  54}, { 21,  54}}, //3 left 4
+	{0, {  0,  56,  62,  55}, { 20,  55}}, //4 left 5
+	{0, { 64,  57,  62,  55}, { 20,  55}}, //5 left 5
 	
-	{1, {  0,   0, 61, 55}, { 37,  46}}, //6 right 1
-	{1, { 67,   0, 52, 55}, { 37,  45}}, //7 right 2
-	{1, {133,   0,  65, 53}, { 37,  43}}, //8 right 3
-	{1, {  0,  56,  64,  57}, { 37,  47}}, //9 right 4
-	{1, { 66,  58,  66,  57}, { 37,  47}}, //10 right 5
-	{1, {134,  55,  65,  54}, { 37,  44}}, //11 right 1
-	{1, {  0, 114,  64,  57}, { 37,  47}}, //12 right 2
-	{1, { 66, 116,  65,  57}, { 36,  48}}, //13 right 3
-	{1, {132, 110,  65,  54}, { 37,  44}}, //14 right 4
-	{1, {  0, 173,  64,  57}, { 37,  47}}, //15 right 5
-	{1, { 68, 173,  65,  58}, { 37,  48}}, //16 right 4
-	{1, {133, 164,  64,  54}, { 37,  44}}, //17 right 5
+	{1, {  0,   0, 61, 55}, { 20,  55}}, //6 right 1
+	{1, { 67,   0, 52, 55}, { 20,  55}}, //7 right 2
+	{1, {133,   0,  65, 53}, { 21,  54}}, //8 right 3
+	{1, {  0,  56,  64,  57}, { 21,  57}}, //9 right 4
+	{1, { 66,  58,  66,  57}, { 20,  57}}, //10 right 5
+	{1, {134,  55,  65,  54}, { 20,  54}}, //11 right 1
+	{1, {  0, 114,  64,  57}, { 21,  56}}, //12 right 2
+	{1, { 66, 116,  65,  57}, { 19,  56}}, //13 right 3
+	{1, {132, 110,  65,  54}, { 20,  53}}, //14 right 4
+	{1, {  0, 173,  64,  57}, { 21,  57}}, //15 right 5
+	{1, { 68, 173,  65,  58}, { 20,  58}}, //16 right 4
+	{1, {133, 164,  64,  54}, { 21,  54}}, //17 right 5
 };
 
 static const Animation henchmen_anim[2] = {
@@ -112,7 +112,7 @@ void Back_WeekT3_DrawBG(StageBack *back)
 	}
 	Animatable_Animate(&this->hench_animatable, (void*)this, WeekT3_Henchmen_SetFrame);
 	
-	WeekT3_Henchmen_Draw(this,  FIXED_DEC(50,1) - fx, FIXED_DEC(20,1) - fy);
+	WeekT3_Henchmen_Draw(this,  FIXED_DEC(5,1) - fx, FIXED_DEC(30,1) - fy);
 
 	//Draw sunset
 	fx = stage.camera.x;
@@ -121,9 +121,9 @@ void Back_WeekT3_DrawBG(StageBack *back)
 	RECT sunset_src = {0, 0, 256, 256};
 	RECT_FIXED sunset_dst = {
 		FIXED_DEC(-410,1) - fx,
-		FIXED_DEC(-120,1) - fy,
+		FIXED_DEC(-145,1) - fy,
 		FIXED_DEC(450,1),
-		FIXED_DEC(340,1)
+		FIXED_DEC(400,1)
 	};
 	
 	Stage_DrawTex(&this->tex_back1, &sunset_src, &sunset_dst, stage.camera.bzoom);
@@ -131,9 +131,9 @@ void Back_WeekT3_DrawBG(StageBack *back)
 	RECT sunset1_src = { 0, 0, 256, 256 };
 	RECT_FIXED sunset1_dst = {
 		FIXED_DEC(-50,1) - fx,
-		FIXED_DEC(-120,1) - fy,
+		FIXED_DEC(-145,1) - fy,
 		FIXED_DEC(450,1),
-		FIXED_DEC(340,1)
+		FIXED_DEC(400,1)
 	};
 
 	Stage_DrawTex(&this->tex_back2, &sunset1_src, &sunset1_dst, stage.camera.bzoom);
