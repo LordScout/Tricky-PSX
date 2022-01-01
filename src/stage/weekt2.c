@@ -253,6 +253,227 @@ void Back_WeekT2_DrawFG(StageBack* back)
 		Stage_DrawTex(&this->tex_cut0, &incorrect2_src, &incorrect2_dst, stage.camera.bzoom);
 	}
 
+	if (stage.stage_id == StageId_1_2 && stage.song_step >= 902 && stage.song_step <= 906)
+	{
+		RECT insufficient1_src = { 86, 84, 156, 24 };
+		RECT_FIXED insufficient1_dst = {
+			FIXED_DEC(-80,1) - fx,
+			FIXED_DEC(20,1) - fy,
+			FIXED_DEC(156, 1),
+			FIXED_DEC(24,1)
+		};
+
+		Stage_DrawTex(&this->tex_cut0, &insufficient1_src, &insufficient1_dst, stage.camera.bzoom);
+	}
+
+	if (stage.stage_id == StageId_1_2 && stage.song_step >= 940 && stage.song_step <= 943)
+	{
+		RECT improbable2_src = { 103, 139, 147, 24 };
+		RECT_FIXED improbable2_dst = {
+			FIXED_DEC(-150,1) - fx,
+			FIXED_DEC(10,1) - fy,
+			FIXED_DEC(147, 1),
+			FIXED_DEC(24,1)
+		};
+
+		Stage_DrawTex(&this->tex_cut0, &improbable2_src, &improbable2_dst, stage.camera.bzoom);
+	}
+
+	if (stage.stage_id == StageId_1_2 && stage.song_step >= 1044 && stage.song_step <= 1046)
+	{
+		RECT terrible2_src = { 104, 225, 106, 24 };
+		RECT_FIXED terrible2_dst = {
+			FIXED_DEC(-80,1) - fx,
+			FIXED_DEC(-15,1) - fy,
+			FIXED_DEC(106,1),
+			FIXED_DEC(24,1)
+		};
+
+		Stage_DrawTex(&this->tex_cut0, &terrible2_src, &terrible2_dst, stage.camera.bzoom);
+	}
+
+	if (stage.stage_id == StageId_1_2 && stage.song_step >= 1048 && stage.song_step <= 1052)
+	{
+		RECT mistake1_src = { 0, 192, 100, 24 };
+		RECT_FIXED mistake1_dst = {
+			FIXED_DEC(-150,1) - fx,
+			FIXED_DEC(10,1) - fy,
+			FIXED_DEC(100, 1),
+			FIXED_DEC(24,1)
+		};
+
+		Stage_DrawTex(&this->tex_cut0, &mistake1_src, &mistake1_dst, stage.camera.bzoom);
+	}
+
+	if (stage.stage_id == StageId_1_2 && stage.song_step >= 1080 && stage.song_step <= 1086)
+	{
+		RECT suffer2_src = { 0, 57, 85, 24 };
+		RECT_FIXED suffer2_dst = {
+			FIXED_DEC(-80,1) - fx,
+			FIXED_DEC(-50,1) - fy,
+			FIXED_DEC(85,1),
+			FIXED_DEC(24,1)
+		};
+
+		Stage_DrawTex(&this->tex_cut0, &suffer2_src, &suffer2_dst, stage.camera.bzoom);
+	}
+
+	if (stage.stage_id == StageId_1_2 && stage.song_step >= 1106 && stage.song_step <= 1108)
+	{
+		RECT invalid3_src = { 5, 139, 87, 24 };
+		RECT_FIXED invalid3_dst = {
+			FIXED_DEC(-50,1) - fx,
+			FIXED_DEC(0,1) - fy,
+			FIXED_DEC(87,1),
+			FIXED_DEC(24,1)
+		};
+
+		Stage_DrawTex(&this->tex_cut0, &invalid3_src, &invalid3_dst, stage.camera.bzoom);
+	}
+
+	if (stage.stage_id == StageId_1_2 && stage.song_step >= 1110 && stage.song_step <= 1114)
+	{
+		RECT incorrect3_src = { 0, 110, 135, 28 };
+		RECT_FIXED incorrect3_dst = {
+			FIXED_DEC(-140,1) - fx,
+			FIXED_DEC(50,1) - fy,
+			FIXED_DEC(131,1),
+			FIXED_DEC(24,1)
+		};
+
+		Stage_DrawTex(&this->tex_cut0, &incorrect3_src, &incorrect3_dst, stage.camera.bzoom);
+	}
+
+	if (stage.stage_id == StageId_1_2 && stage.song_step >= 1142 && stage.song_step <= 1148)
+	{
+		RECT improbable3_src = { 103, 139, 147, 24 };
+		RECT_FIXED improbable3_dst = {
+			FIXED_DEC(-150,1) - fx,
+			FIXED_DEC(10,1) - fy,
+			FIXED_DEC(147, 1),
+			FIXED_DEC(24,1)
+		};
+
+		Stage_DrawTex(&this->tex_cut0, &improbable3_src, &improbable3_dst, stage.camera.bzoom);
+	}
+
+	if (stage.stage_id == StageId_1_2 && stage.song_step >= 1288 && stage.song_step <= 1292)
+	{
+		RECT error_src = { 0, 83, 72, 24 };
+		RECT_FIXED error_dst = {
+			FIXED_DEC(-40,1) - fx,
+			FIXED_DEC(15,1) - fy,
+			FIXED_DEC(72,1),
+			FIXED_DEC(24,1)
+		};
+
+		Stage_DrawTex(&this->tex_cut0, &error_src, &error_dst, stage.camera.bzoom);
+	}
+
+	if (stage.stage_id == StageId_1_2 && stage.song_step >= 1368 && stage.song_step <= 1372)
+	{
+		RECT waste1_src = { 0, 223, 79, 24 };
+		RECT_FIXED waste1_dst = {
+			FIXED_DEC(-130,1) - fx,
+			FIXED_DEC(50,1) - fy,
+			FIXED_DEC(79, 1),
+			FIXED_DEC(24,1)
+		};
+
+		Stage_DrawTex(&this->tex_cut0, &waste1_src, &waste1_dst, stage.camera.bzoom);
+	}
+
+	if (stage.stage_id == StageId_1_2 && stage.song_step >= 1470 && stage.song_step <= 1474)
+	{
+		RECT terrible2_src = { 104, 225, 106, 24 };
+		RECT_FIXED terrible2_dst = {
+			FIXED_DEC(-80,1) - fx,
+			FIXED_DEC(-15,1) - fy,
+			FIXED_DEC(106,1),
+			FIXED_DEC(24,1)
+		};
+
+		Stage_DrawTex(&this->tex_cut0, &terrible2_src, &terrible2_dst, stage.camera.bzoom);
+	}
+
+	if (stage.stage_id == StageId_1_2 && stage.song_step >= 1528 && stage.song_step <= 1536)
+	{
+		RECT suffer_src = { 0, 57, 85, 24 };
+		RECT_FIXED suffer_dst = {
+			FIXED_DEC(-40,1) - fx,
+			FIXED_DEC(0,1) - fy,
+			FIXED_DEC(85,1),
+			FIXED_DEC(24,1)
+		};
+
+		Stage_DrawTex(&this->tex_cut0, &suffer_src, &suffer_dst, stage.camera.bzoom);
+	}
+
+	if (stage.stage_id == StageId_1_2 && stage.song_step >= 1596 && stage.song_step <= 1600)
+	{
+		RECT incorrect9_src = { 0, 110, 135, 28 };
+		RECT_FIXED incorrect9_dst = {
+			FIXED_DEC(-140,1) - fx,
+			FIXED_DEC(50,1) - fy,
+			FIXED_DEC(131,1),
+			FIXED_DEC(24,1)
+		};
+
+		Stage_DrawTex(&this->tex_cut0, &incorrect9_src, &incorrect9_dst, stage.camera.bzoom);
+	}
+
+	if (stage.stage_id == StageId_1_2 && stage.song_step >= 1644 && stage.song_step <= 1648)
+	{
+		RECT invalid3_src = { 5, 139, 87, 24 };
+		RECT_FIXED invalid3_dst = {
+			FIXED_DEC(-50,1) - fx,
+			FIXED_DEC(0,1) - fy,
+			FIXED_DEC(87,1),
+			FIXED_DEC(24,1)
+		};
+
+		Stage_DrawTex(&this->tex_cut0, &invalid3_src, &invalid3_dst, stage.camera.bzoom);
+	}
+
+	if (stage.stage_id == StageId_1_2 && stage.song_step >= 1796 && stage.song_step <= 1800)
+	{
+		RECT mistake1_src = { 0, 192, 100, 24 };
+		RECT_FIXED mistake1_dst = {
+			FIXED_DEC(-150,1) - fx,
+			FIXED_DEC(10,1) - fy,
+			FIXED_DEC(100, 1),
+			FIXED_DEC(24,1)
+		};
+
+		Stage_DrawTex(&this->tex_cut0, &mistake1_src, &mistake1_dst, stage.camera.bzoom);
+	}
+
+	if (stage.stage_id == StageId_1_2 && stage.song_step >= 1862 && stage.song_step <= 1866)
+	{
+		RECT insufficient_src = { 86, 84, 156, 24 };
+		RECT_FIXED insufficient_dst = {
+			FIXED_DEC(-80,1) - fx,
+			FIXED_DEC(20,1) - fy,
+			FIXED_DEC(156, 1),
+			FIXED_DEC(24,1)
+		};
+
+		Stage_DrawTex(&this->tex_cut0, &insufficient_src, &insufficient_dst, stage.camera.bzoom);
+	}
+
+	if (stage.stage_id == StageId_1_2 && stage.song_step >= 2012 && stage.song_step <= 2017)
+	{
+		RECT improbable_src = { 103, 139, 147, 24 };
+		RECT_FIXED improbable_dst = {
+			FIXED_DEC(-150,1) - fx,
+			FIXED_DEC(10,1) - fy,
+			FIXED_DEC(147, 1),
+			FIXED_DEC(24,1)
+		};
+
+		Stage_DrawTex(&this->tex_cut0, &improbable_src, &improbable_dst, stage.camera.bzoom);
+	}
+
 	if (stage.stage_id == StageId_1_2 && stage.song_step >= 2230 && stage.song_step <= 2260)
 	{
 	RECT incorrect9_src = { 0, 110, 135, 28 };
@@ -307,7 +528,7 @@ void Back_WeekT2_DrawBG(StageBack *back)
 	RECT window_src = { 0, 0, 256, 226 };
 	RECT_FIXED window_dst = {
 		FIXED_DEC(-500,1) - fx,
-		FIXED_DEC(-175,1) - fy,
+		FIXED_DEC(-150,1) - fy,
 		FIXED_DEC(512,1),
 		FIXED_DEC(400,1)
 	};
@@ -318,7 +539,7 @@ void Back_WeekT2_DrawBG(StageBack *back)
 	RECT window1_src = { 0, 0, 256, 226 };
 	RECT_FIXED window1_dst = {
 		FIXED_DEC(3,1) - fx,
-		FIXED_DEC(-175,1) - fy,
+		FIXED_DEC(-150,1) - fy,
 		FIXED_DEC(512,1),
 		FIXED_DEC(400,1)
 	};

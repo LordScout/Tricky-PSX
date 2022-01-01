@@ -36,7 +36,7 @@ typedef struct
 static const CharFrame henchmen_frame[18] = {
 	{0, {  0,   0,  61,  55}, { 39,  55}}, //0 left 1
 	{0, { 62,   0,  62,  55}, { 39,  55}}, //1 left 2
-	{0, {125,   0,  60,  55}, { 39,  55}}, //2 left 3
+	{0, {125,   0,  60,  55}, { 39,  54}}, //2 left 3
 	{0, {186,   0,  61,  54}, { 40,  54}}, //3 left 4
 	{0, {  0,  56,  62,  55}, { 40,  55}}, //4 left 5
 	{0, { 64,  57,  62,  55}, { 39,  54}}, //5 left 5
@@ -112,21 +112,11 @@ void Back_WeekT3_DrawBG(StageBack *back)
 	}
 	Animatable_Animate(&this->hench_animatable, (void*)this, WeekT3_Henchmen_SetFrame);
 	
-	WeekT3_Henchmen_Draw(this,  FIXED_DEC(5,1) - fx, FIXED_DEC(30,1) - fy);
+	WeekT3_Henchmen_Draw(this,  FIXED_DEC(20,1) - fx, FIXED_DEC(30,1) - fy);
 
 	//Draw sunset
 	fx = stage.camera.x;
 	fy = stage.camera.y;
-	
-	RECT sunset_src = {0, 0, 256, 256};
-	RECT_FIXED sunset_dst = {
-		FIXED_DEC(-410,1) - fx,
-		FIXED_DEC(-145,1) - fy,
-		FIXED_DEC(450,1),
-		FIXED_DEC(400,1)
-	};
-	
-	Stage_DrawTex(&this->tex_back1, &sunset_src, &sunset_dst, stage.camera.bzoom);
 
 	RECT sunset1_src = { 0, 0, 256, 256 };
 	RECT_FIXED sunset1_dst = {
@@ -137,6 +127,16 @@ void Back_WeekT3_DrawBG(StageBack *back)
 	};
 
 	Stage_DrawTex(&this->tex_back2, &sunset1_src, &sunset1_dst, stage.camera.bzoom);
+
+	RECT sunset_src = { 0, 0, 256, 256 };
+	RECT_FIXED sunset_dst = {
+		FIXED_DEC(-410,1) - fx,
+		FIXED_DEC(-145,1) - fy,
+		FIXED_DEC(450,1),
+		FIXED_DEC(400,1)
+	};
+
+	Stage_DrawTex(&this->tex_back1, &sunset_src, &sunset_dst, stage.camera.bzoom);
 }
 
 void Back_WeekT3_Free(StageBack *back)
