@@ -46,6 +46,13 @@ enum
 	MadC_ArcMain_Right3,
 	MadC_ArcMain_Right4,
 	MadC_ArcMain_Right5,
+	MadC_ArcMain_DownB0,
+	MadC_ArcMain_DownB1,
+	MadC_ArcMain_DownB2,
+	MadC_ArcMain_UpB0,
+	MadC_ArcMain_UpB1,
+	MadC_ArcMain_RightB0,
+	MadC_ArcMain_RightB1,
 
 	MadC_Arc_Max,
 };
@@ -104,6 +111,23 @@ static const CharFrame char_madc_frame[] = {
 	{MadC_ArcMain_Right4, {  0,   0, 218, 143}, { 75, 133}}, //28 Right 1
 	{MadC_ArcMain_Right5, {  0,   0, 220, 143}, { 76, 133}}, //29 Right 2
 
+	{MadC_ArcMain_DownB0, {  0,   0, 106, 107}, { 72, 149}}, //30 left 1
+	{MadC_ArcMain_DownB0, {107,   0, 113, 107}, { 73, 149}}, //31 left 2
+	{MadC_ArcMain_DownB1, {  0,   0, 105, 215}, { 79, 154}}, //32 left 1
+	{MadC_ArcMain_DownB1, {106,   0, 134, 215}, { 76, 153}}, //33 left 2
+	{MadC_ArcMain_DownB2, {  0,   0, 117, 221}, { 80, 150}}, //34 left 1
+	{MadC_ArcMain_DownB2, {118,   0, 122, 221}, { 78, 148}}, //35 left 2
+
+	{MadC_ArcMain_UpB0, {  0,   0, 104, 118}, { 89, 160}}, //36 left 1
+	{MadC_ArcMain_UpB0, {107,   0, 104, 118}, { 93, 160}}, //37 left 2
+	{MadC_ArcMain_UpB1, {  0,   0, 103, 118}, { 94, 160}}, //38 left 1
+	{MadC_ArcMain_UpB1, {106,   0, 106, 118}, { 101, 160}}, //39 left 2
+
+	{MadC_ArcMain_RightB0, {  0,   0, 104, 117}, { 85, 128}}, //40 Right 1
+	{MadC_ArcMain_RightB0, {107,   0, 105, 117}, { 80, 130}}, //41 Right 2
+	{MadC_ArcMain_RightB1, {  0,   0, 120, 115}, { 76, 135}}, //42 Right 1
+	{MadC_ArcMain_RightB1, {121,   0, 119, 115}, { 73, 135}}, //43 Right 2
+
 };
 
 static const Animation char_madc_anim[CharAnim_Max] = {
@@ -111,11 +135,12 @@ static const Animation char_madc_anim[CharAnim_Max] = {
 	{2, (const u8[]) { 6, 7, 8, 9, 10, 11, ASCR_BACK, 3 }},         //CharAnim_Left
 	{0, (const u8[]) { ASCR_CHGANI, CharAnim_Idle }},   //CharAnim_LeftAlt
 	{2, (const u8[]) { 12, 13, 14, 15, 16, 17, ASCR_BACK, 3 }},         //CharAnim_Down
-	{0, (const u8[]) { ASCR_CHGANI, CharAnim_Idle }},   //CharAnim_DownAlt
+	{0, (const u8[]) { ASCR_CHGANI, CharAnim_UpAlt }},   //CharAnim_DownAlt
 	{2, (const u8[]) { 18, 19, 20, 21, 22, 23, ASCR_BACK, 3 }},         //CharAnim_Up
-	{0, (const u8[]) { ASCR_CHGANI, CharAnim_Idle }},   //CharAnim_UpAlt
+	{0, (const u8[]) { ASCR_CHGANI, CharAnim_RightAlt }},   //CharAnim_UpAlt
 	{2, (const u8[]) { 24, 25, 26, 27, 28, 29, ASCR_BACK, 3 }},         //CharAnim_Right
-	{0, (const u8[]) { ASCR_CHGANI, CharAnim_Idle }},   //CharAnim_RightAlt 
+	{0, (const u8[]) { ASCR_CHGANI, CharAnim_Idle }},  //CharAnim_RightAlt 
+	{2, (const u8[]) { 36, 36, 36, 37, 38, 39, 37, 38, 36, 36, 36, 37, 38, 39, 37, 38, 36, 36, 36, 37, 38, 39, 37, 38, 36, 36, 36, 37, 38, 39, 37, 36, 36, 36, 37, 38, 39, 37, 38, 36, 36, 36, 37, 38, 39, 37, 36, 36, 36, 37, 38, 39, 37, 38, 36, 36, 36, 37, 38, 39, 37, 36, 36, 36, 37, 38, 39, 37, 38, 36, 36, 36, 37, 38, 39, 37, 36, 36, 36, 37, 38, 39, 37, 38, 36, 36, 36, 37, 38, 39, 37, 36, 36, 36, 37, 38, 39, 37, 38, 36, 36, 36, 37, 38, 39, 37, 36, 36, 36, 37, 38, 39, 37, 38, 36, 40, 40, 40, 41, 41, 41, 42, 43, 42, 43, 42, 43, 42, 43, 42, 43, 42, 43, 42, 43, 42, 43, 42, 43, 42, 43, 42, 43, 42, 43, 42, 43, 42, 43, 42, 43, 42, 43, 42, 43, 42, 43, 42, 43, 42, 43, 42, 43, 42, 43, 42, 43, 42, 43, 42, 43, 42, 43, 42, 43, 42, 43, 42, 43, 42, 43, 42, 43, 42, 43,  42, 43, 42, 43, 42, 43, 42, 43, 42, 43, 42, 43, 42, 43, 43, 42, 43, 42, 43, 42, 43, 42, 43, 42, 43, 42, 43, 42, 43, 42, 43, 30, 30, 31, 32, 33, 34, 34, 35, 35, 34, 35, 34, 35, 34, 34, 34, 35, 35, 34, 35, 34,35, 34, 33, 34, 34, 35, 35, 34, 35, 34,35, 34, 33, 34, 34, 35, 35, 34, 35, 34, 35, 34, 35, 34, 34, 34, 35, 35, 34, 35, 34, 35, 34, 34, 34, 35, 35, 34, 35, 34,  34, 35,  34, 35,  34, 35, 34, 35, 35, 34, 35, 34, 34, 35, 34, 35,  34, 35, 34, 35, 35, 34, 35, 34, 34, 35,  34, 35,  34, 35,  34, 35, 34, 35,  34, 35, ASCR_BACK, 3 }}, 
 };
 
 //MadC character functions
@@ -141,6 +166,9 @@ void Char_MadC_Tick(Character* character)
 	if ((character->pad_held & (INPUT_LEFT | INPUT_DOWN | INPUT_UP | INPUT_RIGHT)) == 0 &&
 		character->animatable.anim != CharAnim_DownAlt) //Don't interrupt "Heh, pretty good!" sequence
 		Character_PerformIdle(character);
+
+	if (stage.song_step == 2161)
+	    character->set_anim(character, CharAnim_ClownKillsYou);
 
 	//Animate
 	Animatable_Animate(&character->animatable, (void*)this, Char_MadC_SetFrame);
@@ -227,6 +255,13 @@ Character* Char_MadC_New(fixed_t x, fixed_t y)
 		"right3.tim", //MadC_ArcMain_right
 		"right4.tim", //MadC_ArcMain_right
 		"right5.tim", //MadC_ArcMain_right
+		"downb0.tim", //MadC_ArcMain_down
+		"downb1.tim", //MadC_ArcMain_down
+		"downb2.tim", //MadC_ArcMain_down
+		"upb0.tim", //MadC_ArcMain_Up
+		"upb1.tim", //MadC_ArcMain_Up
+		"rightb0.tim", //MadC_ArcMain_right
+		"rightb1.tim", //MadC_ArcMain_right
 		NULL
 	};
 	IO_Data* arc_ptr = this->arc_ptr;
