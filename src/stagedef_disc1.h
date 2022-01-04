@@ -16,7 +16,7 @@
 	},
 	{ //StageId_Clwn_2 (Madness)
 		//Characters
-		{Char_BF_New,    FIXED_DEC(105,1),  FIXED_DEC(100,1)},
+		{Char_BF_New,    FIXED_DEC(105,1),  FIXED_DEC(95,1)},
 		{Char_MadC_New, FIXED_DEC(-100,1),  FIXED_DEC(90,1)},
 		{Char_GF_New,      FIXED_DEC(0,1),  FIXED_DEC(-15,1)},
 

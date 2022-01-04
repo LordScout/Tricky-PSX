@@ -1,4 +1,4 @@
-wt/*
+/*
   This Source Code Form is subject to the terms of the Mozilla Public
   License, v. 2.0. If a copy of the MPL was not distributed with this
   file, You can obtain one at http://mozilla.org/MPL/2.0/.
@@ -53,6 +53,9 @@ enum
 	MadC_ArcMain_UpB1,
 	MadC_ArcMain_RightB0,
 	MadC_ArcMain_RightB1,
+	MadC_ArcMain_RightB2,
+	MadC_ArcMain_RightB3,
+	MadC_ArcMain_RightB4,
 
 	MadC_Arc_Max,
 };
@@ -75,58 +78,54 @@ typedef struct
 
 //Mad Tricky character definitions
 static const CharFrame char_madc_frame[] = {
-	{MadC_ArcMain_Idle2, {  0,   0, 152, 169}, { 63, 159}}, //0 idle 3
-	{MadC_ArcMain_Idle3, {  0,   0, 158, 169}, { 70, 158}}, //1 idle 4
-	{MadC_ArcMain_Idle4, {  0,   0, 155, 171}, { 70, 161}}, //2 idle 1
-	{MadC_ArcMain_Idle5, {  0,   0, 157, 169}, { 70, 159}}, //3 idle 2
-	{MadC_ArcMain_Idle6, {  0,   0, 157, 168}, { 70, 158}}, //4 idle 3
-	{MadC_ArcMain_Idle10, {  0,   0, 155, 166}, { 70, 156}}, //5 idle 3
+	{MadC_ArcMain_Idle2, {  0,   0, 152, 169}, { 68, 158}}, //0 idle 3
+	{MadC_ArcMain_Idle3, {  0,   0, 158, 169}, { 77, 157}}, //1 idle 4
+	{MadC_ArcMain_Idle4, {  0,   0, 155, 171}, { 76, 160}}, //2 idle 1
+	{MadC_ArcMain_Idle5, {  0,   0, 157, 169}, { 76, 158}}, //3 idle 2
+	{MadC_ArcMain_Idle6, {  0,   0, 157, 168}, { 76, 157}}, //4 idle 3
+	{MadC_ArcMain_Idle10, {  0,   0, 155, 166}, { 76, 155}}, //5 idle 3
 
-	{MadC_ArcMain_Left0, {  0,   0, 194, 169}, { 109, 159}}, //6 left 1
-	{MadC_ArcMain_Left1, {  0,   0, 185, 169}, { 105, 160}}, //7 left 2
-	{MadC_ArcMain_Left2, {  0,   0, 183, 171}, { 109, 162}}, //8 left 1
-	{MadC_ArcMain_Left3, {  0,   0, 176, 171}, { 106, 161}}, //9 left 2
-	{MadC_ArcMain_Left4, {  0,   0, 183, 169}, { 109, 160}}, //10 left 1
-	{MadC_ArcMain_Left5, {  0,   0, 180, 170}, { 106, 161}}, //11 left 2
+	{MadC_ArcMain_Left0, {  0,   0, 194, 169}, { 111, 158}}, //6 left 1
+	{MadC_ArcMain_Left1, {  0,   0, 185, 169}, { 107, 158}}, //7 left 2
+	{MadC_ArcMain_Left2, {  0,   0, 183, 171}, { 111, 160}}, //8 left 1
+	{MadC_ArcMain_Left3, {  0,   0, 176, 171}, { 108, 160}}, //9 left 2
+	{MadC_ArcMain_Left4, {  0,   0, 183, 169}, { 111, 158}}, //10 left 1
+	{MadC_ArcMain_Left5, {  0,   0, 180, 170}, { 108, 159}}, //11 left 2
 
 	{MadC_ArcMain_Down0, {  0,   0, 179, 161}, { 72, 149}}, //12 left 1
 	{MadC_ArcMain_Down1, {  0,   0, 178, 161}, { 73, 149}}, //13 left 2
 	{MadC_ArcMain_Down2, {  0,   0, 179, 166}, { 79, 154}}, //14 left 1
 	{MadC_ArcMain_Down3, {  0,   0, 177, 166}, { 76, 153}}, //15 left 2
-	{MadC_ArcMain_Down4, {  0,   0, 179, 162}, { 80, 150}}, //16 left 1
+	{MadC_ArcMain_Down4, {  0,   0, 178, 162}, { 80, 150}}, //16 left 1
 	{MadC_ArcMain_Down5, {  0,   0, 178, 160}, { 78, 148}}, //17 left 2
 
-	{MadC_ArcMain_Up0, {  0,   0, 150, 169}, { 89, 160}}, //18 left 1
-	{MadC_ArcMain_Up1, {  0,   0, 150, 169}, { 93, 160}}, //19 left 2
-	{MadC_ArcMain_Up2, {  0,   0, 147, 169}, { 94, 160}}, //20 left 1
-	{MadC_ArcMain_Up3, {  0,   0, 154, 169}, { 101, 160}}, //21 left 2
-	{MadC_ArcMain_Up4, {  0,   0, 145, 168}, { 92, 159}}, //22 left 1
-	{MadC_ArcMain_Up5, {  0,   0, 149, 166}, { 95, 158}}, //23 left 2
+	{MadC_ArcMain_Up0, {  0,   0, 150, 169}, { 89, 159}}, //18 left 1
+	{MadC_ArcMain_Up1, {  0,   0, 150, 169}, { 93, 159}}, //19 left 2
+	{MadC_ArcMain_Up2, {  0,   0, 147, 169}, { 94, 159}}, //20 left 1
+	{MadC_ArcMain_Up3, {  0,   0, 154, 169}, { 101, 159}}, //21 left 2
+	{MadC_ArcMain_Up4, {  0,   0, 145, 168}, { 92, 158}}, //22 left 1
+	{MadC_ArcMain_Up5, {  0,   0, 149, 166}, { 95, 157}}, //23 left 2
 
 
-	{MadC_ArcMain_Right0, {  0,   0, 236, 137}, { 85, 128}}, //24 Right 1
-	{MadC_ArcMain_Right1, {  0,   0, 226, 139}, { 80, 130}}, //25 Right 2
-	{MadC_ArcMain_Right2, {  0,   0, 219, 144}, { 76, 135}}, //26 Right 1
-	{MadC_ArcMain_Right3, {  0,   0, 216, 144}, { 73, 135}}, //27 Right 2
-	{MadC_ArcMain_Right4, {  0,   0, 218, 143}, { 75, 133}}, //28 Right 1
-	{MadC_ArcMain_Right5, {  0,   0, 220, 143}, { 76, 133}}, //29 Right 2
+	{MadC_ArcMain_Right0, {  0,   0, 236, 137}, { 83, 127}}, //24 Right 1
+	{MadC_ArcMain_Right1, {  0,   0, 226, 139}, { 77, 129}}, //25 Right 2
+	{MadC_ArcMain_Right2, {  0,   0, 219, 144}, { 73, 133}}, //26 Right 1
+	{MadC_ArcMain_Right3, {  0,   0, 216, 144}, { 70, 133}}, //27 Right 2
+	{MadC_ArcMain_Right4, {  0,   0, 218, 143}, { 72, 132}}, //28 Right 1
+	{MadC_ArcMain_Right5, {  0,   0, 220, 143}, { 74, 133}}, //29 Right 2
 
-	{MadC_ArcMain_DownB0, {  0,   0, 106, 107}, { 72, 149}}, //30 left 1
-	{MadC_ArcMain_DownB0, {107,   0, 113, 107}, { 73, 149}}, //31 left 2
-	{MadC_ArcMain_DownB1, {  0,   0, 105, 215}, { 79, 154}}, //32 left 1
-	{MadC_ArcMain_DownB1, {106,   0, 134, 215}, { 76, 153}}, //33 left 2
-	{MadC_ArcMain_DownB2, {  0,   0, 117, 221}, { 80, 150}}, //34 left 1
-	{MadC_ArcMain_DownB2, {118,   0, 122, 221}, { 78, 148}}, //35 left 2
+	{MadC_ArcMain_DownB0, {  0,   0, 165, 186}, { 84, 170}}, //30 left 1
+	{MadC_ArcMain_DownB1, {  0,   0, 166, 186}, { 85, 170}}, //31 left 2
+	{MadC_ArcMain_DownB2, {  0,   0, 192, 184}, { 108, 167}}, //32 left 1
 
-	{MadC_ArcMain_UpB0, {  0,   0, 104, 118}, { 89, 160}}, //36 left 1
-	{MadC_ArcMain_UpB0, {107,   0, 104, 118}, { 93, 160}}, //37 left 2
-	{MadC_ArcMain_UpB1, {  0,   0, 103, 118}, { 94, 160}}, //38 left 1
-	{MadC_ArcMain_UpB1, {106,   0, 106, 118}, { 101, 160}}, //39 left 2
+	{MadC_ArcMain_UpB0, {  0,   0, 166, 186}, { 84, 169}}, //33 left 1
+	{MadC_ArcMain_UpB1, {  0,   0, 166, 183}, { 84, 166}}, //34 left 2
 
-	{MadC_ArcMain_RightB0, {  0,   0, 104, 117}, { 85, 128}}, //40 Right 1
-	{MadC_ArcMain_RightB0, {107,   0, 105, 117}, { 80, 130}}, //41 Right 2
-	{MadC_ArcMain_RightB1, {  0,   0, 120, 115}, { 76, 135}}, //42 Right 1
-	{MadC_ArcMain_RightB1, {121,   0, 119, 115}, { 73, 135}}, //43 Right 2
+	{MadC_ArcMain_RightB0, {  0,   0, 168, 170}, { 88, 154}}, //35 Right 1
+	{MadC_ArcMain_RightB1, {  0,   0, 174, 167}, { 92, 151}}, //36 Right 2
+	{MadC_ArcMain_RightB2, {  0,   0, 168, 219}, { 87, 203}}, //37 Right 1
+	{MadC_ArcMain_RightB3, {  0,   0, 211, 256}, {130, 241}}, //38 Right 2
+	{MadC_ArcMain_RightB4, {  0,   0, 177, 256}, { 96, 241}}, //39 Right 2
 
 };
 
@@ -140,7 +139,7 @@ static const Animation char_madc_anim[CharAnim_Max] = {
 	{0, (const u8[]) { ASCR_CHGANI, CharAnim_RightAlt }},   //CharAnim_UpAlt
 	{2, (const u8[]) { 24, 25, 26, 27, 28, 29, ASCR_BACK, 3 }},         //CharAnim_Right
 	{0, (const u8[]) { ASCR_CHGANI, CharAnim_Idle }},  //CharAnim_RightAlt 
-	{2, (const u8[]) { 36, 36, 36, 37, 38, 39, 37, 38, 36, 36, 36, 37, 38, 39, 37, 38, 36, 36, 36, 37, 38, 39, 37, 38, 36, 36, 36, 37, 38, 39, 37, 36, 36, 36, 37, 38, 39, 37, 38, 36, 36, 36, 37, 38, 39, 37, 36, 36, 36, 37, 38, 39, 37, 38, 36, 36, 36, 37, 38, 39, 37, 36, 36, 36, 37, 38, 39, 37, 38, 36, 36, 36, 37, 38, 39, 37, 36, 36, 36, 37, 38, 39, 37, 38, 36, 36, 36, 37, 38, 39, 37, 36, 36, 36, 37, 38, 39, 37, 38, 36, 36, 36, 37, 38, 39, 37, 36, 36, 36, 37, 38, 39, 37, 38, 36, 40, 40, 40, 41, 41, 41, 42, 43, 42, 43, 42, 43, 42, 43, 42, 43, 42, 43, 42, 43, 42, 43, 42, 43, 42, 43, 42, 43, 42, 43, 42, 43, 42, 43, 42, 43, 42, 43, 42, 43, 42, 43, 42, 43, 42, 43, 42, 43, 42, 43, 42, 43, 42, 43, 42, 43, 42, 43, 42, 43, 42, 43, 42, 43, 42, 43, 42, 43, 42, 43,  42, 43, 42, 43, 42, 43, 42, 43, 42, 43, 42, 43, 42, 43, 43, 42, 43, 42, 43, 42, 43, 42, 43, 42, 43, 42, 43, 42, 43, 42, 43, 30, 30, 31, 32, 33, 34, 34, 35, 35, 34, 35, 34, 35, 34, 34, 34, 35, 35, 34, 35, 34,35, 34, 33, 34, 34, 35, 35, 34, 35, 34,35, 34, 33, 34, 34, 35, 35, 34, 35, 34, 35, 34, 35, 34, 34, 34, 35, 35, 34, 35, 34, 35, 34, 34, 34, 35, 35, 34, 35, 34,  34, 35,  34, 35,  34, 35, 34, 35, 35, 34, 35, 34, 34, 35, 34, 35,  34, 35, 34, 35, 35, 34, 35, 34, 34, 35,  34, 35,  34, 35,  34, 35, 34, 35,  34, 35, ASCR_BACK, 3 }}, 
+	{2, (const u8[]) { 33, 34, 33, 34, 33, 34, 33, 34, 33, 34, 33, 34, 33, 34, 33, 34, 33, 34, 33, 34, 33, 34, 33, 34, 33, 34, 33, 34, 33, 34, 33, 34, 33, 34, 33, 34, 33, 34, 33, 34, 33, 34, 33, 34, 33, 34, 33, 34, 33, 34, 33, 34, 33, 34, 33, 34, 33, 34, 33, 34, 33, 34, 33, 34, 33, 34, 33, 34, 33, 34, 33, 34, 33, 34, 33, 34, 33, 34, 33, 34, 33, 34, 33, 34, 33, 34, 33, 34, 33, 34, 33, 34, 33, 34, 33, 34, 33, 34, 33, 34, 33, 34, 33, 34, 33, 34, 33, 34, 33, 34, 30, 31, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 35, 36, 37, 38, 39, 38, 39, 38, 39, 38, 39, 38, 39, 38, 39, 38, 39, 38, 39, 38, 39, 38, 39, 38, 39, 38, 39, 38, 39, 38, 39, 38, 39, 38, 39, 38, 39, 38, 39, 38, 39, 38, 39, 38, 39, 38, 39, 38, 39, 38, 39, 38, 39, 38, 39, 38, 39, 38, 39, 38, 39, 38, 39, 38, 39, 38, 39, 38, 39, 38, 39, 38, 39, 38, 39, 38, 39, 38, 39, 38, 39, 38, 39, 38, 39, 38, 39, 38, 39, 38, 39, 38, 39, 38, 39, 38, 39, 38, 39, 38, 39, 38, 39, 38, 39, 38, 39, 38, 39, 38, 39, 38, 39, 38, 39, 38, 39, 38, 39, 38, 39, 38, 39, ASCR_BACK, 20 }},
 };
 
 //MadC character functions
@@ -255,15 +254,6 @@ Character* Char_MadC_New(fixed_t x, fixed_t y)
 		"right3.tim", //MadC_ArcMain_right
 		"right4.tim", //MadC_ArcMain_right
 		"right5.tim", //MadC_ArcMain_right
-<<<<<<< HEAD
-		"upb0.tim",
-		"upb1.tim",
-		"rightb0.tim",
-		"rightb1.tim",
-		"downb0.tim",
-		"downb1.tim",
-		"downb2.tim",
-=======
 		"downb0.tim", //MadC_ArcMain_down
 		"downb1.tim", //MadC_ArcMain_down
 		"downb2.tim", //MadC_ArcMain_down
@@ -271,7 +261,9 @@ Character* Char_MadC_New(fixed_t x, fixed_t y)
 		"upb1.tim", //MadC_ArcMain_Up
 		"rightb0.tim", //MadC_ArcMain_right
 		"rightb1.tim", //MadC_ArcMain_right
->>>>>>> 4f5185c38500ea13ee074caa270fc4ac0c114619
+		"rightb2.tim", //MadC_ArcMain_right
+		"rightb3.tim", //MadC_ArcMain_right
+		"rightb4.tim", //MadC_ArcMain_right
 		NULL
 	};
 	IO_Data* arc_ptr = this->arc_ptr;

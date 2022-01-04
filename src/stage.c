@@ -1670,10 +1670,11 @@ void Stage_Tick(void)
 
 
 				//Bump screen
-				if ((is_bump_step) && stage.stage_id == StageId_1_1 && stage.song_step >= 1425)
+				if ((is_bump_step) && (stage.stage_id == StageId_1_1 && stage.song_step >= 1425) || (stage.stage_id == StageId_1_2 && stage.song_step >= 2161))
 				{
 					stage.bump = FIXED_DEC(1, 1);
 				}
+
 
 				else if (is_bump_step)
 				stage.bump = FIXED_DEC(103, 100);

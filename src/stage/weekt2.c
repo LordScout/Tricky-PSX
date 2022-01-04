@@ -153,10 +153,10 @@ void Back_WeekT2_DrawFG(StageBack* back)
 	{
 		RECT youclown_src = { 0, 0, 249, 26 };
 		RECT_FIXED youclown_dst = {
-			FIXED_DEC(-180,1) - fx,
+			FIXED_DEC(-150,1) - fx,
 			FIXED_DEC(50,1) - fy,
-			FIXED_DEC(256,1),
-			FIXED_DEC(26,1)
+			FIXED_DEC(300,1),
+			FIXED_DEC(30,1)
 		};
 
 		Stage_DrawTex(&this->tex_cut0, &youclown_src, &youclown_dst, stage.camera.bzoom);
@@ -491,10 +491,10 @@ void Back_WeekT2_DrawFG(StageBack* back)
 	{
 		RECT clownyou_src = { 0, 25, 256, 28 };
 		RECT_FIXED clownyou_dst = {
-			FIXED_DEC(-160,1) - fx,
-			FIXED_DEC(70,1) - fy,
-			FIXED_DEC(248,1),
-			FIXED_DEC(24,1)
+			FIXED_DEC(-150,1) - fx,
+			FIXED_DEC(50,1) - fy,
+			FIXED_DEC(300,1),
+			FIXED_DEC(30,1)
 		};
 
 		Stage_DrawTex(&this->tex_cut0, &clownyou_src, &clownyou_dst, stage.camera.bzoom);

@@ -235,6 +235,13 @@ void Char_BF_Tick(Character *character)
 		this->character.focus_zoom = FIXED_DEC(8, 10);
 	}
 
+	if (stage.stage_id == StageId_1_2 && stage.song_step >= 2416)
+	{
+		this->character.focus_x = FIXED_DEC(-140, 1);
+		this->character.focus_y = FIXED_DEC(-95, 1);
+		this->character.focus_zoom = FIXED_DEC(9, 10);
+	}
+
 	//Handle animation updates
 	if ((character->pad_held & (INPUT_LEFT | INPUT_DOWN | INPUT_UP | INPUT_RIGHT)) == 0 ||
 	    (character->animatable.anim != CharAnim_Left &&

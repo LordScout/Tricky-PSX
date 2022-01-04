@@ -77,21 +77,21 @@ typedef struct
 
 //Clown character definitions
 static const CharFrame char_clown_frame[] = {
-	{Clown_ArcMain_Idle0, {  0,   0, 152, 154}, { 74, 143}}, //0 idle 1
-	{Clown_ArcMain_Idle1, {  0,   0, 153, 152}, { 73, 141}}, //1 idle 2
+	{Clown_ArcMain_Idle0, {  0,   0, 152, 154}, { 74, 144}}, //0 idle 1
+	{Clown_ArcMain_Idle1, {  0,   0, 153, 152}, { 73, 142}}, //1 idle 2
 	{Clown_ArcMain_Idle2, {  0,   0, 155, 160}, { 75, 150}}, //2 idle 3
 	{Clown_ArcMain_Idle3, {  0,   0, 154, 163}, { 72, 153}}, //3 idle 4
 	{Clown_ArcMain_Idle4, {  0,   0, 155, 161}, { 75, 151}}, //4 idle 2
 	{Clown_ArcMain_Idle5, {  0,   0, 155, 164}, { 74, 154}}, //5 idle 3
 	{Clown_ArcMain_Idle6, {  0,   0, 154, 162}, { 72, 152}}, //6 idle 4
 	
-	{Clown_ArcMain_Left0, {  0,   0, 202, 169}, { 120, 158}}, //7 left 1
-	{Clown_ArcMain_Left1, {  0,   0, 198, 169}, { 120, 158}}, //8 left 1
-	{Clown_ArcMain_Left2, {  0,   0, 188, 173}, { 114, 162}}, //9 left 1
-	{Clown_ArcMain_Left3, {  0,   0, 190, 169}, { 115, 159}}, //10 left 1
-	{Clown_ArcMain_Left4, {  0,   0, 192, 171}, { 119, 160}}, //11 left 1
-	{Clown_ArcMain_Left5, {  0,   0, 187, 170}, { 115, 159}}, //12 left 1
-	{Clown_ArcMain_Left6, {  0,   0, 188, 173}, { 115, 162}}, //13 left 1
+	{Clown_ArcMain_Left0, {  0,   0, 202, 169}, { 124, 158}}, //7 left 1
+	{Clown_ArcMain_Left1, {  0,   0, 198, 169}, { 124, 158}}, //8 left 1
+	{Clown_ArcMain_Left2, {  0,   0, 188, 173}, { 118, 162}}, //9 left 1
+	{Clown_ArcMain_Left3, {  0,   0, 190, 169}, { 119, 159}}, //10 left 1
+	{Clown_ArcMain_Left4, {  0,   0, 192, 171}, { 123, 160}}, //11 left 1
+	{Clown_ArcMain_Left5, {  0,   0, 187, 170}, { 119, 159}}, //12 left 1
+	{Clown_ArcMain_Left6, {  0,   0, 188, 173}, { 119, 162}}, //13 left 1
 	
 	{Clown_ArcMain_Down0, {  0,   0, 185, 149}, { 84, 138}}, //14 down 1
 	{Clown_ArcMain_Down1, {  0,   0, 182, 150}, { 83, 138}}, //15 down 2
@@ -108,13 +108,13 @@ static const CharFrame char_clown_frame[] = {
 	{Clown_ArcMain_Up5, {  0,   0, 149, 167}, { 95, 157}}, //25 up 2
 	{Clown_ArcMain_Up6, {  0,   0, 144, 170}, { 92, 160}}, //26 up 2
 	
-	{Clown_ArcMain_Right0, {  0,   0, 233, 142}, { 82, 132}}, //27 right 1
-	{Clown_ArcMain_Right1, {  0,   0, 219, 146}, { 74, 136}}, //28 right 2
-	{Clown_ArcMain_Right2, {  0,   0, 219, 147}, { 74, 138}}, //29 right 1
-	{Clown_ArcMain_Right3, {  0,   0, 216, 147}, { 71, 138}}, //30 right 2
-	{Clown_ArcMain_Right4, {  0,   0, 218, 146}, { 74, 137}}, //31 right 1
-	{Clown_ArcMain_Right5, {  0,   0, 218, 147}, { 73, 137}}, //32 right 2
-	{Clown_ArcMain_Right6, {  0,   0, 219, 148}, { 75, 139}}, //33 right 2
+	{Clown_ArcMain_Right0, {  0,   0, 233, 142}, { 81, 132}}, //27 right 1
+	{Clown_ArcMain_Right1, {  0,   0, 219, 146}, { 73, 136}}, //28 right 2
+	{Clown_ArcMain_Right2, {  0,   0, 219, 147}, { 73, 138}}, //29 right 1
+	{Clown_ArcMain_Right3, {  0,   0, 216, 147}, { 70, 138}}, //30 right 2
+	{Clown_ArcMain_Right4, {  0,   0, 218, 146}, { 73, 137}}, //31 right 1
+	{Clown_ArcMain_Right5, {  0,   0, 218, 147}, { 72, 137}}, //32 right 2
+	{Clown_ArcMain_Right6, {  0,   0, 219, 148}, { 74, 139}}, //33 right 2
 	
 	{Clown_ArcScene_0, {  0,   0, 128, 256}, { 48, 125}}, //35 ugh 0
 	{Clown_ArcScene_0, {128,   0, 128, 256}, { 50, 128}}, //36 ugh 1

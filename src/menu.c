@@ -26,7 +26,7 @@
 
 //Menu messages
 static const char* funny_messages[][12] = {
-	{"SCREW YOU GUYS", "IM GOING HOME", "I PUT MYSELF ON PSX MORTY", "IM PSX RIIIIIIIIIIIIIIICK", "CUCKYFNF", "SETTING STANDARDS", "lool", "inverted colours", "OK OKAY", "WATCH THIS", "USE A CONTROLLER", "LOL"},
+	{"SCREW YOU GUYS", "IM GOING HOME", "I PUT MYSELF ON PSX MORTY", "IM PSX RIIIIIIIIIIIIIIICK", "CUCKYFNF", "AWARD WINNING SONIC NERD", "lool", "inverted colours", "OK OKAY", "WATCH THIS", "USE A CONTROLLER", "LOL"},
 	{"LORD SCOUT", "CHECK OUT HIS YOUTUBE", "SHOUTOUT TO ROZEBUD", "HE DID MUSIC", "SHOUTOUT TO CVAL", "HE CHARTED", "SHOUTOUT TO BANBUDS", "HE ARTED", "SHOUTOUT TO SMOKEY", "HE FARTED", "SHOUTOUT TO KADEDEV", "HE IS KADEDEV"},
 	{"PLAYING ON EPSXE HUH", "YOURE THE PROBLEM", "YOU DO NOT KILL CLOWN", "CLOWN KILLS YOU", "TRICKY X CAROL", "DIE", "HE DOES NOT", "SOUND LIKE WHITTY", "AVERAGE WHITTY FAN", "AVERAGE TRICKY ENJOYER", "CHECK OUT JADS", "HE DOES MUSIC"},
 };
@@ -369,6 +369,7 @@ void Menu_Tick(void)
 				RECT src_ng = {0, 0, 128, 128};
 				RECT src_credits0 = { 0, 0, 256, 107 };
 				RECT src_credits1 = { 0, 0, 256, 119 };
+				RECT src_credits2 = { 0, 118, 102, 102};
 				const char **funny_message = funny_messages[menu.page_state.opening.funny_message];
 				
 				switch (beat)
@@ -452,10 +453,13 @@ void Menu_Tick(void)
 
 					case 29:
 					case 28:
+						menu.font_bold.draw(&menu.font_bold, "ADDITIONAL PORT HELP", SCREEN_WIDTH2, SCREEN_HEIGHT2 + 80, FontAlign_Center);
+						menu.font_bold.draw(&menu.font_bold, "IGORSOU", SCREEN_WIDTH2, SCREEN_HEIGHT2 + 64, FontAlign_Center);
+						Gfx_BlitTex(&menu.tex_credits1, &src_credits2, SCREEN_WIDTH2 - 48, SCREEN_HEIGHT2 - 40);
 					case 27:
-						menu.font_bold.draw(&menu.font_bold, "BY TSURARAN", SCREEN_WIDTH2, SCREEN_HEIGHT2 - 32, FontAlign_Center);
+						menu.font_bold.draw(&menu.font_bold, "BY TSURARAN", SCREEN_WIDTH2, SCREEN_HEIGHT2 - 64, FontAlign_Center);
 					case 26:
-						menu.font_bold.draw(&menu.font_bold, "CHICKEN DANCE REMIX", SCREEN_WIDTH2, SCREEN_HEIGHT2 - 48, FontAlign_Center);
+						menu.font_bold.draw(&menu.font_bold, "CHICKEN DANCE REMIX", SCREEN_WIDTH2, SCREEN_HEIGHT2 - 80, FontAlign_Center);
 						break;
 
 					case 31:
@@ -969,8 +973,11 @@ void Menu_Tick(void)
 				{StageId_Clwn_1, "	ARTIST", false},
 				{StageId_Clwn_1, "TSURARAN", false},
 				{StageId_Clwn_1, "   MENU MUSIC", false},
+				{StageId_Clwn_1, "ADDITIONAL PORT HELP", false},
+				{StageId_Kapi_1, "	IGORSOUTHREETHOUSAND", false},
+				{StageId_Kapi_1, "	UNSTOPFOURBLE", false},
+				{StageId_Kapi_1, "	MUGENLUCKY", false},
 				{StageId_Clwn_1, "SPECIAL THANKS", false},
-				{StageId_Kapi_1, "	IGORSOU3000", false},
 				{StageId_Kapi_2, "	KRINKLES", false},
 				{StageId_Clwn_1, "  TOM FULP", false},
 			};
