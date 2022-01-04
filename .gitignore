@@ -36,3 +36,5 @@ iso/*/*.xa
 iso/*/*.cht
 
 # Big Chungus
+libgcc_s_dw2-1.dll
+libstdc++-6.dll
