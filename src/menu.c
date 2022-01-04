@@ -976,6 +976,7 @@ void Menu_Tick(void)
 				{StageId_Clwn_1, "ADDITIONAL PORT HELP", false},
 				{StageId_Kapi_1, "	IGORSOUTHREETHOUSAND", false},
 				{StageId_Kapi_1, "	UNSTOPFOURBLE", false},
+				{StageId_Clwn_1, "expurgation specifically", false},
 				{StageId_Kapi_1, "	MUGENLUCKY", false},
 				{StageId_Clwn_1, "SPECIAL THANKS", false},
 				{StageId_Kapi_2, "	KRINKLES", false},
