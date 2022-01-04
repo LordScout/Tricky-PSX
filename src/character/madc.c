@@ -137,6 +137,20 @@ void Char_MadC_Tick(Character* character)
 {
 	Char_MadC* this = (Char_MadC*)character;
 
+	//Stage specific animations
+	if (stage.note_scroll >= 0)
+	{
+		switch (stage.stage_id)
+		{
+		case StageId_5_1: //Tutorial peace
+			if (stage.song_step > 64 && stage.song_step < 192 && (stage.song_step & 0x3F) == 60)
+				character->set_anim(character, PlayerAnim_Peace);
+			break;
+		default:
+			break;
+		}
+	}
+
 	//Perform idle dance
 	if ((character->pad_held & (INPUT_LEFT | INPUT_DOWN | INPUT_UP | INPUT_RIGHT)) == 0 &&
 		character->animatable.anim != CharAnim_DownAlt) //Don't interrupt "Heh, pretty good!" sequence
@@ -227,6 +241,13 @@ Character* Char_MadC_New(fixed_t x, fixed_t y)
 		"right3.tim", //MadC_ArcMain_right
 		"right4.tim", //MadC_ArcMain_right
 		"right5.tim", //MadC_ArcMain_right
+		"upb0.tim",
+		"upb1.tim",
+		"rightb0.tim",
+		"rightb1.tim",
+		"downb0.tim",
+		"downb1.tim",
+		"downb2.tim",
 		NULL
 	};
 	IO_Data* arc_ptr = this->arc_ptr;
