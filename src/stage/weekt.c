@@ -50,12 +50,12 @@ void Back_WeekT_DrawFG(StageBack* back)
 		Stage_DrawTex(&this->tex_cut0, &cutscene0_src, &cutscene0_dst, stage.camera.bzoom);
 	}
 
-	if (stage.stage_id == StageId_1_1 && stage.song_step >= 1482 && stage.song_step <= 1492)
+	if (stage.stage_id == StageId_1_1 && stage.song_step >= 1482 && stage.song_step <= 1487)
 	{
 		RECT cutscene1_src = { 0, 0, 256, 256 };
 		RECT_FIXED cutscene1_dst = {
 			FIXED_DEC(-115,1) - fx,
-			FIXED_DEC(-100,1) - fy,
+			FIXED_DEC(-120,1) - fy,
 			FIXED_DEC(350,1),
 			FIXED_DEC(275,1)
 		};
@@ -63,25 +63,38 @@ void Back_WeekT_DrawFG(StageBack* back)
 		Stage_DrawTex(&this->tex_cut1, &cutscene1_src, &cutscene1_dst, stage.camera.bzoom);
 	}
 
-	if (stage.stage_id == StageId_1_1 && stage.song_step >= 1492 && stage.song_step <= 1520)
+	if (stage.stage_id == StageId_1_1 && stage.song_step >= 1487 && stage.song_step <= 1503)
 	{
-		RECT cutscene2_src = { 0, 0, 256, 256 };
+		RECT cutscene2_src = { 0, 0, 256, 122 };
 		RECT_FIXED cutscene2_dst = {
-			FIXED_DEC(-115,1) - fx,
-			FIXED_DEC(-100,1) - fy,
+			FIXED_DEC(-120,1) - fx,
+			FIXED_DEC(-77,1) - fy,
 			FIXED_DEC(350,1),
-			FIXED_DEC(275,1)
+			FIXED_DEC(175,1)
 		};
 
 		Stage_DrawTex(&this->tex_cut2, &cutscene2_src, &cutscene2_dst, stage.camera.bzoom);
 	}
 
-	if (stage.stage_id == StageId_1_1 && stage.song_step >= 1520 && stage.song_step <= 1540)
+	if (stage.stage_id == StageId_1_1 && stage.song_step >= 1504 && stage.song_step <= 1520)
+	{
+		RECT cutscene2_src = { 0, 122, 256, 134 };
+		RECT_FIXED cutscene2_dst = {
+			FIXED_DEC(-120,1) - fx,
+			FIXED_DEC(-80,1) - fy,
+			FIXED_DEC(350,1),
+			FIXED_DEC(175,1)
+		};
+
+		Stage_DrawTex(&this->tex_cut2, &cutscene2_src, &cutscene2_dst, stage.camera.bzoom);
+	}
+
+	if (stage.stage_id == StageId_1_1 && stage.song_step >= 1521 && stage.song_step <= 1540)
 	{
 		RECT cutscene3_src = { 0, 0, 256, 256 };
 			RECT_FIXED cutscene3_dst = {
-				FIXED_DEC(-115,1) - fx,
-				FIXED_DEC(-100,1) - fy,
+				FIXED_DEC(-100,1) - fx,
+				FIXED_DEC(-85,1) - fy,
 				FIXED_DEC(350,1),
 				FIXED_DEC(275,1)
 		};
@@ -90,7 +103,7 @@ void Back_WeekT_DrawFG(StageBack* back)
 	}
 
 
-	if (stage.stage_id == StageId_1_1 && stage.song_step >= 1540 && stage.song_step <= 1570)
+	if (stage.stage_id == StageId_1_1 && stage.song_step >= 1541 && stage.song_step <= 1570)
 	{
 		RECT cutscene4_src = { 0, 0, 256, 256 };
 		RECT_FIXED cutscene4_dst = {
@@ -116,14 +129,27 @@ void Back_WeekT_DrawFG(StageBack* back)
 		Stage_DrawTex(&this->tex_cut5, &cutscene5_src, &cutscene5_dst, stage.camera.bzoom);
 	}
 
-	if (stage.stage_id == StageId_1_1 && stage.song_step >= 1424)
+	if (stage.stage_id == StageId_1_1 && stage.song_step >= 1424 && stage.song_step <= 1503)
 	{
 		RECT back0_src = { 0, 0, 256, 256 };
 		RECT_FIXED back0_dst = {
-			FIXED_DEC(-100,1) - fx,
+			FIXED_DEC(-110,1) - fx,
 			FIXED_DEC(-150,1) - fy,
 			FIXED_DEC(800,1),
 			FIXED_DEC(800,1)
+		};
+
+		Stage_DrawTex(&this->tex_back0, &back0_src, &back0_dst, stage.camera.bzoom);
+	}
+
+	if (stage.stage_id == StageId_1_1 && stage.song_step >= 1503)
+	{
+		RECT back0_src = { 0, 121, 256, 105};
+		RECT_FIXED back0_dst = {
+			FIXED_DEC(-140,1) - fx,
+			FIXED_DEC(-150,1) - fy,
+			FIXED_DEC(400,1),
+			FIXED_DEC(400,1)
 		};
 
 		Stage_DrawTex(&this->tex_back0, &back0_src, &back0_dst, stage.camera.bzoom);

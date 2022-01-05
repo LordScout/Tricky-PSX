@@ -193,19 +193,19 @@ void Char_BF_Tick(Character *character)
 {
 	Char_BF *this = (Char_BF*)character;
 
-	if (stage.stage_id == StageId_1_1 && stage.song_step >= 1488)
-	{
-		this->character.focus_x = FIXED_DEC(-50, 1);
-		this->character.focus_y = FIXED_DEC(-125, 1);
-		this->character.focus_zoom = FIXED_DEC(12, 10);
-	}
+	//if (stage.stage_id == StageId_1_1 && stage.song_step >= 1488)
+	//{
+	//	this->character.focus_x = FIXED_DEC(-50, 1);
+	//	this->character.focus_y = FIXED_DEC(-125, 1);
+	//	this->character.focus_zoom = FIXED_DEC(12, 10);
+	//}
 
-	if (stage.stage_id == StageId_1_1 && stage.song_step >= 1504)
-	{
-		this->character.focus_x = FIXED_DEC(-50, 1);
-		this->character.focus_y = FIXED_DEC(10, 1);
-		this->character.focus_zoom = FIXED_DEC(12, 10);
-	}
+	//if (stage.stage_id == StageId_1_1 && stage.song_step >= 1504)
+	//{
+	//	this->character.focus_x = FIXED_DEC(-50, 1);
+	//	this->character.focus_y = FIXED_DEC(10, 1);
+	//	this->character.focus_zoom = FIXED_DEC(12, 10);
+	//}
 
 		if (stage.stage_id == StageId_1_1 && stage.song_step >= 1516)
 	{
