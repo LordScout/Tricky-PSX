@@ -20,6 +20,7 @@ all: \
 	iso/weekt2/back.arc \
 	iso/weekt3/back.arc \
 	iso/weekt3/hench.arc \
+	iso/weekt4/back.arc 
 
 iso/%.tim: iso/%.png
 	tools/funkintimconv/funkintimconv $@ $<
@@ -62,3 +63,6 @@ iso/weekt2/back.arc: iso/weekt2/back0.tim iso/weekt2/back1.tim iso/weekt2/back2.
 # Week Tricky Phase 3
 iso/weekt3/back.arc: iso/weekt3/back1.tim iso/weekt3/back2.tim
 iso/weekt3/hench.arc: iso/weekt3/hench0.tim iso/weekt3/hench1.tim
+
+# Week Tricky Phase 4
+iso/weekt4/back.arc: iso/weekt4/back0.tim iso/weekt4/back1.tim iso/weekt4/back2.tim iso/weekt4/cut0.tim iso/weekt4/cut1.tim iso/weekt4/cut2.tim iso/weekt4/cut3.tim iso/weekt4/cut4.tim iso/weekt4/cut5.tim

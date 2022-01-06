@@ -53,7 +53,7 @@
 		{Char_GFPH3_New,      FIXED_DEC(50,1),  FIXED_DEC(55,1)},
 
 		//Stage background
-		Back_WeekT3_New,
+		Back_WeekT4_New,
 
 		//Song info
 		{FIXED_DEC(34,10),FIXED_DEC(34,10),FIXED_DEC(34,10)},

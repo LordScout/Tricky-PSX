@@ -78,6 +78,12 @@
 				<file name = "back.arc" type = "data" source = "iso/weekt3/back.arc"/>
 				<file name = "hench.arc" type = "data" source = "iso/weekt3/hench.arc"/>
 			</dir>
+
+			<!-- Week Tricky 4 assets -->
+			<dir name = "weekt4">
+				<!-- Background art -->
+				<file name = "back.arc" type = "data" source = "iso/weekt4/back.arc"/>
+			</dir>
 			
 			<!-- Character assets -->
 			<dir name = "char">

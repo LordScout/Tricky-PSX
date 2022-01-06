@@ -22,6 +22,7 @@ SRCS = src/main.c \
        src/stage/weekt.c \
        src/stage/weekt2.c \
        src/stage/weekt3.c \
+       src/stage/weekt4.c \
        src/animation.c \
        src/character.c \
        src/character/bf.c \
