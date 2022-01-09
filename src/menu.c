@@ -849,7 +849,7 @@ void Menu_Tick(void)
 			//Initialize page
 			if (menu.page_swap)
 			{
-				menu.scroll = COUNT_OF(menu_options) * FIXED_DEC(24 + SCREEN_HEIGHT2,1);
+				menu.scroll = COUNT_OF(menu_options) * FIXED_DEC(SCREEN_HEIGHT2,1);
 				menu.page_param.stage.diff = StageDiff_Normal;
 				menu.page_state.freeplay.back_r = FIXED_DEC(255, 1);
 				menu.page_state.freeplay.back_g = FIXED_DEC(255, 1);
@@ -866,7 +866,7 @@ void Menu_Tick(void)
 			
 			//Draw difficulty selector
 			if (menu_options[menu.select].difficulty)
-				Menu_DifficultySelector(SCREEN_WIDTH - 100, SCREEN_HEIGHT2 - 32);
+				Menu_DifficultySelector(SCREEN_WIDTH - 100, SCREEN_HEIGHT2 - 24);
 			
 			//Handle option and selection
 			if (menu.next_page == menu.page && Trans_Idle())

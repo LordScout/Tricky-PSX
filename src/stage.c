@@ -23,7 +23,7 @@
 #include "object/splash.h"
 
 //Stage constants
-//#define STAGE_PERFECT //Play all notes perfectly
+#define STAGE_PERFECT //Play all notes perfectly
 //#define STAGE_NOHUD //Disable the HUD
 
 int shake = 0;
@@ -1171,17 +1171,18 @@ static void Stage_LoadMusic(void)
 	//Offset sing ends
 	stage.player->sing_end -= stage.note_scroll;
 	stage.opponent->sing_end -= stage.note_scroll;
-	
+
 	//Find music file and begin seeking to it
 	Audio_SeekXA_Track(stage.stage_def->music_track);
-	
+
 	//Initialize music state
-	stage.note_scroll = FIXED_DEC(-5 * 4 * 12,1);
+	stage.note_scroll = FIXED_DEC(-5 * 4 * 12, 1);
 	stage.song_time = FIXED_DIV(stage.note_scroll, stage.step_crochet);
 	stage.interp_time = 0;
 	stage.interp_ms = 0;
 	stage.interp_speed = 0;
-	
+
+
 	//Offset sing ends again
 	stage.player->sing_end += stage.note_scroll;
 	stage.opponent->sing_end += stage.note_scroll;

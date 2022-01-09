@@ -114,18 +114,18 @@ static const CharFrame char_madc_frame[] = {
 	{MadC_ArcMain_Right4, {  0,   0, 218, 143}, { 72, 132}}, //28 Right 1
 	{MadC_ArcMain_Right5, {  0,   0, 220, 143}, { 74, 133}}, //29 Right 2
 
-	{MadC_ArcMain_DownB0, {  0,   0, 165, 186}, { 84, 170}}, //30 left 1
-	{MadC_ArcMain_DownB1, {  0,   0, 166, 186}, { 85, 170}}, //31 left 2
-	{MadC_ArcMain_DownB2, {  0,   0, 192, 184}, { 108, 167}}, //32 left 1
+	{MadC_ArcMain_DownB0, {  0,   0, 165, 186}, { 87, 167}}, //30 left 1
+	{MadC_ArcMain_DownB1, {  0,   0, 166, 186}, { 88, 168}}, //31 left 2
+	{MadC_ArcMain_DownB2, {  0,   0, 192, 184}, { 113, 166}}, //32 left 1
 
-	{MadC_ArcMain_UpB0, {  0,   0, 166, 186}, { 84, 169}}, //33 left 1
-	{MadC_ArcMain_UpB1, {  0,   0, 166, 183}, { 84, 166}}, //34 left 2
+	{MadC_ArcMain_UpB0, {  0,   0, 166, 186}, { 87, 169}}, //33 left 1
+	{MadC_ArcMain_UpB1, {  0,   0, 166, 183}, { 87, 166}}, //34 left 2
 
-	{MadC_ArcMain_RightB0, {  0,   0, 168, 170}, { 88, 154}}, //35 Right 1
-	{MadC_ArcMain_RightB1, {  0,   0, 174, 167}, { 92, 151}}, //36 Right 2
-	{MadC_ArcMain_RightB2, {  0,   0, 168, 219}, { 87, 203}}, //37 Right 1
-	{MadC_ArcMain_RightB3, {  0,   0, 211, 256}, {130, 241}}, //38 Right 2
-	{MadC_ArcMain_RightB4, {  0,   0, 177, 256}, { 96, 241}}, //39 Right 2
+	{MadC_ArcMain_RightB0, {  0,   0, 168, 170}, { 91, 154}}, //35 Right 1
+	{MadC_ArcMain_RightB1, {  0,   0, 174, 167}, { 95, 151}}, //36 Right 2
+	{MadC_ArcMain_RightB2, {  0,   0, 168, 219}, { 90, 203}}, //37 Right 1
+	{MadC_ArcMain_RightB3, {  0,   0, 211, 256}, {133, 241}}, //38 Right 2
+	{MadC_ArcMain_RightB4, {  0,   0, 177, 256}, { 99, 241}}, //39 Right 2
 
 };
 

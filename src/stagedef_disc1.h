@@ -48,9 +48,9 @@
 	},
 	{ //StageId_Clwn_4 (Expurgation)
 		//Characters
-		{Char_BFPH3_New,    FIXED_DEC(105,1),  FIXED_DEC(100,1)},
-		{Char_Hellc_New, FIXED_DEC(-90,1),  FIXED_DEC(100,1)},
-		{Char_GFPH3_New,      FIXED_DEC(50,1),  FIXED_DEC(55,1)},
+		{Char_BF_New,    FIXED_DEC(105,1),  FIXED_DEC(100,1)},
+		{Char_MadC_New, FIXED_DEC(-90,1),  FIXED_DEC(100,1)},
+		{Char_GF_New,      FIXED_DEC(50,1),  FIXED_DEC(55,1)},
 
 		//Stage background
 		Back_WeekT4_New,
