@@ -55,7 +55,7 @@ iso/gfph3/main.arc: iso/gfph3/bopleft.tim iso/gfph3/bopright.tim
 iso/mticky/main.arc: iso/mticky/ticky0.tim iso/mticky/ticky1.tim iso/mticky/ticky2.tim iso/mticky/ticky3.tim iso/mticky/ticky4.tim iso/mticky/ticky5.tim iso/mticky/ticky6.tim iso/mticky/ticky7.tim iso/mticky/ticky8.tim iso/mticky/ticky9.tim iso/mticky/ticky10.tim
 
 # Week Tricky
-iso/weekt/back.arc: iso/weekt/back0.tim iso/weekt/back1.tim iso/weekt/back2.tim iso/weekt/cut0.tim iso/weekt/cut1.tim iso/weekt/cut2.tim iso/weekt/cut3.tim iso/weekt/cut4.tim iso/weekt/cut5.tim
+iso/weekt/back.arc: iso/weekt/back0.tim iso/weekt/back1.tim iso/weekt/back2.tim iso/weekt/cut0.tim iso/weekt/cut1.tim iso/weekt/cut2.tim iso/weekt/cut3.tim iso/weekt/cut4.tim iso/weekt/cut5.tim iso/weekt/nevada.tim
 
 # Week Tricky Phase 2
 iso/weekt2/back.arc: iso/weekt2/back0.tim iso/weekt2/back1.tim iso/weekt2/back2.tim iso/weekt2/cut0.tim

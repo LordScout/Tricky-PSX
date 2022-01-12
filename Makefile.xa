@@ -1,7 +1,8 @@
 all: \
   iso/music/menu.xa \
   iso/music/weekta.xa \
-  iso/music/weektb.xa 
+  iso/music/weektb.xa \
+  iso/music/cut.xa
 
 # XA converts
 iso/music/%.xa: iso/music/%.mp3
@@ -13,3 +14,4 @@ iso/music/%.xa:
 iso/music/menu.xa: iso/music/freaky.xa iso/music/gameover.xa
 iso/music/weekta.xa: iso/music/improbablei.xa iso/music/improbablev.xa iso/music/madnessi.xa iso/music/madnessv.xa
 iso/music/weektb.xa: iso/music/hellclowni.xa iso/music/hellclownv.xa iso/music/expurgation.xa
+iso/music/cut.xa: iso/music/cutscenei.xa iso/music/cutscenev.xa

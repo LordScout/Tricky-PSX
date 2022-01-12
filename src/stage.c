@@ -162,6 +162,13 @@ static void Stage_ScrollCamera(void)
 			stage.camera.y += RandomRange(FIXED_DEC(-40, 10), FIXED_DEC(50, 10));
 		}
 
+		//Shake in Madness
+		if (stage.stage_id == StageId_2_1 && stage.song_step >= 44)
+		{
+			stage.camera.x += RandomRange(FIXED_DEC(-40, 10), FIXED_DEC(50, 10));
+			stage.camera.y += RandomRange(FIXED_DEC(-40, 10), FIXED_DEC(40, 10));
+		}
+
 	#endif
 	
 	//Update other camera stuff
@@ -641,6 +648,11 @@ void Stage_DrawTexCol(Gfx_Tex *tex, const RECT *src, const RECT_FIXED *dst, fixe
 	if (tex == &stage.tex_hud1 && ((stage.stage_id == StageId_1_2) && stage.song_step >= 2158))
 		return;
 
+	if (tex == &stage.tex_hud0 && (stage.stage_id == StageId_2_1))
+		return;
+
+	if (tex == &stage.tex_hud1 && (stage.stage_id == StageId_2_1))
+		return;
 
 	if (tex == &stage.tex_hud0 || tex == &stage.tex_hud1)
 	{
@@ -940,7 +952,7 @@ static void Stage_DrawNotes(void)
 					note_dst.y = -note_dst.y - note_dst.h;
 				Stage_DrawTex(&stage.tex_hud0, &note_src, &note_dst, stage.bump);
 				
-				if (stage.stage_id == StageId_Clwn_4)
+				if (stage.stage_id == StageId_1_4)
 				{
 					//Draw note halo
 					note_src.x = 160;
@@ -1176,7 +1188,14 @@ static void Stage_LoadMusic(void)
 	Audio_SeekXA_Track(stage.stage_def->music_track);
 
 	//Initialize music state
-	stage.note_scroll = FIXED_DEC(-5 * 4 * 12, 1);
+	if (stage.stage_id == StageId_2_1)
+	{
+		stage.note_scroll = FIXED_DEC(-1 * 4 * 12, 1);
+	}
+	else
+	{
+		stage.note_scroll = FIXED_DEC(-5 * 4 * 12, 1);
+	}
 	stage.song_time = FIXED_DIV(stage.note_scroll, stage.step_crochet);
 	stage.interp_time = 0;
 	stage.interp_ms = 0;
@@ -1496,7 +1515,7 @@ void Stage_Tick(void)
 
             #else
 			{
-			if ((stage.stage_id == StageId_1_1 && stage.song_step >= 1424) || (stage.stage_id == StageId_1_2 && stage.song_step >= 2170))
+			if ((stage.stage_id == StageId_1_1 && stage.song_step >= 1424) || (stage.stage_id == StageId_1_2 && stage.song_step >= 2170) || (stage.stage_id == StageId_2_1))
 			botthing = 1;
 
            else
@@ -1672,7 +1691,7 @@ void Stage_Tick(void)
 
 
 				//Bump screen
-				if ((is_bump_step) && (stage.stage_id == StageId_1_1 && stage.song_step >= 1425) || (stage.stage_id == StageId_1_2 && stage.song_step >= 2161))
+				if ((is_bump_step) && (stage.stage_id == StageId_1_1 && stage.song_step >= 1425) || (stage.stage_id == StageId_1_2 && stage.song_step >= 2161) || (stage.stage_id == StageId_2_1))
 				{
 					stage.bump = FIXED_DEC(1, 1);
 				}

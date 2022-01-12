@@ -50,7 +50,7 @@
 		//Characters
 		{Char_BF_New,    FIXED_DEC(105,1),  FIXED_DEC(100,1)},
 		{Char_MadC_New, FIXED_DEC(-90,1),  FIXED_DEC(100,1)},
-		{Char_GF_New,      FIXED_DEC(50,1),  FIXED_DEC(55,1)},
+		{Char_GF_New,      FIXED_DEC(800,1),  FIXED_DEC(55,1)},
 
 		//Stage background
 		Back_WeekT4_New,
@@ -61,4 +61,20 @@
 		XA_Expurgation, 2,
 		
 		StageId_1_4, 0
+	},
+	{  //StageId_2_1 Cutscene)
+		//Characters
+		{Char_BF_New, FIXED_DEC(105, 1), FIXED_DEC(100, 1)},
+		{ Char_Clown_New, FIXED_DEC(-100,1),  FIXED_DEC(90,1) },
+		{ Char_GF_New,      FIXED_DEC(0,1),  FIXED_DEC(-15,1) },
+
+		//Stage background
+		Back_WeekT_New,
+
+		//Song info
+	{ FIXED_DEC(2,1),FIXED_DEC(25,10),FIXED_DEC(3,1) },
+		1, 5,
+		XA_Cutscene, 0,
+
+		StageId_1_1, 0
 	},

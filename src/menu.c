@@ -621,7 +621,7 @@ void Menu_Tick(void)
 							if (pad_state.press & (PAD_START | PAD_CROSS))
 							{
 								menu.next_page = MenuPage_Stage;
-								menu.page_param.stage.id = StageId_1_1;
+								menu.page_param.stage.id = StageId_2_1;
 								menu.page_param.stage.story = true;
 								menu.page_param.stage.diff = StageDiff_Hard;
 								menu.trans_time = FIXED_UNIT;
@@ -714,7 +714,7 @@ void Menu_Tick(void)
 				const char *name;
 				const char *tracks[3];
 			} menu_options[] = {
-				{"1", StageId_1_1, "THE CLOWN", {"IMPROBABLE", "MADNESS", "HELLCLOWN"}},
+				{"1", StageId_2_1, "THE CLOWN", {"IMPROBABLE", "MADNESS", "HELLCLOWN"}},
 				{NULL, StageId_1_4, "EXPURGATION", {"EXPURGATION", NULL, NULL}},
 			};
 			

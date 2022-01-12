@@ -15,6 +15,7 @@ typedef enum
 	XA_Menu,   //MENU.XA
 	XA_WeekTA, //WEEK1A.XA
 	XA_WeekTB, //WEEK1B.XA
+	XA_Cut, //Cut.XA
 	
 	XA_Max,
 } XA_File;
@@ -30,6 +31,8 @@ typedef enum
 	//WEEK1B.XA
 	XA_Hellclown, //Hellclown
 	XA_Expurgation,  //Expurgation
+	//Cut.XA
+	XA_Cutscene,  //Cutscene
 	
 	XA_TrackMax,
 } XA_Track;

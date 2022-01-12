@@ -79,7 +79,7 @@ typedef struct
 //Mad Tricky character definitions
 static const CharFrame char_madc_frame[] = {
 	{MadC_ArcMain_Idle2, {  0,   0, 152, 169}, { 68, 158}}, //0 idle 3
-	{MadC_ArcMain_Idle3, {  0,   0, 158, 169}, { 77, 157}}, //1 idle 4
+	{MadC_ArcMain_Idle3, {  0,   0, 158, 169}, { 76, 157}}, //1 idle 4
 	{MadC_ArcMain_Idle4, {  0,   0, 155, 171}, { 76, 160}}, //2 idle 1
 	{MadC_ArcMain_Idle5, {  0,   0, 157, 169}, { 76, 158}}, //3 idle 2
 	{MadC_ArcMain_Idle6, {  0,   0, 157, 168}, { 76, 157}}, //4 idle 3

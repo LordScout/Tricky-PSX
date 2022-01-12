@@ -27,6 +27,7 @@ typedef struct
 	Gfx_Tex tex_cut3;
 	Gfx_Tex tex_cut4;
 	Gfx_Tex tex_cut5;
+	Gfx_Tex tex_nevada;
 } Back_WeekT;
 
 void Back_WeekT_DrawFG(StageBack* back)
@@ -36,6 +37,32 @@ void Back_WeekT_DrawFG(StageBack* back)
 	fixed_t fx, fy;
 	fx = stage.camera.x;
 	fy = stage.camera.y;
+
+	if (stage.stage_id == StageId_2_1)
+	{
+		RECT cutscene0_src = { 0, 0, 256, 256 };
+		RECT_FIXED cutscene0_dst = {
+			FIXED_DEC(-115,1) - fx,
+			FIXED_DEC(-500,1) - fy,
+			FIXED_DEC(350,1),
+			FIXED_DEC(350,1)
+		};
+
+		Stage_DrawTex(&this->tex_nevada, &cutscene0_src, &cutscene0_dst, stage.camera.bzoom);
+	}
+
+	if (stage.stage_id == StageId_2_1 && stage.song_step <= 14)
+	{
+		RECT cutscene0_src = { 0, 128, 128, 256 };
+		RECT_FIXED cutscene0_dst = {
+			FIXED_DEC(-115,1) - fx,
+			FIXED_DEC(-200,1) - fy,
+			FIXED_DEC(350,1),
+			FIXED_DEC(350,1)
+		};
+
+		Stage_DrawTex(&this->tex_nevada, &cutscene0_src, &cutscene0_dst, stage.camera.bzoom);
+	}
 
 	if (stage.stage_id == StageId_1_1 && stage.song_step >= 1424 && stage.song_step <= 1482)
 	{
@@ -222,6 +249,7 @@ StageBack *Back_WeekT_New(void)
 	Gfx_LoadTex(&this->tex_cut3, Archive_Find(arc_back, "cut3.tim"), 0);
 	Gfx_LoadTex(&this->tex_cut4, Archive_Find(arc_back, "cut4.tim"), 0);
 	Gfx_LoadTex(&this->tex_cut5, Archive_Find(arc_back, "cut5.tim"), 0);
+	Gfx_LoadTex(&this->tex_nevada, Archive_Find(arc_back, "nevada.tim"), 0);
 	Mem_Free(arc_back);
 	
 	return (StageBack*)this;
