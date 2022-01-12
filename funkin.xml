@@ -96,6 +96,9 @@
 				<file name = "bfdead.arc" type = "data" source = "iso/bf/dead.arc"/>
 				<file name = "bfph3.arc" type = "data" source = "iso/bf/ph3.arc"/>
 				
+				<!-- Expurgation -->
+				<file name = "expurc.arc" type = "data" source = "iso/expurc/main.arc"/>
+
 				<!-- HellClown -->
 				<file name = "hellc.arc" type = "data" source = "iso/hellc/main.arc"/>
 				
@@ -104,6 +107,9 @@
 				
 				<!-- Clown Captain assets -->
 				<file name = "clown.arc" type = "data" source = "iso/clown/main.arc"/>
+
+				<!-- First Cutscene assets -->
+				<file name = "cutscene.arc" type = "data" source = "iso/cutscene/main.arc"/>
 				
 				<!-- Girlfriend assets -->
 				<file name = "gf.arc" type = "data" source = "iso/gf/main.arc"/>

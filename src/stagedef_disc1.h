@@ -49,7 +49,7 @@
 	{ //StageId_Clwn_4 (Expurgation)
 		//Characters
 		{Char_BF_New,    FIXED_DEC(105,1),  FIXED_DEC(100,1)},
-		{Char_MadC_New, FIXED_DEC(-90,1),  FIXED_DEC(100,1)},
+		{Char_ExpurC_New, FIXED_DEC(-90,1),  FIXED_DEC(100,1)},
 		{Char_GF_New,      FIXED_DEC(800,1),  FIXED_DEC(55,1)},
 
 		//Stage background
@@ -65,7 +65,7 @@
 	{  //StageId_2_1 Cutscene)
 		//Characters
 		{Char_BF_New, FIXED_DEC(105, 1), FIXED_DEC(100, 1)},
-		{ Char_Clown_New, FIXED_DEC(-100,1),  FIXED_DEC(90,1) },
+		{ Char_Cutscene_New, FIXED_DEC(-100,1),  FIXED_DEC(90,1) },
 		{ Char_GF_New,      FIXED_DEC(0,1),  FIXED_DEC(-15,1) },
 
 		//Stage background

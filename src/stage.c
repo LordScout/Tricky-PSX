@@ -29,9 +29,6 @@
 int shake = 0;
 int botthing = 0;
 
-
-
-
 //#define STAGE_FREECAM //Freecam
 
 static const fixed_t note_x[8] = {
@@ -52,6 +49,8 @@ static const u16 note_key[] = {INPUT_LEFT, INPUT_DOWN, INPUT_UP, INPUT_RIGHT};
 //Stage definitions
 #include "character/bf.h"
 #include "character/bfph3.h"
+#include "character/expurc.h"
+#include "character/cutscene.h"
 #include "character/hellc.h"
 #include "character/madc.h"
 #include "character/clown.h"

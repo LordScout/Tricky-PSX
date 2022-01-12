@@ -28,6 +28,8 @@ SRCS = src/main.c \
        src/character/bf.c \
        src/character/bfph3.c \
        src/character/speaker.c \
+       src/character/cutscene.c \
+       src/character/expurc.c \
        src/character/hellc.c \
        src/character/madc.c \
        src/character/clown.c \

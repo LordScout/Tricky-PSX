@@ -10,6 +10,8 @@ all: \
 	iso/bf/dead.arc \
 	iso/bf/ph3.arc \
 	iso/hellc/main.arc \
+	iso/cutscene/main.arc \
+	iso/expurc/main.arc \
 	iso/madc/main.arc \
 	iso/clown/main.arc \
 	iso/mticky/main.arc \
@@ -41,6 +43,15 @@ iso/hellc/main.arc: iso/hellc/idle0.tim iso/hellc/idle1.tim iso/hellc/idle2.tim 
 
 # Madness
 iso/madc/main.arc: iso/madc/idle2.tim iso/madc/idle3.tim iso/madc/idle4.tim iso/madc/idle5.tim iso/madc/idle6.tim iso/madc/idle10.tim iso/madc/down0.tim iso/madc/down1.tim iso/madc/down2.tim iso/madc/down3.tim iso/madc/down4.tim iso/madc/down5.tim iso/madc/downb0.tim iso/madc/downb1.tim iso/madc/downb2.tim iso/madc/right0.tim iso/madc/right1.tim iso/madc/right2.tim iso/madc/right3.tim iso/madc/right4.tim iso/madc/right5.tim iso/madc/rightb0.tim iso/madc/rightb1.tim iso/madc/rightb2.tim iso/madc/rightb3.tim iso/madc/rightb4.tim iso/madc/left0.tim iso/madc/left1.tim iso/madc/left2.tim iso/madc/left3.tim iso/madc/left4.tim iso/madc/left5.tim iso/madc/up0.tim iso/madc/up1.tim iso/madc/up2.tim iso/madc/up3.tim iso/madc/up4.tim iso/madc/up5.tim iso/madc/upb0.tim iso/madc/upb1.tim 
+
+# Improbable Outset
+iso/clown/main.arc: iso/clown/idle0.tim iso/clown/idle1.tim iso/clown/idle2.tim iso/clown/idle3.tim iso/clown/idle4.tim iso/clown/idle5.tim iso/clown/idle6.tim iso/clown/left0.tim iso/clown/left1.tim iso/clown/left2.tim iso/clown/left3.tim iso/clown/left4.tim iso/clown/left5.tim iso/clown/left6.tim iso/clown/down0.tim iso/clown/down1.tim iso/clown/down2.tim iso/clown/down3.tim iso/clown/down4.tim iso/clown/down5.tim iso/clown/up0.tim iso/clown/up1.tim iso/clown/up2.tim iso/clown/up3.tim iso/clown/up4.tim iso/clown/up5.tim iso/clown/up6.tim iso/clown/right0.tim iso/clown/right1.tim iso/clown/right2.tim iso/clown/right3.tim iso/clown/right4.tim iso/clown/right5.tim iso/clown/right6.tim
+
+# CutScene
+iso/cutscene/main.arc: iso/cutscene/idle0.tim iso/cutscene/idle1.tim iso/cutscene/idle2.tim iso/cutscene/idle3.tim iso/cutscene/idle4.tim iso/cutscene/idle5.tim iso/cutscene/idle6.tim iso/cutscene/left0.tim iso/cutscene/left1.tim iso/cutscene/left2.tim iso/cutscene/left3.tim iso/cutscene/left4.tim iso/cutscene/left5.tim iso/cutscene/left6.tim iso/cutscene/down0.tim iso/cutscene/down1.tim iso/cutscene/down2.tim iso/cutscene/down3.tim iso/cutscene/down4.tim iso/cutscene/down5.tim iso/cutscene/up0.tim iso/cutscene/up1.tim iso/cutscene/up2.tim iso/cutscene/up3.tim iso/cutscene/up4.tim iso/cutscene/up5.tim iso/cutscene/up6.tim iso/cutscene/right0.tim iso/cutscene/right1.tim iso/cutscene/right2.tim iso/cutscene/right3.tim iso/cutscene/right4.tim iso/cutscene/right5.tim iso/cutscene/right6.tim
+
+# Expurgation
+iso/expurc/main.arc: iso/expurc/idle0.tim iso/expurc/idle1.tim iso/expurc/idle2.tim iso/expurc/idle3.tim iso/expurc/idle4.tim iso/expurc/idle5.tim iso/expurc/idle6.tim iso/expurc/left0.tim iso/expurc/left1.tim iso/expurc/left2.tim iso/expurc/left3.tim iso/expurc/left4.tim iso/expurc/left5.tim iso/expurc/left6.tim iso/expurc/down0.tim iso/expurc/down1.tim iso/expurc/down2.tim iso/expurc/down3.tim iso/expurc/down4.tim iso/expurc/down5.tim iso/expurc/up0.tim iso/expurc/up1.tim iso/expurc/up2.tim iso/expurc/up3.tim iso/expurc/up4.tim iso/expurc/up5.tim iso/expurc/up6.tim iso/expurc/right0.tim iso/expurc/right1.tim iso/expurc/right2.tim iso/expurc/right3.tim iso/expurc/right4.tim iso/expurc/right5.tim iso/expurc/right6.tim
 
 # Improbable Outset
 iso/clown/main.arc: iso/clown/idle0.tim iso/clown/idle1.tim iso/clown/idle2.tim iso/clown/idle3.tim iso/clown/idle4.tim iso/clown/idle5.tim iso/clown/idle6.tim iso/clown/left0.tim iso/clown/left1.tim iso/clown/left2.tim iso/clown/left3.tim iso/clown/left4.tim iso/clown/left5.tim iso/clown/left6.tim iso/clown/down0.tim iso/clown/down1.tim iso/clown/down2.tim iso/clown/down3.tim iso/clown/down4.tim iso/clown/down5.tim iso/clown/up0.tim iso/clown/up1.tim iso/clown/up2.tim iso/clown/up3.tim iso/clown/up4.tim iso/clown/up5.tim iso/clown/up6.tim iso/clown/right0.tim iso/clown/right1.tim iso/clown/right2.tim iso/clown/right3.tim iso/clown/right4.tim iso/clown/right5.tim iso/clown/right6.tim
