@@ -28,7 +28,7 @@
 		1, 2,
 		XA_Madness, 2,
 
-		StageId_1_3, 0,
+		StageId_1_2, 0,
 	},
 	{ //StageId_Clwn_3 (Hellclown)
 		//Characters
@@ -65,7 +65,7 @@
 	{  //StageId_2_1 Cutscene)
 		//Characters
 		{Char_BF_New, FIXED_DEC(105, 1), FIXED_DEC(100, 1)},
-		{ Char_Cutscene_New, FIXED_DEC(-100,1),  FIXED_DEC(90,1) },
+		{ Char_Cutscene_New, FIXED_DEC(-60,1),  FIXED_DEC(90,1) },
 		{ Char_GF_New,      FIXED_DEC(0,1),  FIXED_DEC(-15,1) },
 
 		//Stage background

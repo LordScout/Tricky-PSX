@@ -71,48 +71,49 @@ typedef struct
 
 //Cutscene character definitions
 static const CharFrame char_cutscene_frame[] = {
-	{Cutscene_ArcMain_Idle0, {  0,   0, 152, 154}, { 740, 1440}}, //0 idle 1
-	{Cutscene_ArcMain_Idle1, {  0,   0, 153, 152}, { 730, 1420}}, //1 idle 2
-	{Cutscene_ArcMain_Idle2, {  0,   0, 155, 160}, { 750, 1500}}, //2 idle 3
-	{Cutscene_ArcMain_Idle3, {  0,   0, 154, 163}, { 720, 1530}}, //3 idle 4
-	{Cutscene_ArcMain_Idle4, {  0,   0, 155, 161}, { 750, 1510}}, //4 idle 2
-	{Cutscene_ArcMain_Idle5, {  0,   0, 155, 164}, { 740, 1540}}, //5 idle 3
-	{Cutscene_ArcMain_Idle6, {  0,   0, 154, 162}, { 720, 1520}}, //6 idle 4
+	{Cutscene_ArcMain_Idle0, {  0,   0, 180, 173}, { 130, 153}}, //0 idle 1
+	{Cutscene_ArcMain_Idle1, {  0,   0, 180, 173}, { 250, 153}}, //1 idle 2
+	{Cutscene_ArcMain_Idle2, {  0,   0, 180, 173}, { 130, 153}}, //2 idle 3
+	{Cutscene_ArcMain_Idle3, {  0,   0, 180, 173}, { 130, 153}}, //3 idle 4
+	{Cutscene_ArcMain_Idle4, {  0,   0, 180, 173}, { 130, 153}}, //4 idle 2
+	{Cutscene_ArcMain_Idle5, {  0,   0, 180, 173}, { 130, 153}}, //5 idle 3
+	{Cutscene_ArcMain_Idle6, {  0,   0, 180, 173}, { 130, 153}}, //6 idle 4
 	
-	{Cutscene_ArcMain_Left0, {  0,   0, 202, 169}, { 124, 158}}, //7 left 1
-	{Cutscene_ArcMain_Left1, {  0,   0, 198, 169}, { 124, 158}}, //8 left 1
-	{Cutscene_ArcMain_Left2, {  0,   0, 188, 173}, { 118, 162}}, //9 left 1
-	{Cutscene_ArcMain_Left3, {  0,   0, 190, 169}, { 119, 159}}, //10 left 1
-	{Cutscene_ArcMain_Left4, {  0,   0, 192, 171}, { 123, 160}}, //11 left 1
-	{Cutscene_ArcMain_Left5, {  0,   0, 187, 170}, { 119, 159}}, //12 left 1
-	{Cutscene_ArcMain_Left6, {  0,   0, 188, 173}, { 119, 162}}, //13 left 1
+	{Cutscene_ArcMain_Left0, {  0,   0, 180, 173}, { 130, 153}}, //7 left 1
+	{Cutscene_ArcMain_Left1, {  0,   0, 180, 173}, { 130, 153}}, //8 left 1
+	{Cutscene_ArcMain_Left2, {  0,   0, 180, 173}, { 130, 153}}, //9 left 1
+	{Cutscene_ArcMain_Left3, {  0,   0, 180, 173}, { 130, 153}}, //10 left 1
+	{Cutscene_ArcMain_Left4, {  0,   0, 180, 173}, { 130, 153}}, //11 left 1
+	{Cutscene_ArcMain_Left5, {  0,   0, 180, 173}, { 130, 153}}, //12 left 1
+	{Cutscene_ArcMain_Left6, {  0,   0, 180, 173}, { 130, 153}}, //13 left 1
 	
-	{Cutscene_ArcMain_Down0, {  0,   0, 185, 149}, { 84, 138}}, //14 down 1
-	{Cutscene_ArcMain_Down1, {  0,   0, 182, 150}, { 83, 138}}, //15 down 2
-	{Cutscene_ArcMain_Down2, {  0,   0, 183, 153}, { 79, 142}}, //16 down 1
-	{Cutscene_ArcMain_Down3, {  0,   0, 180, 152}, { 78, 140}}, //17 down 2
-	{Cutscene_ArcMain_Down4, {  0,   0, 181, 154}, { 80, 142}}, //18 down 1
-	{Cutscene_ArcMain_Down5, {  0,   0, 180, 153}, { 77, 142}}, //19 down 1
+	{Cutscene_ArcMain_Down0, {  0,   0, 180, 173}, { 130, 153}}, //14 down 1
+	{Cutscene_ArcMain_Down1, {  0,   0, 180, 173}, { 130, 153}}, //15 down 2
+	{Cutscene_ArcMain_Down2, {  0,   0, 180, 173}, { 130, 153}}, //16 down 1
+	{Cutscene_ArcMain_Down3, {  0,   0, 180, 173}, { 130, 153}}, //17 down 2
+	{Cutscene_ArcMain_Down4, {  0,   0, 180, 173}, { 130, 153}}, //18 down 1
+	{Cutscene_ArcMain_Down5, {  0,   0, 180, 173}, { 130, 153}}, //19 down 1
 	
-	{Cutscene_ArcMain_Up0, {  0,   0, 147, 169}, { 87, 160}}, //20 up 1
-	{Cutscene_ArcMain_Up1, {  0,   0, 147, 166}, { 90, 157}}, //21 up 2
-	{Cutscene_ArcMain_Up2, {  0,   0, 145, 169}, { 93, 159}}, //22 up 1
-	{Cutscene_ArcMain_Up3, {  0,   0, 145, 165}, { 92, 155}}, //23 up 2
-	{Cutscene_ArcMain_Up4, {  0,   0, 145, 167}, { 94, 157}}, //24 up 1
-	{Cutscene_ArcMain_Up5, {  0,   0, 149, 167}, { 95, 157}}, //25 up 2
-	{Cutscene_ArcMain_Up6, {  0,   0, 144, 170}, { 92, 160}}, //26 up 2
+	{Cutscene_ArcMain_Up0, {  0,   0, 180, 173}, { 130, 153}}, //20 up 1
+	{Cutscene_ArcMain_Up1, {  0,   0, 180, 173}, { 130, 153}}, //21 up 2
+	{Cutscene_ArcMain_Up2, {  0,   0, 180, 173}, { 130, 153}}, //22 up 1
+	{Cutscene_ArcMain_Up3, {  0,   0, 180, 173}, { 130, 153}}, //23 up 2
+	{Cutscene_ArcMain_Up4, {  0,   0, 180, 173}, { 130, 153}}, //24 up 1
+	{Cutscene_ArcMain_Up5, {  0,   0, 180, 173}, { 130, 153}}, //25 up 2
+	{Cutscene_ArcMain_Up6, {  0,   0, 180, 173}, { 130, 153}}, //26 up 2
 	
-	{Cutscene_ArcMain_Right0, {  0,   0, 233, 142}, { 81, 132}}, //27 right 1
-	{Cutscene_ArcMain_Right1, {  0,   0, 219, 146}, { 73, 136}}, //28 right 2
-	{Cutscene_ArcMain_Right2, {  0,   0, 219, 147}, { 73, 138}}, //29 right 1
-	{Cutscene_ArcMain_Right3, {  0,   0, 216, 147}, { 70, 138}}, //30 right 2
-	{Cutscene_ArcMain_Right4, {  0,   0, 218, 146}, { 73, 137}}, //31 right 1
-	{Cutscene_ArcMain_Right5, {  0,   0, 218, 147}, { 72, 137}}, //32 right 2
-	{Cutscene_ArcMain_Right6, {  0,   0, 219, 148}, { 74, 139}}, //33 right 2
+	{Cutscene_ArcMain_Right0, {  0,   0, 180, 173}, { 130, 153}}, //27 right 1
+	{Cutscene_ArcMain_Right1, {  0,   0, 180, 173}, { 130, 153}}, //28 right 2
+	{Cutscene_ArcMain_Right2, {  0,   0, 180, 173}, { 130, 153}}, //29 right 1
+	{Cutscene_ArcMain_Right3, {  0,   0, 180, 173}, { 130, 153}}, //30 right 2
+	{Cutscene_ArcMain_Right4, {  0,   0, 180, 173}, { 130, 153}}, //31 right 1
+
+	{Cutscene_ArcMain_Idle1, {  0,   0, 180, 173}, { 180, 153}}, //32 idle 2
+	{Cutscene_ArcMain_Idle1, {  0,   0, 180, 173}, { 130, 153}}, //33 idle 2
 };
 
 static const Animation char_cutscene_anim[CharAnim_Max] = {
-	{1, (const u8[]){ 0, 0,  1, 1,  2, 2,  3, 3, 4, 5, 6, ASCR_BACK, 3}},                                           //CharAnim_Idle
+	{1, (const u8[]){ 0, 0, 0, 0, 0, ASCR_BACK, 1}},                                           //CharAnim_Idle
 	{2, (const u8[]){ 7, 8, 9, 10, 11, 12, 13, ASCR_BACK, 3}},                                                   //CharAnim_Left
 	{0, (const u8[]){ASCR_CHGANI, CharAnim_Idle}},                                             //CharAnim_LeftAlt
 	{2, (const u8[]){ 14, 15, 16, 17, 18, 19, ASCR_BACK, 3}},                                                   //CharAnim_Down
@@ -121,7 +122,7 @@ static const Animation char_cutscene_anim[CharAnim_Max] = {
 	{2, (const u8[]){12, 13, 14, 15, ASCR_BACK, 1}},                                           //CharAnim_UpAlt
 	{2, (const u8[]){ 27, 28, 29, 30, 31, 32, 33, ASCR_BACK, 3}},                                                   //CharAnim_Right
     {0, (const u8[]){ASCR_CHGANI, CharAnim_Idle}},     //CharAnim_RightAlt
-	{2, (const u8[]){ 27, 28, 29, 30, 31, 32, 33, 27, 28, 29, 30, 31, 32, 33, 27, 28, 29, 30, 31, 32, 33, 27, 28, 29, 30, 31, 32, 33, ASCR_BACK, 3}},
+	{1, (const u8[]){ 1, 32, 33, 33, 33, 33, 33, 33, 33, 33, 33, 33, 33, 33, 33, 33, 33, 33, 33, 33, 33, 33, 33, 33, 33, 33, 33, 33, 33, 33, 33, 33, 33, 33, 33, 33, 33, 33, 33, 33, 33, 33, 33, 33, 33, 33, 33, 33, 33, 33, 33, 33, 33, 33, 33, 33, 33, 33, 2, 2, 3, 3, 4, 4, 5, 5, 6, 6, 7, 7, 8, 8, 9, 9, 10, 10, 11, 11, 12, 12, 13, 13, 14, 14, 15, 15, 16, 16, 17, 17, 18, 18, 19, 19, 20, 20, 21, 21, 22, 22, 23, 23, 24, 24, 25, 25, 26, 26, 26, 26, 26, 26, 26, 26, 26, 26, 26, 26, 27, 28, 29, 30, 31, 27, 28, 29, 30, 31, 27, 28, 29, 30, 31, 27, 28, 29, 30, 31, 27, 28, 29, 30, 31, 27, 28, 29, 30, 31, 27, 28, 29, 30, 31, 27, 28, 29, 30, 31, 27, 28, 29, 30, 31, 27, 28, 29, 30, 31, 27, 28, 29, 30, 31, 27, 28, 29, 30, 31, 27, 28, 29, 30, 31, 27, 28, 29, 30, 31, 27, 28, 29, 30, 31, 27, 28, 29, 30, 31, 27, 28, 29, 30, 31, 27, 28, 29, 30, 31, 27, 28, 29, 30, 31, 27, 28, 29, 30, 31, 27, 28, 29, 30, 31, 27, 28, 29, 30, 31, 27, 28, 29, 30, 31, 27, 28, 29, 30, 31, ASCR_BACK, 5}},
 };
 
 //Cutscene character functions
@@ -157,7 +158,7 @@ void Char_Cutscene_Tick(Character *character)
 	//Stage specific animations
 		if (stage.note_scroll >= 0)
 		{
-	     if (stage.song_step == 28)
+	     if (stage.song_step == 24)
 	      character->set_anim(character, CharAnim_ClownKillsYou);
 		}
 }
