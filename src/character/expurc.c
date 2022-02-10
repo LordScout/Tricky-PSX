@@ -21,7 +21,6 @@ enum
 	ExpurC_ArcMain_Idle3,
 	ExpurC_ArcMain_Idle4,
 	ExpurC_ArcMain_Idle5,
-	ExpurC_ArcMain_Idle6,
 	ExpurC_ArcMain_Left0,
 	ExpurC_ArcMain_Left1,
 	ExpurC_ArcMain_Left2,
@@ -75,7 +74,6 @@ static const CharFrame char_expurc_frame[] = {
 	{ExpurC_ArcMain_Idle3, {  0,   0, 154, 163}, { 72, 153}}, //3 idle 4
 	{ExpurC_ArcMain_Idle4, {  0,   0, 155, 161}, { 75, 151}}, //4 idle 2
 	{ExpurC_ArcMain_Idle5, {  0,   0, 155, 164}, { 74, 154}}, //5 idle 3
-	{ExpurC_ArcMain_Idle6, {  0,   0, 154, 162}, { 72, 152}}, //6 idle 4
 	
 	{ExpurC_ArcMain_Left0, {  0,   0, 202, 169}, { 124, 158}}, //7 left 1
 	{ExpurC_ArcMain_Left1, {  0,   0, 198, 169}, { 124, 158}}, //8 left 1
@@ -120,6 +118,8 @@ static const Animation char_expurc_anim[CharAnim_Max] = {
 	{2, (const u8[]){12, 13, 14, 15, ASCR_BACK, 1}},                                           //CharAnim_UpAlt
 	{2, (const u8[]){ 27, 28, 29, 30, 31, 32, 33, ASCR_BACK, 3}},                                                   //CharAnim_Right
 	{0, (const u8[]){ASCR_CHGANI, CharAnim_Idle}},                                             //CharAnim_RightAlt
+	{2, (const u8[]) { 14, 15, 16, 17, 18, 19, ASCR_BACK, 3 }},
+
 };
 
 //ExpurC character functions
@@ -153,8 +153,11 @@ void Char_ExpurC_Tick(Character *character)
 	Character_Draw(character, &this->tex, &char_expurc_frame[this->frame]);
 
 	 //Stage specific animations
-	     if (stage.song_step < 0)
-	      character->set_anim(character, CharAnim_Left);
+	     if (stage.song_step <= 0)
+	      character->set_anim(character, CharAnim_ClownKillsYou);
+
+		 if (stage.song_step >= 2128 && stage.song_step <= 2140)
+			 character->set_anim(character, CharAnim_Up);
 }
 
 void Char_ExpurC_SetAnim(Character *character, u8 anim)
