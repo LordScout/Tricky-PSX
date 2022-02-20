@@ -277,6 +277,12 @@ void Char_BF_Tick(Character *character)
 		this->character.focus_zoom = FIXED_DEC(1, 1);
 	}
 
+	if (stage.stage_id == StageId_1_4)
+	{
+		this->character.focus_x = FIXED_DEC(-50, 1);
+		this->character.focus_y = FIXED_DEC(-80, 1);
+		this->character.focus_zoom = FIXED_DEC(7, 10);
+	}
 
 	//Handle animation updates
 	if ((character->pad_held & (INPUT_LEFT | INPUT_DOWN | INPUT_UP | INPUT_RIGHT)) == 0 ||

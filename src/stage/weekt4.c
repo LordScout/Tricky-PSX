@@ -16,14 +16,14 @@ typedef struct
 	StageBack back;
 	
 	//Textures
-	Gfx_Tex tex_back2; //Window
-	Gfx_Tex tex_back1; //Window
-	Gfx_Tex tex_back0;
+	Gfx_Tex tex_back2; //Right Rock
+	Gfx_Tex tex_back1; //Left Rock
+	Gfx_Tex tex_back0; //Background
 
 	//Cutscene
-	Gfx_Tex tex_cut0; 
-	Gfx_Tex tex_cut1;
-	Gfx_Tex tex_cut2; 
+	Gfx_Tex tex_cut0; //Cover Rock
+	Gfx_Tex tex_cut1; //Beam of Light
+	Gfx_Tex tex_cut2; //the one 8 bit texture... use it wisely...
 	Gfx_Tex tex_cut3;
 	Gfx_Tex tex_cut4;
 	Gfx_Tex tex_cut5;
@@ -37,123 +37,15 @@ void Back_WeekT4_DrawFG(StageBack* back)
 	fx = stage.camera.x;
 	fy = stage.camera.y;
 
-	if (stage.stage_id == StageId_1_1 && stage.song_step >= 1424 && stage.song_step <= 1482)
-	{
-		RECT cutscene0_src = { 0, 0, 256, 256 };
-		RECT_FIXED cutscene0_dst = {
-			FIXED_DEC(-115,1) - fx,
-			FIXED_DEC(-100,1) - fy,
-			FIXED_DEC(350,1),
-			FIXED_DEC(275,1)
-		};
+	RECT cover_src = { 0, 0, 182, 151 };
+	RECT_FIXED cover_dst = {
+		FIXED_DEC(-295,1) - fx,
+		FIXED_DEC(35,1) - fy,
+		FIXED_DEC(273,1),
+		FIXED_DEC(226,1)
+	};
 
-		Stage_DrawTex(&this->tex_cut0, &cutscene0_src, &cutscene0_dst, stage.camera.bzoom);
-	}
-
-	if (stage.stage_id == StageId_1_1 && stage.song_step >= 1482 && stage.song_step <= 1487)
-	{
-		RECT cutscene1_src = { 0, 0, 256, 256 };
-		RECT_FIXED cutscene1_dst = {
-			FIXED_DEC(-115,1) - fx,
-			FIXED_DEC(-120,1) - fy,
-			FIXED_DEC(350,1),
-			FIXED_DEC(275,1)
-		};
-
-		Stage_DrawTex(&this->tex_cut1, &cutscene1_src, &cutscene1_dst, stage.camera.bzoom);
-	}
-
-	if (stage.stage_id == StageId_1_1 && stage.song_step >= 1487 && stage.song_step <= 1503)
-	{
-		RECT cutscene2_src = { 0, 0, 256, 122 };
-		RECT_FIXED cutscene2_dst = {
-			FIXED_DEC(-120,1) - fx,
-			FIXED_DEC(-77,1) - fy,
-			FIXED_DEC(350,1),
-			FIXED_DEC(175,1)
-		};
-
-		Stage_DrawTex(&this->tex_cut2, &cutscene2_src, &cutscene2_dst, stage.camera.bzoom);
-	}
-
-	if (stage.stage_id == StageId_1_1 && stage.song_step >= 1504 && stage.song_step <= 1520)
-	{
-		RECT cutscene2_src = { 0, 122, 256, 134 };
-		RECT_FIXED cutscene2_dst = {
-			FIXED_DEC(-120,1) - fx,
-			FIXED_DEC(-80,1) - fy,
-			FIXED_DEC(350,1),
-			FIXED_DEC(175,1)
-		};
-
-		Stage_DrawTex(&this->tex_cut2, &cutscene2_src, &cutscene2_dst, stage.camera.bzoom);
-	}
-
-	if (stage.stage_id == StageId_1_1 && stage.song_step >= 1521 && stage.song_step <= 1540)
-	{
-		RECT cutscene3_src = { 0, 0, 256, 256 };
-			RECT_FIXED cutscene3_dst = {
-				FIXED_DEC(-100,1) - fx,
-				FIXED_DEC(-85,1) - fy,
-				FIXED_DEC(350,1),
-				FIXED_DEC(275,1)
-		};
-
-			Stage_DrawTex(&this->tex_cut3, &cutscene3_src, &cutscene3_dst, stage.camera.bzoom);
-	}
-
-
-	if (stage.stage_id == StageId_1_1 && stage.song_step >= 1541 && stage.song_step <= 1570)
-	{
-		RECT cutscene4_src = { 0, 0, 256, 256 };
-		RECT_FIXED cutscene4_dst = {
-			FIXED_DEC(-115,1) - fx,
-			FIXED_DEC(-100,1) - fy,
-			FIXED_DEC(350,1),
-			FIXED_DEC(275,1)
-		};
-
-		Stage_DrawTex(&this->tex_cut4, &cutscene4_src, &cutscene4_dst, stage.camera.bzoom);
-	}
-
-	if (stage.stage_id == StageId_1_1 && stage.song_step >= 1570 && stage.song_step <= 1700)
-	{
-		RECT cutscene5_src = { 0, 0, 256, 256 };
-		RECT_FIXED cutscene5_dst = {
-			FIXED_DEC(-160,1) - fx,
-			FIXED_DEC(-160,1) - fy,
-			FIXED_DEC(425,1),
-			FIXED_DEC(350,1)
-		};
-
-		Stage_DrawTex(&this->tex_cut5, &cutscene5_src, &cutscene5_dst, stage.camera.bzoom);
-	}
-
-	if (stage.stage_id == StageId_1_1 && stage.song_step >= 1424 && stage.song_step <= 1503)
-	{
-		RECT back0_src = { 0, 0, 256, 256 };
-		RECT_FIXED back0_dst = {
-			FIXED_DEC(-110,1) - fx,
-			FIXED_DEC(-150,1) - fy,
-			FIXED_DEC(800,1),
-			FIXED_DEC(800,1)
-		};
-
-		Stage_DrawTex(&this->tex_back0, &back0_src, &back0_dst, stage.camera.bzoom);
-	}
-
-	if (stage.stage_id == StageId_1_1 && stage.song_step >= 1503)
-	{
-		RECT back0_src = { 0, 121, 256, 105};
-		RECT_FIXED back0_dst = {
-			FIXED_DEC(-140,1) - fx,
-			FIXED_DEC(-150,1) - fy,
-			FIXED_DEC(400,1),
-			FIXED_DEC(400,1)
-		};
-
-		Stage_DrawTex(&this->tex_back0, &back0_src, &back0_dst, stage.camera.bzoom);
-	}
+	Stage_DrawTex(&this->tex_cut0, &cover_src, &cover_dst, stage.camera.bzoom);
 
 }
 
@@ -165,28 +57,51 @@ void Back_WeekT4_DrawBG(StageBack *back)
 	fixed_t fx, fy;
 	fx = stage.camera.x;
 	fy = stage.camera.y;
+
 	
-	//Draw window
-	RECT window_src = {0, 0, 256, 226};
-	RECT_FIXED window_dst = {
-		FIXED_DEC(-500,1) - fx,
-		FIXED_DEC(-165,1) - fy,
-		FIXED_DEC(512,1),
-		FIXED_DEC(400,1)
+	//Draw 
+	RECT RockL_src = {0, 0, 222, 256};
+	RECT_FIXED RockL_dst = {
+		FIXED_DEC(-383,1) - fx,
+		FIXED_DEC(-275,1) - fy,
+		FIXED_DEC(333,1),
+		FIXED_DEC(384,1)
 	};
 	
-	Stage_DrawTex(&this->tex_back1, &window_src, &window_dst, stage.camera.bzoom);
+	Stage_DrawTex(&this->tex_back1, &RockL_src, &RockL_dst, stage.camera.bzoom);
 
-	//Draw window
-	RECT window1_src = { 0, 0, 256, 226};
-	RECT_FIXED window1_dst = {
-		FIXED_DEC(3,1) - fx,
-		FIXED_DEC(-165,1) - fy,
-		FIXED_DEC(512,1),
-		FIXED_DEC(400,1)
+	//Draw
+	RECT RockR_src = { 0, 0, 202, 256};
+	RECT_FIXED RockR_dst = {
+		FIXED_DEC(-50,1) - fx,
+		FIXED_DEC(-110,1) - fy,
+		FIXED_DEC(303,1),
+		FIXED_DEC(384,1)
 	};
 
-	Stage_DrawTex(&this->tex_back2, &window1_src, &window1_dst, stage.camera.bzoom);
+	Stage_DrawTex(&this->tex_back2, &RockR_src, &RockR_dst, stage.camera.bzoom);
+
+	//Draw
+	RECT light_src = { 0, 0, 102, 255};
+	RECT_FIXED light_dst = {
+		FIXED_DEC(40,1) - fx,
+		FIXED_DEC(-250,1) - fy,
+		FIXED_DEC(204,1),
+		FIXED_DEC(600,1)
+	};
+
+	Stage_DrawTex(&this->tex_cut1, &light_src, &light_dst, stage.camera.bzoom);
+
+	//Draw
+	RECT bg_src = { 0, 0, 256, 256};
+	RECT_FIXED bg_dst = {
+		FIXED_DEC(-400,1) - fx,
+		FIXED_DEC(-400,1) - fy,
+		FIXED_DEC(768,1),
+		FIXED_DEC(768,1)
+	};
+
+	Stage_DrawTex(&this->tex_back0, &bg_src, &bg_dst, stage.camera.bzoom);
 }
 
 void Back_WeekT4_Free(StageBack *back)

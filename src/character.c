@@ -77,7 +77,7 @@ void Character_CheckEndSing(Character *this)
 	     this->animatable.anim == PlayerAnim_UpMiss ||
 	     this->animatable.anim == PlayerAnim_RightMiss))) &&
 	    stage.note_scroll >= this->sing_end)
-		this->set_anim(this, CharAnim_Idle);
+		this->set_anim(this, (stage.stage_id == StageId_1_4) ? CharAnim_ClownKillsYou : CharAnim_Idle);
 }
 
 void Character_PerformIdle(Character *this)
@@ -95,6 +95,6 @@ void Character_PerformIdle(Character *this)
 		     this->animatable.anim != CharAnim_Right &&
 		     this->animatable.anim != CharAnim_RightAlt) &&
 		    (stage.song_step & 0x7) == 0)
-			this->set_anim(this, CharAnim_Idle);
+			this->set_anim(this, (stage.stage_id == StageId_1_4) ? CharAnim_ClownKillsYou : CharAnim_Idle);
 	}
 }
