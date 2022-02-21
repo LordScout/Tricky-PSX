@@ -153,8 +153,8 @@ static const CharFrame char_expurc_frame[] = {
 	{ExpurC_ArcMain_Hank5, {  0,   0, 185, 187}, { 77, 184}}, //42 hank 2
 	{ExpurC_ArcMain_Hank6, {  0,   0, 195, 191}, { 93, 188}}, //43 hank 2
 
-	{ExpurC_ArcMain_Intro0, {  0,   0, 124, 60}, { 70, 55}}, //44 intro 1
-	{ExpurC_ArcMain_Intro1, {  0,   0, 172, 165}, { 96, 161}}, //45 intro 2
+	{ExpurC_ArcMain_Intro0, {  0,   0, 124, 60}, { 70, 35}}, //44 intro 1
+	{ExpurC_ArcMain_Intro1, {  0,   0, 172, 165}, { 96, 141}}, //45 intro 2
 	{ExpurC_ArcMain_Intro2, {  0,   0, 174, 244}, { 97, 239}}, //46 intro 1
 	{ExpurC_ArcMain_Intro3, {  0,   0, 169, 202}, { 98, 195}}, //47 intro 2
 	{ExpurC_ArcMain_Intro4, {  0,   0, 160, 185}, { 95, 180}}, //48 intro 1
@@ -209,7 +209,14 @@ void Char_ExpurC_SetFrame(void *user, u8 frame)
 void Char_ExpurC_Tick(Character *character)
 {
 	Char_ExpurC *this = (Char_ExpurC*)character;
-	
+
+	if (stage.stage_id == StageId_1_4 && stage.song_step >= 44)
+	{
+		this->character.focus_x = FIXED_DEC(50, 1);
+		this->character.focus_y = FIXED_DEC(-80, 1);
+		this->character.focus_zoom = FIXED_DEC(7, 10);
+	}
+
 	//Perform idle dance
 	if ((character->pad_held & (INPUT_LEFT | INPUT_DOWN | INPUT_UP | INPUT_RIGHT)) == 0 &&
 	     character->animatable.anim != CharAnim_DownAlt) //Don't interrupt "Heh, pretty good!" sequence
@@ -267,7 +274,7 @@ Character *Char_ExpurC_New(fixed_t x, fixed_t y)
 	this->character.health_i = 4;
 	
 	this->character.focus_x = FIXED_DEC(50,1);
-	this->character.focus_y = FIXED_DEC(-80,1);
+	this->character.focus_y = FIXED_DEC(-60,1);
 	this->character.focus_zoom = FIXED_DEC(7,10);
 	
 	//Load art

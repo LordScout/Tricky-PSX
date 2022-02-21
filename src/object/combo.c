@@ -23,6 +23,10 @@ boolean Obj_Combo_Tick(Object *obj)
 		if (this->ht > 0)
 			clipp = 16 - ((this->ht * 60) >> FIXED_SHIFT);
 		
+		fixed_t fx, fy;
+		fx = stage.camera.x;
+		fy = stage.camera.y;
+
 		if (stage.stage_id == StageId_1_4)
 		{
 			RECT hit_src = {
@@ -32,8 +36,8 @@ boolean Obj_Combo_Tick(Object *obj)
 				clipp << 1
 			};
 			RECT_FIXED hit_dst = {
-				this->x - FIXED_DEC(-70,1),
-				this->hy - FIXED_DEC(100,1),
+				this->x - FIXED_DEC(-60,1) - fx,
+				this->hy - FIXED_DEC(110,1) - fy,
 				FIXED_DEC(80,1),
 				(FIXED_DEC(32,1) * clipp) >> 4
 			};
@@ -72,6 +76,10 @@ boolean Obj_Combo_Tick(Object *obj)
 		if (this->ct > 0)
 			clipp = 16 - ((this->ct * 60) >> FIXED_SHIFT);
 		
+		fixed_t fx, fy;
+		fx = stage.camera.x;
+		fy = stage.camera.y;
+
 		if (stage.stage_id == StageId_1_4)
 		{
 			RECT combo_src = {
@@ -81,8 +89,8 @@ boolean Obj_Combo_Tick(Object *obj)
 				clipp << 1
 			};
 			RECT_FIXED combo_dst = {
-				this->x + FIXED_DEC(110,1),
-				this->cy - FIXED_DEC(95,1),
+				this->x + FIXED_DEC(105,1) - fx,
+				this->cy - FIXED_DEC(100,1) - fy,
 				FIXED_DEC(60,1),
 				(FIXED_DEC(24,1) * clipp) >> 4
 			};
@@ -126,7 +134,11 @@ boolean Obj_Combo_Tick(Object *obj)
 			u8 clipp = 16;
 			if (this->numt > 0)
 				clipp = 16 - ((this->numt * 60) >> FIXED_SHIFT);
-			
+
+			fixed_t fx, fy;
+			fx = stage.camera.x;
+			fy = stage.camera.y;
+
 			if (stage.stage_id == StageId_1_4)
 			{
 				RECT num_src = {
@@ -136,8 +148,8 @@ boolean Obj_Combo_Tick(Object *obj)
 					clipp << 1
 				};
 				RECT_FIXED num_dst = {
-					this->x - FIXED_DEC(-35,1) + (i * FIXED_DEC(16,1)) - FIXED_DEC(14,1),
-					this->numy[i] - FIXED_DEC(92,1),
+					this->x - FIXED_DEC(-30,1) + (i * FIXED_DEC(16,1)) - FIXED_DEC(14,1) - fx,
+					this->numy[i] - FIXED_DEC(100,1) - fy,
 					FIXED_DEC(24,1),
 					(FIXED_DEC(24,1) * clipp) >> 4
 				};

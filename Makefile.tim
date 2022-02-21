@@ -22,7 +22,8 @@ all: \
 	iso/weekt2/back.arc \
 	iso/weekt3/back.arc \
 	iso/weekt3/hench.arc \
-	iso/weekt4/back.arc 
+	iso/weekt4/back.arc \
+	iso/weekt4/hench.arc \
 
 iso/%.tim: iso/%.png
 	tools/funkintimconv/funkintimconv $@ $<

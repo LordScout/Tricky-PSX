@@ -37,6 +37,19 @@ void Back_WeekT4_DrawFG(StageBack* back)
 	fx = stage.camera.x;
 	fy = stage.camera.y;
 
+	if (stage.stage_id == StageId_1_4 && stage.song_step >= 2128 && stage.song_step <= 2140)
+	{
+		RECT hank_src = { 0, 232, 250, 24 };
+		RECT_FIXED hank_dst = {
+			FIXED_DEC(-90,1) - fx,
+			FIXED_DEC(-140,1) - fy,
+			FIXED_DEC(300,1),
+			FIXED_DEC(30,1)
+		};
+
+		Stage_DrawTex(&this->tex_cut1, &hank_src, &hank_dst, stage.camera.bzoom);
+	}
+
 	RECT cover_src = { 0, 0, 182, 151 };
 	RECT_FIXED cover_dst = {
 		FIXED_DEC(-295,1) - fx,
@@ -80,6 +93,9 @@ void Back_WeekT4_DrawBG(StageBack *back)
 	};
 
 	Stage_DrawTex(&this->tex_back2, &RockR_src, &RockR_dst, stage.camera.bzoom);
+
+	fx = stage.camera.x * 2 / 3;
+	fy = stage.camera.y * 2 / 3;
 
 	//Draw
 	RECT light_src = { 0, 0, 102, 255};
