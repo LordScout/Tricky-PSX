@@ -14,6 +14,9 @@ typedef struct
 {
 	//Stage background base structure
 	StageBack back;
+
+	//Textures
+	IO_Data arc_clonexpur, arc_clonexpur_ptr[2];
 	
 	//Textures
 	Gfx_Tex tex_back2; //Right Rock
@@ -27,7 +30,54 @@ typedef struct
 	Gfx_Tex tex_cut3;
 	Gfx_Tex tex_cut4;
 	Gfx_Tex tex_cut5;
+
+	//clonexpur state
+	Gfx_Tex tex_clonexpur;
+	u8 clonexpur_frame,clonexpur_tex_id;
+	
+	Animatable clonexpur_animatable;
 } Back_WeekT4;
+
+//Clonexpur animation and rects
+static const CharFrame clonexpur_frame[5] = {
+	{0, {  0,   0,  75, 121}, { 71,  98}}, //0 left 1
+	{0, {  0,   0,  75, 121}, { 71,  98}}, //1 left 2
+	{0, {  0,   0,  75, 121}, { 71,  98}}, //2 left 3
+	{0, {  0,   0,  75, 121}, { 71,  98}}, //3 left 4
+	{0, {  0,   0,  75, 121}, { 71,  98}}, //4 left 5
+};
+
+static const Animation clonexpur_anim[] = {
+	{2, (const u8[]){0, 1, 2, 3, 4, ASCR_BACK, 1}}, //Left
+};
+
+//Clonexpur functions
+void WeekT4_Clonexpur_SetFrame(void *user, u8 frame)
+{
+	Back_WeekT4 *this = (Back_WeekT4*)user;
+	
+	//Check if this is a new frame
+	if (frame != this->clonexpur_frame)
+	{
+		//Check if new art shall be loaded
+		const CharFrame *cframe = &clonexpur_frame[this->clonexpur_frame = frame];
+		if (cframe->tex != this->clonexpur_tex_id)
+			Gfx_LoadTex(&this->tex_clonexpur, this->arc_clonexpur_ptr[this->clonexpur_tex_id = cframe->tex], 0);
+	}
+}
+
+void WeekT4_Clonexpur_Draw(Back_WeekT4 *this, fixed_t x, fixed_t y)
+{
+	//Draw character
+	const CharFrame *cframe = &clonexpur_frame[this->clonexpur_frame];
+	
+	fixed_t ox = x - ((fixed_t)cframe->off[0] << FIXED_SHIFT);
+	fixed_t oy = y - ((fixed_t)cframe->off[1] << FIXED_SHIFT);
+	
+	RECT src = {cframe->src[0], cframe->src[1], cframe->src[2], cframe->src[3]};
+	RECT_FIXED dst = {ox, oy, src.w << FIXED_SHIFT, src.h << FIXED_SHIFT};
+	Stage_DrawTex(&this->tex_clonexpur, &src, &dst, stage.camera.bzoom);
+}
 
 void Back_WeekT4_DrawFG(StageBack* back)
 {
@@ -59,6 +109,9 @@ void Back_WeekT4_DrawFG(StageBack* back)
 	};
 
 	Stage_DrawTex(&this->tex_cut0, &cover_src, &cover_dst, stage.camera.bzoom);
+    
+	Animatable_Animate(&this->clonexpur_animatable, (void*)this, WeekT4_Clonexpur_SetFrame);
+	WeekT4_Clonexpur_Draw(this, FIXED_DEC(-50,1) - fx, FIXED_DEC(30,1) - fy);
 
 }
 
@@ -123,6 +176,9 @@ void Back_WeekT4_DrawBG(StageBack *back)
 void Back_WeekT4_Free(StageBack *back)
 {
 	Back_WeekT4 *this = (Back_WeekT4*)back;
+
+	//Free clonexpur archive
+	Mem_Free(this->arc_clonexpur);
 	
 	//Free structure
 	Mem_Free(this);
@@ -154,6 +210,15 @@ StageBack *Back_WeekT4_New(void)
 	Gfx_LoadTex(&this->tex_cut4, Archive_Find(arc_back, "cut4.tim"), 0);
 	Gfx_LoadTex(&this->tex_cut5, Archive_Find(arc_back, "cut5.tim"), 0);
 	Mem_Free(arc_back);
+
+	//Load henchmen textures
+	this->arc_clonexpur = IO_Read("\\WEEKT4\\HENCH.ARC;1");
+	this->arc_clonexpur_ptr[0] = Archive_Find(this->arc_clonexpur, "hench0.tim");
+
+	//Initialize clonexpur state
+	Animatable_Init(&this->clonexpur_animatable, clonexpur_anim);
+	Animatable_SetAnim(&this->clonexpur_animatable, 0);
+	this->clonexpur_frame = this->clonexpur_tex_id = 0xFF; //Force art load
 	
 	return (StageBack*)this;
 }

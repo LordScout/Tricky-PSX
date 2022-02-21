@@ -87,6 +87,7 @@
 			<dir name = "weekt4">
 				<!-- Background art -->
 				<file name = "back.arc" type = "data" source = "iso/weekt4/back.arc"/>
+				<file name = "hench.arc" type = "data" source = "iso/weekt4/hench.arc"/>
 			</dir>
 			
 			<!-- Character assets -->
