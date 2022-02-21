@@ -50,7 +50,7 @@
 		//Characters
 		{Char_BF_New,    FIXED_DEC(77,1),  FIXED_DEC(72,1)},
 		{Char_ExpurC_New, FIXED_DEC(-155,1),  FIXED_DEC(30,1)},
-		{Char_GF_New,      FIXED_DEC(800,1),  FIXED_DEC(55,1)},
+		{Char_GF_New,      FIXED_DEC(-60,1),  FIXED_DEC(-83,1)},
 
 		//Stage background
 		Back_WeekT4_New,

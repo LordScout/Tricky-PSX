@@ -68,14 +68,29 @@ void Speaker_Tick(Speaker *this, fixed_t x, fixed_t y)
 	for (int i = 0; i < 2; i++, piece++)
 	{
 		//Draw piece
-		RECT piece_src = {piece->rect[0], piece->rect[1], piece->rect[2], piece->rect[3]};
-		RECT_FIXED piece_dst = {
-			x - FIXED_DEC(88,1) + ((fixed_t)piece->ox << FIXED_SHIFT) - stage.camera.x,
-			y + ((fixed_t)piece->oy << FIXED_SHIFT) - stage.camera.y,
-			(fixed_t)piece->rect[2] << FIXED_SHIFT,
-			(fixed_t)piece->rect[3] << FIXED_SHIFT,
-		};
-		
-		Stage_DrawTex(&this->tex, &piece_src, &piece_dst, stage.camera.bzoom);
+		if (stage.stage_id == StageId_1_4)
+		{
+			RECT piece_src = { piece->rect[0], piece->rect[1], piece->rect[2], piece->rect[3] };
+			RECT_FIXED piece_dst = {
+				x - FIXED_DEC(2008,1) + ((fixed_t)piece->ox << FIXED_SHIFT) - stage.camera.x,
+				y + ((fixed_t)piece->oy << FIXED_SHIFT) - stage.camera.y,
+				(fixed_t)piece->rect[2] << FIXED_SHIFT,
+				(fixed_t)piece->rect[3] << FIXED_SHIFT,
+			};
+
+			Stage_DrawTex(&this->tex, &piece_src, &piece_dst, stage.camera.bzoom);
+		}
+		else
+		{
+			RECT piece_src = { piece->rect[0], piece->rect[1], piece->rect[2], piece->rect[3] };
+			RECT_FIXED piece_dst = {
+				x - FIXED_DEC(88,1) + ((fixed_t)piece->ox << FIXED_SHIFT) - stage.camera.x,
+				y + ((fixed_t)piece->oy << FIXED_SHIFT) - stage.camera.y,
+				(fixed_t)piece->rect[2] << FIXED_SHIFT,
+				(fixed_t)piece->rect[3] << FIXED_SHIFT,
+			};
+
+			Stage_DrawTex(&this->tex, &piece_src, &piece_dst, stage.camera.bzoom);
+		}
 	}
 }
