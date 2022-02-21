@@ -16,6 +16,7 @@ typedef struct
 	StageBack back;
 	
 	//Textures
+	Gfx_Tex tex_back2; //Window
 	Gfx_Tex tex_back1; //Window
 	Gfx_Tex tex_back0;
 
@@ -525,26 +526,65 @@ void Back_WeekT2_DrawBG(StageBack *back)
 	fy = stage.camera.y;
 	
 	//Draw window
-	RECT window_src = { 0, 0, 256, 226 };
+	RECT window_src = { 0, 55, 256, 171 };
 	RECT_FIXED window_dst = {
 		FIXED_DEC(-500,1) - fx,
-		FIXED_DEC(-150,1) - fy,
+		FIXED_DEC(-70,1) - fy,
 		FIXED_DEC(512,1),
-		FIXED_DEC(400,1)
+		FIXED_DEC(342,1)
 	};
 
 	Stage_DrawTex(&this->tex_back0, &window_src, &window_dst, stage.camera.bzoom);
 
 	//Draw window
-	RECT window1_src = { 0, 0, 256, 226 };
+	RECT window1_src = { 0, 55, 249, 171 };
 	RECT_FIXED window1_dst = {
-		FIXED_DEC(3,1) - fx,
-		FIXED_DEC(-150,1) - fy,
-		FIXED_DEC(512,1),
-		FIXED_DEC(400,1)
+		FIXED_DEC(0,1) - fx,
+		FIXED_DEC(-73,1) - fy,
+		FIXED_DEC(398,1),
+		FIXED_DEC(342,1)
 	};
 
 	Stage_DrawTex(&this->tex_back1, &window1_src, &window1_dst, stage.camera.bzoom);
+
+	fx = stage.camera.x * 4 / 5;
+	fy = stage.camera.y * 4 / 5;
+
+	//Draw rocks
+	RECT rocksl_src = { 0, 8, 246, 45};
+	RECT_FIXED rocksl_dst = {
+		FIXED_DEC(-460,1) - fx,
+		FIXED_DEC(-120,1) - fy,
+		FIXED_DEC(422,1),
+		FIXED_DEC(90,1)
+	};
+
+	Stage_DrawTex(&this->tex_back0, &rocksl_src, &rocksl_dst, stage.camera.bzoom);
+
+	//Draw rocks
+	RECT rocksr_src = { 0, 3, 200, 47 };
+	RECT_FIXED rocksr_dst = {
+		FIXED_DEC(-20,1) - fx,
+		FIXED_DEC(-123,1) - fy,
+		FIXED_DEC(400,1),
+		FIXED_DEC(94,1)
+	};
+
+	Stage_DrawTex(&this->tex_back1, &rocksr_src, &rocksr_dst, stage.camera.bzoom);
+
+
+	fx = stage.camera.x * 2 / 4;
+	fy = stage.camera.y * 2 / 4;
+
+	RECT bg_src = { 0, 0, 256, 256 };
+	RECT_FIXED bg_dst = {
+		FIXED_DEC(-300,1) - fx,
+		FIXED_DEC(-200,1) - fy,
+		FIXED_DEC(512,1),
+		FIXED_DEC(512,1)
+	};
+
+	Stage_DrawTex(&this->tex_back2, &bg_src, &bg_dst, stage.camera.bzoom);
 }
 
 void Back_WeekT2_Free(StageBack *back)
@@ -571,7 +611,7 @@ StageBack *Back_WeekT2_New(void)
 	
 	//Load background textures
 	IO_Data arc_back = IO_Read("\\WEEKT2\\BACK.ARC;1");
-	Gfx_LoadTex(&this->tex_back1, Archive_Find(arc_back, "back2.tim"), 0);
+	Gfx_LoadTex(&this->tex_back2, Archive_Find(arc_back, "back2.tim"), 0);
 	Gfx_LoadTex(&this->tex_back1, Archive_Find(arc_back, "back1.tim"), 0);
 	Gfx_LoadTex(&this->tex_back0, Archive_Find(arc_back, "back0.tim"), 0);
 	Gfx_LoadTex(&this->tex_cut0, Archive_Find(arc_back, "cut0.tim"), 0);

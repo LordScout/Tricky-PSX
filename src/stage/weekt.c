@@ -197,7 +197,7 @@ void Back_WeekT_DrawBG(StageBack *back)
 	RECT window_src = {0, 0, 256, 226};
 	RECT_FIXED window_dst = {
 		FIXED_DEC(-500,1) - fx,
-		FIXED_DEC(-165,1) - fy,
+		FIXED_DEC(-145,1) - fy,
 		FIXED_DEC(512,1),
 		FIXED_DEC(400,1)
 	};
@@ -208,12 +208,41 @@ void Back_WeekT_DrawBG(StageBack *back)
 	RECT window1_src = { 0, 0, 256, 226};
 	RECT_FIXED window1_dst = {
 		FIXED_DEC(3,1) - fx,
-		FIXED_DEC(-165,1) - fy,
+		FIXED_DEC(-145,1) - fy,
 		FIXED_DEC(512,1),
 		FIXED_DEC(400,1)
 	};
 
 	Stage_DrawTex(&this->tex_back2, &window1_src, &window1_dst, stage.camera.bzoom);
+
+	fx = stage.camera.x * 2 / 4;
+	fy = stage.camera.y * 2 / 4;
+
+	if (stage.stage_id == StageId_1_1 && stage.song_step <= 1424)
+	{
+		RECT bg_src = { 0, 0, 256, 256 };
+		RECT_FIXED bg_dst = {
+			FIXED_DEC(-270,1) - fx,
+			FIXED_DEC(-200,1) - fy,
+			FIXED_DEC(512,1),
+			FIXED_DEC(512,1)
+		};
+
+		Stage_DrawTex(&this->tex_back0, &bg_src, &bg_dst, stage.camera.bzoom);
+	}
+
+	if (stage.stage_id == StageId_2_1)
+	{
+		RECT bg_src = { 0, 0, 256, 256 };
+		RECT_FIXED bg_dst = {
+			FIXED_DEC(-270,1) - fx,
+			FIXED_DEC(-200,1) - fy,
+			FIXED_DEC(512,1),
+			FIXED_DEC(512,1)
+		};
+
+		Stage_DrawTex(&this->tex_back0, &bg_src, &bg_dst, stage.camera.bzoom);
+	}
 }
 
 void Back_WeekT_Free(StageBack *back)
