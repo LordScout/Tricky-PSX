@@ -130,10 +130,10 @@ static const CharFrame char_madc_frame[] = {
 };
 
 static const Animation char_madc_anim[CharAnim_Max] = {
-	{1, (const u8[]) { 0, 0, 1, 1, 0,  2, 2, 1, 3, 3, 2, 4, 4, 3, 5, 5, 4, 5, ASCR_BACK, 15 }}, //CharAnim_Idle
+	{1, (const u8[]) { 0, 1, 2, 3, 4, 5, ASCR_BACK, 5 }}, //CharAnim_Idle
 	{1, (const u8[]) { 6, 7, 8, 9, 10, 11, ASCR_BACK, 3 }},         //CharAnim_Left
 	{0, (const u8[]) { ASCR_CHGANI, CharAnim_Idle }},   //CharAnim_LeftAlt
-	{1, (const u8[]) { 12, 13, 14, 15, 16, 17, ASCR_BACK, 3 }},         //CharAnim_Down
+	{1, (const u8[]) { 12, 13, 14, 15, 17, 17, ASCR_BACK, 3 }},         //CharAnim_Down
 	{0, (const u8[]) { ASCR_CHGANI, CharAnim_UpAlt }},   //CharAnim_DownAlt
 	{1, (const u8[]) { 18, 19, 20, 21, 22, 23, ASCR_BACK, 3 }},         //CharAnim_Up
 	{0, (const u8[]) { ASCR_CHGANI, CharAnim_RightAlt }},   //CharAnim_UpAlt

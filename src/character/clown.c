@@ -132,7 +132,7 @@ static const CharFrame char_clown_frame[] = {
 };
 
 static const Animation char_clown_anim[CharAnim_Max] = {
-	{1, (const u8[]){ 0, 0,  1, 1,  2, 2,  3, 3, 4, 5, 6, ASCR_BACK, 3}},                                           //CharAnim_Idle
+	{1, (const u8[]){ 0,  1,  2,  3, 4, 5, 6, ASCR_BACK, 3}},                                           //CharAnim_Idle
 	{1, (const u8[]){ 7, 8, 9, 10, 11, 12, 13, ASCR_BACK, 3}},                                                   //CharAnim_Left
 	{0, (const u8[]){ASCR_CHGANI, CharAnim_Idle}},                                             //CharAnim_LeftAlt
 	{1, (const u8[]){ 14, 15, 16, 17, 18, 19, ASCR_BACK, 3}},                                                   //CharAnim_Down

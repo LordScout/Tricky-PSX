@@ -52,7 +52,7 @@ static const CharFrame clonexpur_frame[8] = {
 };
 
 static const Animation clonexpur_anim[] = {
-	{1, (const u8[]){0, 1, 2, 3, 4, 5, 6,  2, 3, 4, 5, 6,  2, 3, 4, 5, 6, 2, 3, 4, 5, 6,  2, 3, 4, 5, 6,  2, 3, 4, 5, 6, 2, 3, 4, 5, 6,  2, 3, 4, 5, 6, 2, 3, 4, 5, 6,  2, 3, 4, 5, 6, 2, 3, 4, 5, 6,  2, 3, 4, 5, 6,  2, 3, 4, 5, 6, 2, 3, 4, 5, 6,  2, 3, 4, 5, 6, 2, 3, 4, 5, 6, 7, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, ASCR_BACK, 1}}, //Left
+	{1, (const u8[]){0, 1, 2, 3, 4, 5, 6,  2, 3, 4, 5, 6, 2, 3, 4, 5, 6,  2, 3, 4, 5, 6,  2, 3, 4, 5, 6, 2, 3, 4, 5, 6,  2, 3, 4, 5, 6, 2, 3, 4, 5, 6, 2, 3, 4, 5, 6, 2, 3, 4, 5, 6,  2, 3, 4, 5, 6,  2, 3, 4, 5, 6, 2, 3, 4, 5, 6,  2, 3, 4, 5, 6, 2, 3, 4, 5, 6, 7, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, ASCR_BACK, 1}}, //Left
 };
 
 //Clonexpur functions
@@ -106,8 +106,8 @@ void Back_WeekT4_DrawFG(StageBack* back)
 
 	RECT cover_src = { 0, 0, 182, 151 };
 	RECT_FIXED cover_dst = {
-		FIXED_DEC(-295,1) - fx,
-		FIXED_DEC(35,1) - fy,
+		FIXED_DEC(-293,1) - fx,
+		FIXED_DEC(30,1) - fy,
 		FIXED_DEC(273,1),
 		FIXED_DEC(226,1)
 	};
@@ -116,7 +116,7 @@ void Back_WeekT4_DrawFG(StageBack* back)
     
 	if (stage.flag & STAGE_FLAG_JUST_STEP)
 	{
-		switch (stage.song_step % 0x40)
+		switch (stage.song_step % 0x51)
 		{
 		case 0:
 			Animatable_SetAnim(&this->clonexpur_animatable, 0);
@@ -125,7 +125,8 @@ void Back_WeekT4_DrawFG(StageBack* back)
 	}
 	Animatable_Animate(&this->clonexpur_animatable, (void*)this, WeekT4_Clonexpur_SetFrame);
 
-	WeekT4_Clonexpur_Draw(this, FIXED_DEC(-100,1) - fx, FIXED_DEC(55,1) - fy);
+	WeekT4_Clonexpur_Draw(this, FIXED_DEC(-120,1) - fx, FIXED_DEC(60,1) - fy);
+
 
 
 }
