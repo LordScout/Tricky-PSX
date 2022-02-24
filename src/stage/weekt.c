@@ -215,8 +215,8 @@ void Back_WeekT_DrawBG(StageBack *back)
 
 	Stage_DrawTex(&this->tex_back2, &window1_src, &window1_dst, stage.camera.bzoom);
 
-	fx = stage.camera.x * 2 / 4;
-	fy = stage.camera.y * 2 / 4;
+	fx = stage.camera.x * 2 / 6;
+	fy = stage.camera.y * 2 / 6;
 
 	if (stage.stage_id == StageId_1_1 && stage.song_step <= 1424)
 	{
@@ -235,7 +235,7 @@ void Back_WeekT_DrawBG(StageBack *back)
 	{
 		RECT bg_src = { 0, 0, 256, 256 };
 		RECT_FIXED bg_dst = {
-			FIXED_DEC(-270,1) - fx,
+			FIXED_DEC(-280,1) - fx,
 			FIXED_DEC(-200,1) - fy,
 			FIXED_DEC(512,1),
 			FIXED_DEC(512,1)

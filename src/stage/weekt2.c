@@ -540,32 +540,34 @@ void Back_WeekT2_DrawBG(StageBack *back)
 	RECT window1_src = { 0, 55, 249, 171 };
 	RECT_FIXED window1_dst = {
 		FIXED_DEC(0,1) - fx,
-		FIXED_DEC(-73,1) - fy,
+		FIXED_DEC(-70,1) - fy,
 		FIXED_DEC(398,1),
 		FIXED_DEC(342,1)
 	};
 
 	Stage_DrawTex(&this->tex_back1, &window1_src, &window1_dst, stage.camera.bzoom);
 
-	fx = stage.camera.x * 4 / 5;
-	fy = stage.camera.y * 4 / 5;
+	fx = stage.camera.x * 4 / 6;
+	fy = stage.camera.y * 4 / 6;
 
 	//Draw rocks
 	RECT rocksl_src = { 0, 8, 246, 45};
 	RECT_FIXED rocksl_dst = {
 		FIXED_DEC(-460,1) - fx,
-		FIXED_DEC(-120,1) - fy,
+		FIXED_DEC(-100,1) - fy,
 		FIXED_DEC(422,1),
 		FIXED_DEC(90,1)
 	};
 
 	Stage_DrawTex(&this->tex_back0, &rocksl_src, &rocksl_dst, stage.camera.bzoom);
 
+
+
 	//Draw rocks
-	RECT rocksr_src = { 0, 3, 200, 47 };
+	RECT rocksr_src = { 0, 0, 200, 50};
 	RECT_FIXED rocksr_dst = {
 		FIXED_DEC(-20,1) - fx,
-		FIXED_DEC(-123,1) - fy,
+		FIXED_DEC(-103,1) - fy,
 		FIXED_DEC(400,1),
 		FIXED_DEC(94,1)
 	};
@@ -573,12 +575,12 @@ void Back_WeekT2_DrawBG(StageBack *back)
 	Stage_DrawTex(&this->tex_back1, &rocksr_src, &rocksr_dst, stage.camera.bzoom);
 
 
-	fx = stage.camera.x * 2 / 4;
-	fy = stage.camera.y * 2 / 4;
+	fx = stage.camera.x * 2 / 6;
+	fy = stage.camera.y * 2 / 6;
 
 	RECT bg_src = { 0, 0, 256, 256 };
 	RECT_FIXED bg_dst = {
-		FIXED_DEC(-300,1) - fx,
+		FIXED_DEC(-250,1) - fx,
 		FIXED_DEC(-200,1) - fy,
 		FIXED_DEC(512,1),
 		FIXED_DEC(512,1)

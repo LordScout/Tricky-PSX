@@ -39,16 +39,20 @@ typedef struct
 } Back_WeekT4;
 
 //Clonexpur animation and rects
-static const CharFrame clonexpur_frame[5] = {
-	{0, {  0,   0,  75, 121}, { 71,  98}}, //0 left 1
-	{0, {  0,   0,  75, 121}, { 71,  98}}, //1 left 2
-	{0, {  0,   0,  75, 121}, { 71,  98}}, //2 left 3
-	{0, {  0,   0,  75, 121}, { 71,  98}}, //3 left 4
-	{0, {  0,   0,  75, 121}, { 71,  98}}, //4 left 5
+static const CharFrame clonexpur_frame[8] = {
+	{0, {  224,   0,  3, 3}, { 71,  98}}, //0 left 1
+	{0, {  0,   0,  71, 121}, { 20, 121}}, //1 left 2
+	{0, {  78,  0,  68, 93}, { 43,  92}}, //2 left 3
+	{0, {149,   0,  73, 105}, { 25, 103}}, //3 left 4
+	{0, {  0, 139,  74, 113}, { 43, 113}}, //4 left 5
+	{0, { 76,  94,  74, 101}, { 42, 101}}, //5 left 4
+	{0, { 79, 198, 104, 60}, { 50,  60}}, //6 left 5
+	{0, {206,  86,  51, 171}, { 33, 150}}, //7 left 4
+
 };
 
 static const Animation clonexpur_anim[] = {
-	{2, (const u8[]){0, 1, 2, 3, 4, ASCR_BACK, 1}}, //Left
+	{2, (const u8[]){0, 1, 2, 3, 4, 5, 6,  2, 3, 4, 5, 6,  2, 3, 4, 5, 6, 2, 3, 4, 5, 6,  2, 3, 4, 5, 6,  2, 3, 4, 5, 6, 2, 3, 4, 5, 6,  2, 3, 4, 5, 6,  2, 3, 4, 5, 6, 7, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, ASCR_BACK, 1}}, //Left
 };
 
 //Clonexpur functions
@@ -110,8 +114,19 @@ void Back_WeekT4_DrawFG(StageBack* back)
 
 	Stage_DrawTex(&this->tex_cut0, &cover_src, &cover_dst, stage.camera.bzoom);
     
+	if (stage.flag & STAGE_FLAG_JUST_STEP)
+	{
+		switch (stage.song_step & 64)
+		{
+		case 0:
+			Animatable_SetAnim(&this->clonexpur_animatable, 0);
+			break;
+		}
+	}
 	Animatable_Animate(&this->clonexpur_animatable, (void*)this, WeekT4_Clonexpur_SetFrame);
-	WeekT4_Clonexpur_Draw(this, FIXED_DEC(-50,1) - fx, FIXED_DEC(30,1) - fy);
+
+	WeekT4_Clonexpur_Draw(this, FIXED_DEC(-100,1) - fx, FIXED_DEC(55,1) - fy);
+
 
 }
 
@@ -147,8 +162,8 @@ void Back_WeekT4_DrawBG(StageBack *back)
 
 	Stage_DrawTex(&this->tex_back2, &RockR_src, &RockR_dst, stage.camera.bzoom);
 
-	fx = stage.camera.x * 2 / 3;
-	fy = stage.camera.y * 2 / 3;
+	fx = stage.camera.x * 3 / 4;
+	fy = stage.camera.y * 3 / 4;
 
 	//Draw
 	RECT light_src = { 0, 0, 102, 255};
@@ -160,6 +175,9 @@ void Back_WeekT4_DrawBG(StageBack *back)
 	};
 
 	Stage_DrawTex(&this->tex_cut1, &light_src, &light_dst, stage.camera.bzoom);
+
+	fx = stage.camera.x * 2 / 3;
+	fy = stage.camera.y * 2 / 3;
 
 	//Draw
 	RECT bg_src = { 0, 0, 256, 256};

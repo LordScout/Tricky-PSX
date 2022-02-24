@@ -178,7 +178,7 @@ static const CharFrame char_expurc_frame[] = {
 };
 
 static const Animation char_expurc_anim[CharAnim_Max] = {
-	{1, (const u8[]){ 65, 65, 65, 65, 65, 65, 65, 65, 65, 65, 65, 65, 65, 65, 65, 65, 65, 65, 65, 65, 65, 65, 65, 65, 65, 65, 65, 65, 44, 44, 45, 45, 46, 46, 47, 47, 48, 48, 49, 49, 50, 50, 51, 52, 53, 54, 55, 56, 57, 58, 59, 60, 61, 62, 63, 64, 54, 55, 56, 57, 58, 59, 60, 61, 62, 63, 64,54, 55, 56, 57, 58, 59, 60, 61, 62, 63, 64, ASCR_CHGANI, CharAnim_ClownKillsYou}},     //CharAnim_Idle
+	{1, (const u8[]){ 65, 65, 65, 65, 65, 65, 65, 65, 65, 65, 65, 65, 65, 65, 65, 65, 65, 65, 65, 65, 65, 65, 65, 65, 65, 65, 65, 65, 44, 45, 46, 46, 46, 47, 47, 47, 48, 48, 49, 49, 50, 50, 51, 52, 53, 54, 55, 56, 57, 58, 59, 60, 61, 62, 63, 64, 54, 55, 56, 57, 58, 59, 60, 61, 62, 63, 64,54, 55, 56, 57, 58, 59, 60, 61, 62, 63, 64, ASCR_CHGANI, CharAnim_ClownKillsYou}},     //CharAnim_Idle
 	{2, (const u8[]){ 6, 7, 8, 9, 10, 11, 12, 13, ASCR_CHGANI, CharAnim_ClownKillsYou}},                                                   //CharAnim_Left
 	{0, (const u8[]){ASCR_CHGANI, CharAnim_Idle}},                                     //CharAnim_LeftAlt
 	{2, (const u8[]){14, 15, 16, 17, 18, 19, 20, 21, ASCR_CHGANI, CharAnim_ClownKillsYou}},                                                   //CharAnim_Down
