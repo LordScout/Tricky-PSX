@@ -116,7 +116,7 @@ void Back_WeekT4_DrawFG(StageBack* back)
     
 	if (stage.flag & STAGE_FLAG_JUST_STEP)
 	{
-		switch (stage.song_step & 64)
+		switch (stage.song_step % 0x40)
 		{
 		case 0:
 			Animatable_SetAnim(&this->clonexpur_animatable, 0);
