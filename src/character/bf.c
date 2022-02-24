@@ -232,18 +232,11 @@ void Char_BF_Tick(Character *character)
 	{
 		this->character.focus_x = FIXED_DEC(-50, 1);
 		this->character.focus_y = FIXED_DEC(-80, 1);
-		this->character.focus_zoom = FIXED_DEC(8, 10);
+		this->character.focus_zoom = FIXED_DEC(10, 10);
 	}
+
 
 	if (stage.stage_id == StageId_1_2 && stage.song_step >= 2158)
-	{
-		this->character.focus_x = FIXED_DEC(-120, 1);
-		this->character.focus_y = FIXED_DEC(-105, 1);
-		this->character.focus_zoom = FIXED_DEC(6, 10);
-	}
-
-
-	if (stage.stage_id == StageId_1_2 && stage.song_step >= 2162)
 	{
 		this->character.focus_x = FIXED_DEC(-125, 1);
 		this->character.focus_y = FIXED_DEC(-105, 1);

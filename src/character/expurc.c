@@ -119,14 +119,14 @@ static const CharFrame char_expurc_frame[] = {
 	{ExpurC_ArcMain_Left6, {  0,   0, 138, 193}, { 117, 176}}, //12 left 1
 	{ExpurC_ArcMain_Left7, {  0,   0, 136, 205}, { 105, 185}}, //13 left 1
 	
-	{ExpurC_ArcMain_Down0, {  0,   0, 170, 137}, { 86, 120}}, //14 down 1
-	{ExpurC_ArcMain_Down1, {  0,   0, 160, 140}, { 77, 125}}, //15 down 2
-	{ExpurC_ArcMain_Down2, {  0,   0, 140, 129}, { 70, 121}}, //16 down 1
-	{ExpurC_ArcMain_Down3, {  0,   0, 140, 139}, { 73, 129}}, //17 down 2
-	{ExpurC_ArcMain_Down4, {  0,   0, 140, 139}, { 73, 129}}, //18 down 1
-	{ExpurC_ArcMain_Down5, {  0,   0, 140, 127}, { 73, 117}}, //19 down 1
-	{ExpurC_ArcMain_Down6, {  0,   0, 150, 126}, { 81, 118}}, //20 down 1
-	{ExpurC_ArcMain_Down7, {  0,   0, 156, 128}, { 70, 118}}, //21 down 1
+	{ExpurC_ArcMain_Down0, {  0,   0, 170, 137}, { 66, 100}}, //14 down 1
+	{ExpurC_ArcMain_Down1, {  0,   0, 160, 140}, { 57, 105}}, //15 down 2
+	{ExpurC_ArcMain_Down2, {  0,   0, 140, 129}, { 50, 101}}, //16 down 1
+	{ExpurC_ArcMain_Down3, {  0,   0, 140, 139}, { 53, 109}}, //17 down 2
+	{ExpurC_ArcMain_Down4, {  0,   0, 140, 139}, { 53, 109}}, //18 down 1
+	{ExpurC_ArcMain_Down5, {  0,   0, 140, 127}, { 53, 97}}, //19 down 1
+	{ExpurC_ArcMain_Down6, {  0,   0, 150, 126}, { 61, 98}}, //20 down 1
+	{ExpurC_ArcMain_Down7, {  0,   0, 156, 128}, { 50, 98}}, //21 down 1
 	
 	{ExpurC_ArcMain_Up0, {  0,   0, 240, 232}, { 136, 221}}, //22 up 1
 	{ExpurC_ArcMain_Up1, {  0,   0, 218, 214}, { 122, 204}}, //23 up 2
@@ -179,13 +179,13 @@ static const CharFrame char_expurc_frame[] = {
 
 static const Animation char_expurc_anim[CharAnim_Max] = {
 	{1, (const u8[]){ 65, 65, 65, 65, 65, 65, 65, 65, 65, 65, 65, 65, 65, 65, 65, 65, 65, 65, 65, 65, 65, 65, 65, 65, 65, 65, 65, 65, 44, 45, 46, 46, 46, 47, 47, 47, 48, 48, 49, 49, 50, 50, 51, 52, 53, 54, 55, 56, 57, 58, 59, 60, 61, 62, 63, 64, 54, 55, 56, 57, 58, 59, 60, 61, 62, 63, 64,54, 55, 56, 57, 58, 59, 60, 61, 62, 63, 64, ASCR_CHGANI, CharAnim_ClownKillsYou}},     //CharAnim_Idle
-	{2, (const u8[]){ 6, 7, 8, 9, 10, 11, 12, 13, ASCR_CHGANI, CharAnim_ClownKillsYou}},                                                   //CharAnim_Left
+	{1, (const u8[]){ 6, 7, 8, 9, 10, 11, 12, 13, ASCR_CHGANI, CharAnim_ClownKillsYou}},                                                   //CharAnim_Left
 	{0, (const u8[]){ASCR_CHGANI, CharAnim_Idle}},                                     //CharAnim_LeftAlt
-	{2, (const u8[]){14, 15, 16, 17, 18, 19, 20, 21, ASCR_CHGANI, CharAnim_ClownKillsYou}},                                                   //CharAnim_Down
+	{1, (const u8[]){14, 15, 16, 17, 18, 19, 20, 21, ASCR_CHGANI, CharAnim_ClownKillsYou}},                                                   //CharAnim_Down
 	{0, (const u8[]){ASCR_CHGANI, CharAnim_Idle}},   //CharAnim_DownAlt
-	{2, (const u8[]){22, 23,  24, 25, 26, 27, 28, ASCR_CHGANI, CharAnim_ClownKillsYou}},                                                   //CharAnim_Up
-	{2, (const u8[]) { 37, 37, 37, 37, 38, 38, 39, 39, 40, 40, 41, 42, 43, 42, 43, 43, ASCR_BACK, 1 }},                                    //CharAnim_Hank
-	{2, (const u8[]){29, 30, 31, 32, 33, 34, 35, 36, ASCR_CHGANI, CharAnim_ClownKillsYou}},                                                   //CharAnim_Right
+	{1, (const u8[]){22, 23,  24, 25, 26, 27, 28, ASCR_CHGANI, CharAnim_ClownKillsYou}},                                                   //CharAnim_Up
+	{1, (const u8[]) { 37, 37, 37, 37, 38, 38, 39, 39, 40, 40, 41, 42, 43, 42, 43, 43, ASCR_BACK, 1 }},                                    //CharAnim_Hank
+	{1, (const u8[]){29, 30, 31, 32, 33, 34, 35, 36, ASCR_CHGANI, CharAnim_ClownKillsYou}},                                                   //CharAnim_Right
 	{0, (const u8[]){ASCR_CHGANI, CharAnim_Idle}},                                             //CharAnim_RightAlt
 	{1, (const u8[]) { 0, 1,  2, 3, 4, 5, 0,  1, 2, 3, 4, 5, ASCR_REPEAT }},
 
