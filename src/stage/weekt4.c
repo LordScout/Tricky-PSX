@@ -8,6 +8,7 @@
 
 #include "../mem.h"
 #include "../archive.h"
+#include "../random.h"
 
 //Week Tricky Phase 4 background structure
 typedef struct
@@ -31,6 +32,8 @@ typedef struct
 	Gfx_Tex tex_cut4;
 	Gfx_Tex tex_cut5;
 
+	u16 random;
+	u16 randomchoose;
 	//clonexpur state
 	Gfx_Tex tex_clonexpur;
 	u8 clonexpur_frame,clonexpur_tex_id;
@@ -91,6 +94,11 @@ void Back_WeekT4_DrawFG(StageBack* back)
 	fx = stage.camera.x;
 	fy = stage.camera.y;
 
+	this->randomchoose = RandomRange(0,8)*29;
+    
+	if (RandomRange(0,100) == 10)
+	this->random = this->randomchoose;
+
 	if (stage.stage_id == StageId_1_4 && stage.song_step >= 2128 && stage.song_step <= 2140)
 	{
 		RECT hank_src = { 0, 232, 250, 24 };
@@ -102,6 +110,19 @@ void Back_WeekT4_DrawFG(StageBack* back)
 		};
 
 		Stage_DrawTex(&this->tex_cut1, &hank_src, &hank_dst, stage.camera.bzoom);
+	}
+
+	{
+		RECT redtext_src = { 0, this->random, 224, 29 };
+		RECT_FIXED redtext_dst = {
+			FIXED_DEC(-190,1) + RandomRange(FIXED_DEC(-20, 1), FIXED_DEC(-12, 1)) - fx,
+			FIXED_DEC(-130,1) + RandomRange(FIXED_DEC(-20, 1), FIXED_DEC(-12, 1)) - fy,
+			FIXED_DEC(224,1),
+			FIXED_DEC(29,1)
+		};
+        
+		if (stage.randomtext == true)
+		Stage_DrawTex(&this->tex_cut3, &redtext_src, &redtext_dst, stage.camera.bzoom);
 	}
 
 	RECT cover_src = { 0, 0, 182, 151 };
@@ -126,6 +147,7 @@ void Back_WeekT4_DrawFG(StageBack* back)
 	Animatable_Animate(&this->clonexpur_animatable, (void*)this, WeekT4_Clonexpur_SetFrame);
 
 	WeekT4_Clonexpur_Draw(this, FIXED_DEC(-120,1) - fx, FIXED_DEC(60,1) - fy);
+	WeekT4_Clonexpur_Draw(this, FIXED_DEC(-220,1) - fx, FIXED_DEC(60,1) - fy);
 
 
 

@@ -210,6 +210,7 @@ typedef struct
 	boolean story;
 	u8 flag;
 	StageTrans trans;
+	boolean randomtext;
 	
 	struct
 	{

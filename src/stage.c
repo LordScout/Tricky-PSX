@@ -1522,6 +1522,20 @@ void Stage_Tick(void)
 			}
 
 			#endif
+
+			if (stage.cur_section->flag & SECTION_FLAG_OPPFOCUS)
+				{
+				if (stage.opponent->animatable.anim == CharAnim_Left || stage.opponent->animatable.anim == CharAnim_LeftAlt)
+					stage.randomtext = true;
+				if (stage.opponent->animatable.anim == CharAnim_Down || stage.opponent->animatable.anim == CharAnim_DownAlt)
+					stage.randomtext = true;
+				if (stage.opponent->animatable.anim == CharAnim_Up || stage.opponent->animatable.anim == CharAnim_UpAlt)
+					stage.randomtext = true;
+				if (stage.opponent->animatable.anim == CharAnim_Right || stage.opponent->animatable.anim == CharAnim_RightAlt)
+				stage.randomtext = true;
+				}
+			else
+			stage.randomtext = false;	
 			
 			#ifdef PSXF_NETWORK
 			if (!Network_IsReady())
