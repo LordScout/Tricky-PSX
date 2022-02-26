@@ -184,7 +184,7 @@ static const Animation char_expurc_anim[CharAnim_Max] = {
 	{1, (const u8[]){14, 15, 16, 17, 18, 19, 20, 21, ASCR_CHGANI, CharAnim_ClownKillsYou}},                                                   //CharAnim_Down
 	{0, (const u8[]){ASCR_CHGANI, CharAnim_Idle}},   //CharAnim_DownAlt
 	{1, (const u8[]){22, 23,  24, 25, 26, 27, 28, ASCR_CHGANI, CharAnim_ClownKillsYou}},                                                   //CharAnim_Up
-	{1, (const u8[]) { 37, 37, 37, 37, 38, 38, 39, 39, 40, 40, 41, 42, 43, 42, 43, 43, ASCR_BACK, 1 }},                                    //CharAnim_Hank
+	{1, (const u8[]) { 37, 38, 39, 40, 41, 42,  ASCR_BACK, 5 }},                                 //CharAnim_Hank
 	{1, (const u8[]){29, 30, 31, 32, 33, 34, 35, 36, ASCR_CHGANI, CharAnim_ClownKillsYou}},                                                   //CharAnim_Right
 	{0, (const u8[]){ASCR_CHGANI, CharAnim_Idle}},                                             //CharAnim_RightAlt
 	{1, (const u8[]) { 0, 1,  2, 3, 4, 5, 0,  1, 2, 3, 4, 5, ASCR_REPEAT }},
@@ -230,8 +230,6 @@ void Char_ExpurC_Tick(Character *character)
 
 	 //Stage specific animations
 
-		 if (stage.song_step >= 2128 && stage.song_step <= 2140)
-			 character->set_anim(character, CharAnim_UpAlt);
 }
 
 void Char_ExpurC_SetAnim(Character *character, u8 anim)

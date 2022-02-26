@@ -647,6 +647,13 @@ void Stage_DrawTexCol(Gfx_Tex *tex, const RECT *src, const RECT_FIXED *dst, fixe
 	if (tex == &stage.tex_hud1 && ((stage.stage_id == StageId_1_2) && stage.song_step >= 2158))
 		return;
 
+	if (tex == &stage.tex_hud0 && ((stage.stage_id == StageId_1_4) && (stage.mode == StageMode_Normal) && stage.song_step >= 2128 && stage.song_step <= 2144))
+		return;
+
+	if (tex == &stage.tex_hud1 && ((stage.stage_id == StageId_1_4) && (stage.mode == StageMode_Normal) && stage.song_step >= 2128 && stage.song_step <= 2144))
+		return;
+
+
 	if (tex == &stage.tex_hud0 && (stage.stage_id == StageId_2_1))
 		return;
 

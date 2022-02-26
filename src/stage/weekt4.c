@@ -96,7 +96,7 @@ void Back_WeekT4_DrawFG(StageBack* back)
 
 	this->randomchoose = RandomRange(0,8)*29;
     
-	if (RandomRange(0,100) <= 5)
+	if (RandomRange(0,100) <= 3)
 	this->random = this->randomchoose;
 
 	if (stage.stage_id == StageId_1_4 && stage.song_step >= 2128 && stage.song_step <= 2140)
