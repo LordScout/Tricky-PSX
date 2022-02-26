@@ -8,6 +8,7 @@
 
 #include "../mem.h"
 #include "../archive.h"
+#include "../random.h"
 
 //Week Tricky 2 background structure
 typedef struct
@@ -36,8 +37,9 @@ void Back_WeekT2_DrawFG(StageBack* back)
 	{
 		RECT suffer_src = { 0, 57, 85, 24};
 		RECT_FIXED suffer_dst = {
-			FIXED_DEC(-40,1) - fx,
-			FIXED_DEC(0,1) - fy,
+			FIXED_DEC(-40,1) + RandomRange(FIXED_DEC(-20, 1), FIXED_DEC(-12, 1)) - fx,
+			FIXED_DEC(0,1) + RandomRange(FIXED_DEC(-20, 1), FIXED_DEC(-12, 1)) - fy,
+
 			FIXED_DEC(85,1),
 			FIXED_DEC(24,1)
 		};
@@ -49,8 +51,8 @@ void Back_WeekT2_DrawFG(StageBack* back)
 	{
 		RECT incorrect1_src = { 0, 110, 135, 28 };
 		RECT_FIXED incorrect1_dst = {
-			FIXED_DEC(-50,1) - fx,
-			FIXED_DEC(-50,1) - fy,
+			FIXED_DEC(-50,1) + RandomRange(FIXED_DEC(-20, 1), FIXED_DEC(-12, 1)) - fx,
+			FIXED_DEC(-50,1) + RandomRange(FIXED_DEC(-20, 1), FIXED_DEC(-12, 1)) - fy,
 			FIXED_DEC(135,1),
 			FIXED_DEC(28,1)
 		};
@@ -62,8 +64,8 @@ void Back_WeekT2_DrawFG(StageBack* back)
 	{
 		RECT invalid_src = { 5, 139, 87, 24 };
 		RECT_FIXED invalid_dst = {
-			FIXED_DEC(-50,1) - fx,
-			FIXED_DEC(0,1) - fy,
+			FIXED_DEC(-50,1) + RandomRange(FIXED_DEC(-20, 1), FIXED_DEC(-12, 1)) - fx,
+			FIXED_DEC(0,1) + RandomRange(FIXED_DEC(-20, 1), FIXED_DEC(-12, 1)) - fy,
 			FIXED_DEC(87,1),
 			FIXED_DEC(24,1)
 		};
@@ -75,8 +77,8 @@ void Back_WeekT2_DrawFG(StageBack* back)
 	{
 		RECT error_src = { 0, 83, 72, 24};
 		RECT_FIXED error_dst = {
-			FIXED_DEC(-40,1) - fx,
-			FIXED_DEC(15,1) - fy,
+			FIXED_DEC(-40,1) + RandomRange(FIXED_DEC(-20, 1), FIXED_DEC(-12, 1)) - fx,
+			FIXED_DEC(15,1) + RandomRange(FIXED_DEC(-20, 1), FIXED_DEC(-12, 1)) - fy,
 			FIXED_DEC(72,1),
 			FIXED_DEC(24,1)
 		};
@@ -88,8 +90,8 @@ void Back_WeekT2_DrawFG(StageBack* back)
 	{
 		RECT error9_src = { 0, 83, 72, 24 };
 		RECT_FIXED error9_dst = {
-			FIXED_DEC(-40,1) - fx,
-			FIXED_DEC(15,1) - fy,
+			FIXED_DEC(-40,1) + RandomRange(FIXED_DEC(-20, 1), FIXED_DEC(-12, 1)) - fx,
+			FIXED_DEC(15,1) + RandomRange(FIXED_DEC(-20, 1), FIXED_DEC(-12, 1)) - fy,
 			FIXED_DEC(72,1),
 			FIXED_DEC(24,1)
 		};
@@ -101,8 +103,8 @@ void Back_WeekT2_DrawFG(StageBack* back)
 	{
 		RECT suffer1_src = { 0, 57, 85, 24 };
 		RECT_FIXED suffer1_dst = {
-			FIXED_DEC(-80,1) - fx,
-			FIXED_DEC(-50,1) - fy,
+			FIXED_DEC(-80,1) + RandomRange(FIXED_DEC(-20, 1), FIXED_DEC(-12, 1)) - fx,
+			FIXED_DEC(-50,1) + RandomRange(FIXED_DEC(-20, 1), FIXED_DEC(-12, 1)) - fy,
 			FIXED_DEC(85,1),
 			FIXED_DEC(24,1)
 		};
@@ -114,8 +116,8 @@ void Back_WeekT2_DrawFG(StageBack* back)
 	{
 		RECT terrible_src = { 104, 225, 106, 24};
 		RECT_FIXED terrible_dst = {
-			FIXED_DEC(-80,1) - fx,
-			FIXED_DEC(-15,1) - fy,
+			FIXED_DEC(-80,1) + RandomRange(FIXED_DEC(-20, 1), FIXED_DEC(-12, 1)) - fx,
+			FIXED_DEC(-15,1) + RandomRange(FIXED_DEC(-20, 1), FIXED_DEC(-12, 1)) - fy,
 			FIXED_DEC(106,1),
 			FIXED_DEC(24,1)
 		};
@@ -127,8 +129,8 @@ void Back_WeekT2_DrawFG(StageBack* back)
 	{
 		RECT waste_src = { 0, 223, 79, 24 };
 		RECT_FIXED waste_dst = {
-			FIXED_DEC(-130,1) - fx,
-			FIXED_DEC(50,1) - fy,
+			FIXED_DEC(-130,1) + RandomRange(FIXED_DEC(-20, 1), FIXED_DEC(-12, 1)) - fx,
+			FIXED_DEC(50,1) + RandomRange(FIXED_DEC(-20, 1), FIXED_DEC(-12, 1)) - fy,
 			FIXED_DEC(79, 1),
 			FIXED_DEC(24,1)
 		};
@@ -140,8 +142,8 @@ void Back_WeekT2_DrawFG(StageBack* back)
 	{
 		RECT correction_src = {96, 57, 145, 24 };
 		RECT_FIXED correction_dst = {
-			FIXED_DEC(-110,1) - fx,
-			FIXED_DEC(40,1) - fy,
+			FIXED_DEC(-110,1) + RandomRange(FIXED_DEC(-20, 1), FIXED_DEC(-12, 1)) - fx,
+			FIXED_DEC(40,1) + RandomRange(FIXED_DEC(-20, 1), FIXED_DEC(-12, 1)) - fy,
 			FIXED_DEC(145, 1),
 			FIXED_DEC(24,1)
 		};
@@ -150,12 +152,12 @@ void Back_WeekT2_DrawFG(StageBack* back)
 	}
 
 
-	if (stage.stage_id == StageId_1_2 && stage.song_step >= 2172 && stage.song_step <= 2214)
+	if (stage.stage_id == StageId_1_2 && stage.song_step >= 2172 && stage.song_step <= 2230)
 	{
 		RECT youclown_src = { 0, 0, 249, 26 };
 		RECT_FIXED youclown_dst = {
-			FIXED_DEC(-150,1) - fx,
-			FIXED_DEC(50,1) - fy,
+			FIXED_DEC(-150,1) + RandomRange(FIXED_DEC(-20, 1), FIXED_DEC(-12, 1)) - fx,
+			FIXED_DEC(50,1) + RandomRange(FIXED_DEC(-20, 1), FIXED_DEC(-12, 1)) - fy,
 			FIXED_DEC(300,1),
 			FIXED_DEC(30,1)
 		};
@@ -167,8 +169,8 @@ void Back_WeekT2_DrawFG(StageBack* back)
 	{
 		RECT incorrect_src = { 0, 110, 135, 28};
 		RECT_FIXED incorrect_dst = {
-			FIXED_DEC(-140,1) - fx,
-			FIXED_DEC(50,1) - fy,
+			FIXED_DEC(-140,1) + RandomRange(FIXED_DEC(-20, 1), FIXED_DEC(-12, 1)) - fx,
+			FIXED_DEC(50,1) + RandomRange(FIXED_DEC(-20, 1), FIXED_DEC(-12, 1)) - fy,
 			FIXED_DEC(131,1),
 			FIXED_DEC(24,1)
 		};
@@ -180,8 +182,8 @@ void Back_WeekT2_DrawFG(StageBack* back)
 	{
 		RECT mistake_src = { 0, 192, 100, 24 };
 		RECT_FIXED mistake_dst = {
-			FIXED_DEC(-150,1) - fx,
-			FIXED_DEC(10,1) - fy,
+			FIXED_DEC(-150,1) + RandomRange(FIXED_DEC(-20, 1), FIXED_DEC(-12, 1)) - fx,
+			FIXED_DEC(10,1) + RandomRange(FIXED_DEC(-20, 1), FIXED_DEC(-12, 1)) - fy,
 			FIXED_DEC(100, 1),
 			FIXED_DEC(24,1)
 		};
@@ -193,8 +195,8 @@ void Back_WeekT2_DrawFG(StageBack* back)
 	{
 		RECT improbable_src = { 103, 139, 147, 24 };
 		RECT_FIXED improbable_dst = {
-			FIXED_DEC(-150,1) - fx,
-			FIXED_DEC(10,1) - fy,
+			FIXED_DEC(-150,1) + RandomRange(FIXED_DEC(-20, 1), FIXED_DEC(-12, 1)) - fx,
+			FIXED_DEC(10,1) + RandomRange(FIXED_DEC(-20, 1), FIXED_DEC(-12, 1)) - fy,
 			FIXED_DEC(147, 1),
 			FIXED_DEC(24,1)
 		};
@@ -206,8 +208,8 @@ void Back_WeekT2_DrawFG(StageBack* back)
 	{
 		RECT insufficient_src = { 86, 84, 156, 24 };
 		RECT_FIXED insufficient_dst = {
-			FIXED_DEC(-80,1) - fx,
-			FIXED_DEC(20,1) - fy,
+			FIXED_DEC(-80,1) + RandomRange(FIXED_DEC(-20, 1), FIXED_DEC(-12, 1)) - fx,
+			FIXED_DEC(20,1) + RandomRange(FIXED_DEC(-20, 1), FIXED_DEC(-12, 1)) - fy,
 			FIXED_DEC(156, 1),
 			FIXED_DEC(24,1)
 		};
@@ -219,8 +221,8 @@ void Back_WeekT2_DrawFG(StageBack* back)
 	{
 		RECT suffer2_src = { 0, 57, 85, 24 };
 		RECT_FIXED suffer2_dst = {
-			FIXED_DEC(-100,1) - fx,
-			FIXED_DEC(-30,1) - fy,
+			FIXED_DEC(-100,1) + RandomRange(FIXED_DEC(-20, 1), FIXED_DEC(-12, 1)) - fx,
+			FIXED_DEC(-30,1) + RandomRange(FIXED_DEC(-20, 1), FIXED_DEC(-12, 1)) - fy,
 			FIXED_DEC(85,1),
 			FIXED_DEC(24,1)
 		};
@@ -232,8 +234,8 @@ void Back_WeekT2_DrawFG(StageBack* back)
 	{
 		RECT waste1_src = { 0, 223, 79, 24 };
 		RECT_FIXED waste1_dst = {
-			FIXED_DEC(-130,1) - fx,
-			FIXED_DEC(50,1) - fy,
+			FIXED_DEC(-130,1) + RandomRange(FIXED_DEC(-20, 1), FIXED_DEC(-12, 1)) - fx,
+			FIXED_DEC(50,1) + RandomRange(FIXED_DEC(-20, 1), FIXED_DEC(-12, 1)) - fy,
 			FIXED_DEC(79, 1),
 			FIXED_DEC(24,1)
 		};
@@ -245,8 +247,8 @@ void Back_WeekT2_DrawFG(StageBack* back)
 	{
 		RECT incorrect2_src = { 0, 110, 135, 28 };
 		RECT_FIXED incorrect2_dst = {
-			FIXED_DEC(-80,1) - fx,
-			FIXED_DEC(0,1) - fy,
+			FIXED_DEC(-80,1) + RandomRange(FIXED_DEC(-20, 1), FIXED_DEC(-12, 1)) - fx,
+			FIXED_DEC(0,1) + RandomRange(FIXED_DEC(-20, 1), FIXED_DEC(-12, 1)) - fy,
 			FIXED_DEC(135,1),
 			FIXED_DEC(28,1)
 		};
@@ -258,8 +260,8 @@ void Back_WeekT2_DrawFG(StageBack* back)
 	{
 		RECT insufficient1_src = { 86, 84, 156, 24 };
 		RECT_FIXED insufficient1_dst = {
-			FIXED_DEC(-80,1) - fx,
-			FIXED_DEC(20,1) - fy,
+			FIXED_DEC(-80,1) + RandomRange(FIXED_DEC(-20, 1), FIXED_DEC(-12, 1)) - fx,
+			FIXED_DEC(20,1) + RandomRange(FIXED_DEC(-20, 1), FIXED_DEC(-12, 1)) - fy,
 			FIXED_DEC(156, 1),
 			FIXED_DEC(24,1)
 		};
@@ -271,8 +273,8 @@ void Back_WeekT2_DrawFG(StageBack* back)
 	{
 		RECT improbable2_src = { 103, 139, 147, 24 };
 		RECT_FIXED improbable2_dst = {
-			FIXED_DEC(-150,1) - fx,
-			FIXED_DEC(10,1) - fy,
+			FIXED_DEC(-150,1) + RandomRange(FIXED_DEC(-20, 1), FIXED_DEC(-12, 1)) - fx,
+			FIXED_DEC(10,1) + RandomRange(FIXED_DEC(-20, 1), FIXED_DEC(-12, 1)) - fy,
 			FIXED_DEC(147, 1),
 			FIXED_DEC(24,1)
 		};
@@ -284,8 +286,8 @@ void Back_WeekT2_DrawFG(StageBack* back)
 	{
 		RECT terrible2_src = { 104, 225, 106, 24 };
 		RECT_FIXED terrible2_dst = {
-			FIXED_DEC(-80,1) - fx,
-			FIXED_DEC(-15,1) - fy,
+			FIXED_DEC(-80,1) + RandomRange(FIXED_DEC(-20, 1), FIXED_DEC(-12, 1)) - fx,
+			FIXED_DEC(-15,1) + RandomRange(FIXED_DEC(-20, 1), FIXED_DEC(-12, 1)) - fy,
 			FIXED_DEC(106,1),
 			FIXED_DEC(24,1)
 		};
@@ -297,8 +299,8 @@ void Back_WeekT2_DrawFG(StageBack* back)
 	{
 		RECT mistake1_src = { 0, 192, 100, 24 };
 		RECT_FIXED mistake1_dst = {
-			FIXED_DEC(-150,1) - fx,
-			FIXED_DEC(10,1) - fy,
+			FIXED_DEC(-150,1) + RandomRange(FIXED_DEC(-20, 1), FIXED_DEC(-12, 1)) - fx,
+			FIXED_DEC(10,1) + RandomRange(FIXED_DEC(-20, 1), FIXED_DEC(-12, 1)) - fy,
 			FIXED_DEC(100, 1),
 			FIXED_DEC(24,1)
 		};
@@ -310,8 +312,8 @@ void Back_WeekT2_DrawFG(StageBack* back)
 	{
 		RECT suffer2_src = { 0, 57, 85, 24 };
 		RECT_FIXED suffer2_dst = {
-			FIXED_DEC(-80,1) - fx,
-			FIXED_DEC(-50,1) - fy,
+			FIXED_DEC(-80,1) + RandomRange(FIXED_DEC(-20, 1), FIXED_DEC(-12, 1)) - fx,
+			FIXED_DEC(-50,1) + RandomRange(FIXED_DEC(-20, 1), FIXED_DEC(-12, 1)) - fy,
 			FIXED_DEC(85,1),
 			FIXED_DEC(24,1)
 		};
@@ -323,8 +325,8 @@ void Back_WeekT2_DrawFG(StageBack* back)
 	{
 		RECT invalid3_src = { 5, 139, 87, 24 };
 		RECT_FIXED invalid3_dst = {
-			FIXED_DEC(-50,1) - fx,
-			FIXED_DEC(0,1) - fy,
+			FIXED_DEC(-50,1) + RandomRange(FIXED_DEC(-20, 1), FIXED_DEC(-12, 1)) - fx,
+			FIXED_DEC(0,1) + RandomRange(FIXED_DEC(-20, 1), FIXED_DEC(-12, 1)) - fy,
 			FIXED_DEC(87,1),
 			FIXED_DEC(24,1)
 		};
@@ -336,8 +338,8 @@ void Back_WeekT2_DrawFG(StageBack* back)
 	{
 		RECT incorrect3_src = { 0, 110, 135, 28 };
 		RECT_FIXED incorrect3_dst = {
-			FIXED_DEC(-140,1) - fx,
-			FIXED_DEC(50,1) - fy,
+			FIXED_DEC(-140,1) + RandomRange(FIXED_DEC(-20, 1), FIXED_DEC(-12, 1)) - fx,
+			FIXED_DEC(50,1) + RandomRange(FIXED_DEC(-20, 1), FIXED_DEC(-12, 1)) - fy,
 			FIXED_DEC(131,1),
 			FIXED_DEC(24,1)
 		};
@@ -349,8 +351,8 @@ void Back_WeekT2_DrawFG(StageBack* back)
 	{
 		RECT improbable3_src = { 103, 139, 147, 24 };
 		RECT_FIXED improbable3_dst = {
-			FIXED_DEC(-150,1) - fx,
-			FIXED_DEC(10,1) - fy,
+			FIXED_DEC(-150,1) + RandomRange(FIXED_DEC(-20, 1), FIXED_DEC(-12, 1)) - fx,
+			FIXED_DEC(10,1) + RandomRange(FIXED_DEC(-20, 1), FIXED_DEC(-12, 1)) - fy,
 			FIXED_DEC(147, 1),
 			FIXED_DEC(24,1)
 		};
@@ -362,8 +364,8 @@ void Back_WeekT2_DrawFG(StageBack* back)
 	{
 		RECT error_src = { 0, 83, 72, 24 };
 		RECT_FIXED error_dst = {
-			FIXED_DEC(-40,1) - fx,
-			FIXED_DEC(15,1) - fy,
+			FIXED_DEC(-40,1) + RandomRange(FIXED_DEC(-20, 1), FIXED_DEC(-12, 1)) - fx,
+			FIXED_DEC(15,1) + RandomRange(FIXED_DEC(-20, 1), FIXED_DEC(-12, 1)) - fy,
 			FIXED_DEC(72,1),
 			FIXED_DEC(24,1)
 		};
@@ -375,8 +377,8 @@ void Back_WeekT2_DrawFG(StageBack* back)
 	{
 		RECT waste1_src = { 0, 223, 79, 24 };
 		RECT_FIXED waste1_dst = {
-			FIXED_DEC(-130,1) - fx,
-			FIXED_DEC(50,1) - fy,
+			FIXED_DEC(-130,1) + RandomRange(FIXED_DEC(-20, 1), FIXED_DEC(-12, 1)) - fx,
+			FIXED_DEC(50,1) + RandomRange(FIXED_DEC(-20, 1), FIXED_DEC(-12, 1)) - fy,
 			FIXED_DEC(79, 1),
 			FIXED_DEC(24,1)
 		};
@@ -388,8 +390,8 @@ void Back_WeekT2_DrawFG(StageBack* back)
 	{
 		RECT terrible2_src = { 104, 225, 106, 24 };
 		RECT_FIXED terrible2_dst = {
-			FIXED_DEC(-80,1) - fx,
-			FIXED_DEC(-15,1) - fy,
+			FIXED_DEC(-80,1) + RandomRange(FIXED_DEC(-20, 1), FIXED_DEC(-12, 1)) - fx,
+			FIXED_DEC(-15,1) + RandomRange(FIXED_DEC(-20, 1), FIXED_DEC(-12, 1)) - fy,
 			FIXED_DEC(106,1),
 			FIXED_DEC(24,1)
 		};
@@ -401,8 +403,8 @@ void Back_WeekT2_DrawFG(StageBack* back)
 	{
 		RECT suffer_src = { 0, 57, 85, 24 };
 		RECT_FIXED suffer_dst = {
-			FIXED_DEC(-40,1) - fx,
-			FIXED_DEC(0,1) - fy,
+			FIXED_DEC(-40,1) + RandomRange(FIXED_DEC(-20, 1), FIXED_DEC(-12, 1)) - fx,
+			FIXED_DEC(0,1) + RandomRange(FIXED_DEC(-20, 1), FIXED_DEC(-12, 1)) - fy,
 			FIXED_DEC(85,1),
 			FIXED_DEC(24,1)
 		};
@@ -414,8 +416,8 @@ void Back_WeekT2_DrawFG(StageBack* back)
 	{
 		RECT incorrect9_src = { 0, 110, 135, 28 };
 		RECT_FIXED incorrect9_dst = {
-			FIXED_DEC(-140,1) - fx,
-			FIXED_DEC(50,1) - fy,
+			FIXED_DEC(-140,1) + RandomRange(FIXED_DEC(-20, 1), FIXED_DEC(-12, 1)) - fx,
+			FIXED_DEC(50,1) + RandomRange(FIXED_DEC(-20, 1), FIXED_DEC(-12, 1)) - fy,
 			FIXED_DEC(131,1),
 			FIXED_DEC(24,1)
 		};
@@ -427,8 +429,8 @@ void Back_WeekT2_DrawFG(StageBack* back)
 	{
 		RECT invalid3_src = { 5, 139, 87, 24 };
 		RECT_FIXED invalid3_dst = {
-			FIXED_DEC(-50,1) - fx,
-			FIXED_DEC(0,1) - fy,
+			FIXED_DEC(-50,1) + RandomRange(FIXED_DEC(-20, 1), FIXED_DEC(-12, 1)) - fx,
+			FIXED_DEC(0,1) + RandomRange(FIXED_DEC(-20, 1), FIXED_DEC(-12, 1)) - fy,
 			FIXED_DEC(87,1),
 			FIXED_DEC(24,1)
 		};
@@ -440,8 +442,8 @@ void Back_WeekT2_DrawFG(StageBack* back)
 	{
 		RECT mistake1_src = { 0, 192, 100, 24 };
 		RECT_FIXED mistake1_dst = {
-			FIXED_DEC(-150,1) - fx,
-			FIXED_DEC(10,1) - fy,
+			FIXED_DEC(-150,1) + RandomRange(FIXED_DEC(-20, 1), FIXED_DEC(-12, 1)) - fx,
+			FIXED_DEC(10,1) + RandomRange(FIXED_DEC(-20, 1), FIXED_DEC(-12, 1)) - fy,
 			FIXED_DEC(100, 1),
 			FIXED_DEC(24,1)
 		};
@@ -453,8 +455,8 @@ void Back_WeekT2_DrawFG(StageBack* back)
 	{
 		RECT insufficient_src = { 86, 84, 156, 24 };
 		RECT_FIXED insufficient_dst = {
-			FIXED_DEC(-80,1) - fx,
-			FIXED_DEC(20,1) - fy,
+			FIXED_DEC(-80,1) + RandomRange(FIXED_DEC(-20, 1), FIXED_DEC(-12, 1)) - fx,
+			FIXED_DEC(20,1) + RandomRange(FIXED_DEC(-20, 1), FIXED_DEC(-12, 1)) - fy,
 			FIXED_DEC(156, 1),
 			FIXED_DEC(24,1)
 		};
@@ -466,8 +468,8 @@ void Back_WeekT2_DrawFG(StageBack* back)
 	{
 		RECT improbable_src = { 103, 139, 147, 24 };
 		RECT_FIXED improbable_dst = {
-			FIXED_DEC(-150,1) - fx,
-			FIXED_DEC(10,1) - fy,
+			FIXED_DEC(-150,1) + RandomRange(FIXED_DEC(-20, 1), FIXED_DEC(-12, 1)) - fx,
+			FIXED_DEC(10,1) + RandomRange(FIXED_DEC(-20, 1), FIXED_DEC(-12, 1)) - fy,
 			FIXED_DEC(147, 1),
 			FIXED_DEC(24,1)
 		};
@@ -475,12 +477,12 @@ void Back_WeekT2_DrawFG(StageBack* back)
 		Stage_DrawTex(&this->tex_cut0, &improbable_src, &improbable_dst, stage.camera.bzoom);
 	}
 
-	if (stage.stage_id == StageId_1_2 && stage.song_step >= 2230 && stage.song_step <= 2260)
+	if (stage.stage_id == StageId_1_2 && stage.song_step >= 2230 && stage.song_step <= 2290)
 	{
 	RECT incorrect9_src = { 0, 110, 135, 28 };
 	RECT_FIXED incorrect9_dst = {
-		FIXED_DEC(-140,1) - fx,
-		FIXED_DEC(50,1) - fy,
+		FIXED_DEC(-140,1) + RandomRange(FIXED_DEC(-20, 1), FIXED_DEC(-12, 1)) - fx,
+		FIXED_DEC(50,1) + RandomRange(FIXED_DEC(-20, 1), FIXED_DEC(-12, 1)) - fy,
 		FIXED_DEC(131,1),
 		FIXED_DEC(24,1)
 	};
@@ -488,12 +490,12 @@ void Back_WeekT2_DrawFG(StageBack* back)
 	Stage_DrawTex(&this->tex_cut0, &incorrect9_src, &incorrect9_dst, stage.camera.bzoom);
 	}
 
-	if (stage.stage_id == StageId_1_2 && stage.song_step >= 2294 && stage.song_step <= 2330)
+	if (stage.stage_id == StageId_1_2 && stage.song_step >= 2294 && stage.song_step <= 2414)
 	{
 		RECT clownyou_src = { 0, 25, 256, 28 };
 		RECT_FIXED clownyou_dst = {
-			FIXED_DEC(-150,1) - fx,
-			FIXED_DEC(50,1) - fy,
+			FIXED_DEC(-150,1) + RandomRange(FIXED_DEC(-20, 1), FIXED_DEC(-12, 1)) - fx,
+			FIXED_DEC(50,1) + RandomRange(FIXED_DEC(-20, 1), FIXED_DEC(-12, 1)) - fy,
 			FIXED_DEC(300,1),
 			FIXED_DEC(30,1)
 		};
@@ -506,8 +508,8 @@ void Back_WeekT2_DrawFG(StageBack* back)
 	{
 		RECT hank_src = { 110, 195, 141, 28 };
 		RECT_FIXED hank_dst = {
-			FIXED_DEC(-160,1) - fx,
-			FIXED_DEC(30,1) - fy,
+			FIXED_DEC(-160,1) + RandomRange(FIXED_DEC(-20, 1), FIXED_DEC(-12, 1)) - fx,
+			FIXED_DEC(30,1) + RandomRange(FIXED_DEC(-20, 1), FIXED_DEC(-12, 1)) - fy,
 			FIXED_DEC(282,1),
 			FIXED_DEC(56,1)
 		};

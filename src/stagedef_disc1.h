@@ -32,7 +32,7 @@
 	},
 	{ //StageId_Clwn_3 (Hellclown)
 		//Characters
-		{Char_BFPH3_New,    FIXED_DEC(105,1),  FIXED_DEC(100,1)},
+		{Char_BFPH3_New,    FIXED_DEC(85,1),  FIXED_DEC(100,1)},
 		{Char_Hellc_New, FIXED_DEC(-90,1),  FIXED_DEC(110,1)},
 		{Char_GFPH3_New,      FIXED_DEC(50,1),  FIXED_DEC(55,1)},
 

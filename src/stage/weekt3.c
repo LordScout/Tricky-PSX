@@ -22,6 +22,7 @@ typedef struct
 	//Textures
 	IO_Data arc_hench, arc_hench_ptr[2];
 	
+	Gfx_Tex tex_back0;
 	Gfx_Tex tex_back1;
 	Gfx_Tex tex_back2; //Sunset
 	
@@ -118,25 +119,65 @@ void Back_WeekT3_DrawBG(StageBack *back)
 	fx = stage.camera.x;
 	fy = stage.camera.y;
 
-	RECT sunset1_src = { 0, 0, 256, 256 };
+	RECT sunset1_src = { 25, 86, 231, 152 };
 	RECT_FIXED sunset1_dst = {
-		FIXED_DEC(-50,1) - fx,
-		FIXED_DEC(-145,1) - fy,
-		FIXED_DEC(450,1),
-		FIXED_DEC(400,1)
+		FIXED_DEC(-10,1) - fx,
+		FIXED_DEC(-10,1) - fy,
+		FIXED_DEC(346,1),
+		FIXED_DEC(228,1)
 	};
 
 	Stage_DrawTex(&this->tex_back2, &sunset1_src, &sunset1_dst, stage.camera.bzoom);
 
-	RECT sunset_src = { 0, 0, 256, 256 };
+	RECT sunset_src = { 0, 86, 256, 151 };
 	RECT_FIXED sunset_dst = {
-		FIXED_DEC(-410,1) - fx,
-		FIXED_DEC(-145,1) - fy,
-		FIXED_DEC(450,1),
-		FIXED_DEC(400,1)
+		FIXED_DEC(-320,1) - fx,
+		FIXED_DEC(-10,1) - fy,
+		FIXED_DEC(346,1),
+		FIXED_DEC(228,1)
 	};
 
 	Stage_DrawTex(&this->tex_back1, &sunset_src, &sunset_dst, stage.camera.bzoom);
+
+	fx = stage.camera.x * 7 / 10;
+	fy = stage.camera.y * 7 / 10;
+
+	//Draw rocks
+	RECT rocksl_src = { 0, 0, 55, 53 };
+	RECT_FIXED rocksl_dst = {
+		FIXED_DEC(-200,1) - fx,
+		FIXED_DEC(-80,1) - fy,
+		FIXED_DEC(82,1),
+		FIXED_DEC(80,1)
+	};
+
+	Stage_DrawTex(&this->tex_back1, &rocksl_src, &rocksl_dst, stage.camera.bzoom);
+
+
+
+	//Draw rocks
+	RECT rocksr_src = { 7, 11, 256, 72};
+	RECT_FIXED rocksr_dst = {
+		FIXED_DEC(-0,1) - fx,
+		FIXED_DEC(-100,1) - fy,
+		FIXED_DEC(384,1),
+		FIXED_DEC(108,1)
+	};
+
+	Stage_DrawTex(&this->tex_back2, &rocksr_src, &rocksr_dst, stage.camera.bzoom);
+
+	fx = stage.camera.x * 2 / 5;
+	fy = stage.camera.y * 2 / 5;
+
+	RECT bg_src = { 0, 0, 256, 256 };
+	RECT_FIXED bg_dst = {
+		FIXED_DEC(-400,1) - fx,
+		FIXED_DEC(-400,1) - fy,
+		FIXED_DEC(768,1),
+		FIXED_DEC(768,1)
+	};
+
+	Stage_DrawTex(&this->tex_back0, &bg_src, &bg_dst, stage.camera.bzoom);
 }
 
 void Back_WeekT3_Free(StageBack *back)
@@ -165,6 +206,7 @@ StageBack *Back_WeekT3_New(void)
 	
 	//Load background textures
 	IO_Data arc_back = IO_Read("\\WEEKT3\\BACK.ARC;1");
+	Gfx_LoadTex(&this->tex_back0, Archive_Find(arc_back, "back0.tim"), 0);
 	Gfx_LoadTex(&this->tex_back1, Archive_Find(arc_back, "back1.tim"), 0);
 	Gfx_LoadTex(&this->tex_back2, Archive_Find(arc_back, "back2.tim"), 0);
 	Mem_Free(arc_back);

@@ -96,15 +96,15 @@ void Back_WeekT4_DrawFG(StageBack* back)
 
 	this->randomchoose = RandomRange(0,8)*29;
     
-	if (RandomRange(0,100) == 10)
+	if (RandomRange(0,100) <= 5)
 	this->random = this->randomchoose;
 
 	if (stage.stage_id == StageId_1_4 && stage.song_step >= 2128 && stage.song_step <= 2140)
 	{
 		RECT hank_src = { 0, 232, 250, 24 };
 		RECT_FIXED hank_dst = {
-			FIXED_DEC(-90,1) - fx,
-			FIXED_DEC(-140,1) - fy,
+			FIXED_DEC(-90,1) + RandomRange(FIXED_DEC(-20, 1), FIXED_DEC(-12, 1)) - fx,
+			FIXED_DEC(-100,1) + RandomRange(FIXED_DEC(-20, 1), FIXED_DEC(-12, 1)) - fy,
 			FIXED_DEC(300,1),
 			FIXED_DEC(30,1)
 		};
@@ -115,8 +115,8 @@ void Back_WeekT4_DrawFG(StageBack* back)
 	{
 		RECT redtext_src = { 0, this->random, 224, 29 };
 		RECT_FIXED redtext_dst = {
-			FIXED_DEC(-190,1) + RandomRange(FIXED_DEC(-20, 1), FIXED_DEC(-12, 1)) - fx,
-			FIXED_DEC(-130,1) + RandomRange(FIXED_DEC(-20, 1), FIXED_DEC(-12, 1)) - fy,
+			FIXED_DEC(-120,1) + RandomRange(FIXED_DEC(-20, 1), FIXED_DEC(-12, 1)) - fx,
+			FIXED_DEC(-60,1) + RandomRange(FIXED_DEC(-20, 1), FIXED_DEC(-12, 1)) - fy,
 			FIXED_DEC(224,1),
 			FIXED_DEC(29,1)
 		};
@@ -147,7 +147,7 @@ void Back_WeekT4_DrawFG(StageBack* back)
 	Animatable_Animate(&this->clonexpur_animatable, (void*)this, WeekT4_Clonexpur_SetFrame);
 
 	WeekT4_Clonexpur_Draw(this, FIXED_DEC(-120,1) - fx, FIXED_DEC(60,1) - fy);
-	WeekT4_Clonexpur_Draw(this, FIXED_DEC(-220,1) - fx, FIXED_DEC(60,1) - fy);
+	//WeekT4_Clonexpur_Draw(this, FIXED_DEC(-220,1) - fx, FIXED_DEC(60,1) - fy);
 
 
 
@@ -197,10 +197,10 @@ void Back_WeekT4_DrawBG(StageBack *back)
 		FIXED_DEC(600,1)
 	};
 
-	Stage_DrawTex(&this->tex_cut1, &light_src, &light_dst, stage.camera.bzoom);
+	Stage_DrawTex(&this->tex_cut5, &light_src, &light_dst, stage.camera.bzoom);
 
-	fx = stage.camera.x * 2 / 3;
-	fy = stage.camera.y * 2 / 3;
+	fx = stage.camera.x * 2 / 6;
+	fy = stage.camera.y * 2 / 6;
 
 	//Draw
 	RECT bg_src = { 0, 0, 256, 256};

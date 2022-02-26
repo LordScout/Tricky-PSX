@@ -73,7 +73,7 @@ iso/weekt/back.arc: iso/weekt/back0.tim iso/weekt/back1.tim iso/weekt/back2.tim 
 iso/weekt2/back.arc: iso/weekt2/back0.tim iso/weekt2/back1.tim iso/weekt2/back2.tim iso/weekt2/cut0.tim
 
 # Week Tricky Phase 3
-iso/weekt3/back.arc: iso/weekt3/back1.tim iso/weekt3/back2.tim
+iso/weekt3/back.arc: iso/weekt3/back0.tim iso/weekt3/back1.tim iso/weekt3/back2.tim
 iso/weekt3/hench.arc: iso/weekt3/hench0.tim iso/weekt3/hench1.tim
 
 # Week Tricky Phase 4
