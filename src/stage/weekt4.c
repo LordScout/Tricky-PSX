@@ -10,6 +10,16 @@
 #include "../archive.h"
 #include "../random.h"
 
+int x = 0;
+int y = 0;
+int sizex = 0;
+int sizey = 0;
+int px = 0;
+int py = 0;
+int psizex = 0;
+int psizey = 0;
+
+
 //Week Tricky Phase 4 background structure
 typedef struct
 {
@@ -125,6 +135,7 @@ void Back_WeekT4_DrawFG(StageBack* back)
 		Stage_DrawTex(&this->tex_cut3, &redtext_src, &redtext_dst, stage.camera.bzoom);
 	}
 	
+<<<<<<< HEAD
 	RECT sp_src = { 0, 0, 136, 82};
 	RECT_FIXED sp_dst = {
 		FIXED_DEC(0,1) - fx,
@@ -134,6 +145,45 @@ void Back_WeekT4_DrawFG(StageBack* back)
 	};
 		
 	if (stage.spikes == true)
+=======
+	if (stage.spike == 1)
+	{
+		x = 138;
+		y = 58;
+		sizex = 118;
+		sizey = 9;
+		px = -280;
+		py = 40;
+	}
+	if (stage.spike == 2)
+	{
+		x = 138;
+		y = 0;
+		sizex = 118;
+		sizey = 50;
+		px = -280;
+		py = -50;
+	}
+	if (stage.spike == 3)
+	{
+		x = 0;
+		y = 0;
+		sizex = 136;
+		sizey = 82;
+		px = -300;
+		py = -100;
+	}
+	
+	RECT sp_src = {x, y, sizex, sizey};
+	RECT_FIXED sp_dst = {
+		FIXED_DEC(px,1) - fx,
+		FIXED_DEC(py,1) - fy,
+		FIXED_DEC(sizex * 2,1),
+		FIXED_DEC(sizey * 2,1)
+	};
+		
+	if (stage.spike > 0)
+>>>>>>> dd77651c7ea8d8631ad8a880425d5a184eae6067
 		Stage_DrawTex(&this->tex_cut4, &sp_src, &sp_dst, stage.camera.bzoom);
 	
 	RECT cover_src = { 0, 0, 182, 151 };
