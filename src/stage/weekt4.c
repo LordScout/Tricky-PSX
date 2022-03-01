@@ -27,7 +27,7 @@ typedef struct
 	//Cutscene
 	Gfx_Tex tex_cut0; //Cover Rock
 	Gfx_Tex tex_cut1; //Beam of Light
-	Gfx_Tex tex_cut2; //the one 8 bit texture... use it wisely...
+	//Gfx_Tex tex_cut2; //the one 8 bit texture... use it wisely...
 	Gfx_Tex tex_cut3;
 	Gfx_Tex tex_cut4;
 	Gfx_Tex tex_cut5;
@@ -111,7 +111,7 @@ void Back_WeekT4_DrawFG(StageBack* back)
 
 		Stage_DrawTex(&this->tex_cut1, &hank_src, &hank_dst, stage.camera.bzoom);
 	}
-
+	
 	{
 		RECT redtext_src = { 0, this->random, 224, 29 };
 		RECT_FIXED redtext_dst = {
@@ -124,7 +124,18 @@ void Back_WeekT4_DrawFG(StageBack* back)
 		if (stage.randomtext == true)
 		Stage_DrawTex(&this->tex_cut3, &redtext_src, &redtext_dst, stage.camera.bzoom);
 	}
-
+	
+	RECT sp_src = { 0, 0, 136, 82};
+	RECT_FIXED sp_dst = {
+		FIXED_DEC(0,1) - fx,
+		FIXED_DEC(0,1) - fy,
+		FIXED_DEC(136,1),
+		FIXED_DEC(82,1)
+	};
+		
+	if (stage.spikes == true)
+		Stage_DrawTex(&this->tex_cut4, &sp_src, &sp_dst, stage.camera.bzoom);
+	
 	RECT cover_src = { 0, 0, 182, 151 };
 	RECT_FIXED cover_dst = {
 		FIXED_DEC(-293,1) - fx,
@@ -246,7 +257,7 @@ StageBack *Back_WeekT4_New(void)
 	Gfx_LoadTex(&this->tex_back0, Archive_Find(arc_back, "back0.tim"), 0);
 	Gfx_LoadTex(&this->tex_cut0, Archive_Find(arc_back, "cut0.tim"), 0);
 	Gfx_LoadTex(&this->tex_cut1, Archive_Find(arc_back, "cut1.tim"), 0);
-	Gfx_LoadTex(&this->tex_cut2, Archive_Find(arc_back, "cut2.tim"), 0);
+	//Gfx_LoadTex(&this->tex_cut2, Archive_Find(arc_back, "cut2.tim"), 0);
 	Gfx_LoadTex(&this->tex_cut3, Archive_Find(arc_back, "cut3.tim"), 0);
 	Gfx_LoadTex(&this->tex_cut4, Archive_Find(arc_back, "cut4.tim"), 0);
 	Gfx_LoadTex(&this->tex_cut5, Archive_Find(arc_back, "cut5.tim"), 0);
