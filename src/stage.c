@@ -29,6 +29,8 @@
 int shake = 0;
 int botthing = 0;
 
+int spiketime = 0;
+
 //#define STAGE_FREECAM //Freecam
 
 static const fixed_t note_x[8] = {
@@ -1542,7 +1544,28 @@ void Stage_Tick(void)
 				stage.randomtext = true;
 				}
 			else
-			stage.randomtext = false;	
+				stage.randomtext = false;	
+			
+			if (stage.opponent->animatable.anim == CharAnim_Up || stage.opponent->animatable.anim == CharAnim_UpAlt)
+			{
+				if (stage.stage_id == StageId_1_4)
+					stage.spikes = true;
+			}
+			else
+				stage.spikes = false;
+			
+			if (spiketime == 0)
+			{
+				if (stage.spikes == true)
+					if (stage.spike < 3)
+						stage.spike += 1;
+				if (stage.spikes == false)
+					if (stage.spike > 0)
+						stage.spike -= 1;
+				spiketime = 1;
+			}
+			if (spiketime > 0)
+				spiketime -= 1;
 			
 			#ifdef PSXF_NETWORK
 			if (!Network_IsReady())
