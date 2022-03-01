@@ -1533,29 +1533,17 @@ void Stage_Tick(void)
 			#endif
 
 			if (stage.cur_section->flag & SECTION_FLAG_OPPFOCUS)
-			{
+				{
 				if (stage.opponent->animatable.anim == CharAnim_Left || stage.opponent->animatable.anim == CharAnim_LeftAlt)
 					stage.randomtext = true;
 				if (stage.opponent->animatable.anim == CharAnim_Down || stage.opponent->animatable.anim == CharAnim_DownAlt)
 					stage.randomtext = true;
 				if (stage.opponent->animatable.anim == CharAnim_Up || stage.opponent->animatable.anim == CharAnim_UpAlt)
-				{
 					stage.randomtext = true;
-					if (stage.stage_id == StageId_1_4)
-						stage.spikes = true;
-				}
-				else
-					stage.spikes = false;
 				if (stage.opponent->animatable.anim == CharAnim_Right || stage.opponent->animatable.anim == CharAnim_RightAlt)
 				stage.randomtext = true;
-			}
+				}
 			else
-<<<<<<< HEAD
-				stage.randomtext = false;
-			
-		//	if (stage.spikes == true)
-		//		stage.camera.y = FIXED_DEC(-50, 1);
-=======
 				stage.randomtext = false;	
 			
 			if (stage.opponent->animatable.anim == CharAnim_Up || stage.opponent->animatable.anim == CharAnim_UpAlt)
@@ -1578,7 +1566,6 @@ void Stage_Tick(void)
 			}
 			if (spiketime > 0)
 				spiketime -= 1;
->>>>>>> dd77651c7ea8d8631ad8a880425d5a184eae6067
 			
 			#ifdef PSXF_NETWORK
 			if (!Network_IsReady())

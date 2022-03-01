@@ -211,10 +211,7 @@ typedef struct
 	u8 flag;
 	StageTrans trans;
 	boolean randomtext, spikes;
-<<<<<<< HEAD
-=======
 	s32 spike;
->>>>>>> dd77651c7ea8d8631ad8a880425d5a184eae6067
 	
 	struct
 	{
