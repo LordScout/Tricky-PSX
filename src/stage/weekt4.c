@@ -10,15 +10,6 @@
 #include "../archive.h"
 #include "../random.h"
 
-int x = 0;
-int y = 0;
-int sizex = 0;
-int sizey = 0;
-int px = 0;
-int py = 0;
-int psizex = 0;
-int psizey = 0;
-
 
 //Week Tricky Phase 4 background structure
 typedef struct
@@ -135,6 +126,14 @@ void Back_WeekT4_DrawFG(StageBack* back)
 		Stage_DrawTex(&this->tex_cut3, &redtext_src, &redtext_dst, stage.camera.bzoom);
 	}
 	
+	////Spikes////
+	float x = 0;
+	float y = 0;
+	float sizex = 0;
+	float sizey = 0;
+	float px = 0;
+	float py = 0;
+	
 	if (stage.spike == 1)
 	{
 		x = 138;
@@ -173,6 +172,7 @@ void Back_WeekT4_DrawFG(StageBack* back)
 		
 	if (stage.spike > 0)
 		Stage_DrawTex(&this->tex_cut4, &sp_src, &sp_dst, stage.camera.bzoom);
+	////Spikes End////
 	
 	RECT cover_src = { 0, 0, 182, 151 };
 	RECT_FIXED cover_dst = {
