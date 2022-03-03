@@ -42,6 +42,13 @@ typedef struct
 	Animatable clonexpur_animatable;
 } Back_WeekT4;
 
+//Spike frames
+static int spikeframes[3][6] = {
+	{138,58,118,9,-280,40},
+	{138,0,118,50,-280,-50},
+	{0,0,136,82,-300,-100}
+};
+
 //Clonexpur animation and rects
 static const CharFrame clonexpur_frame[8] = {
 	{0, {  224,   0,  3, 3}, { 71,  98}}, //0 left 1
@@ -121,53 +128,18 @@ void Back_WeekT4_DrawFG(StageBack* back)
 			FIXED_DEC(224,1),
 			FIXED_DEC(29,1)
 		};
-        
+		
 		if (stage.randomtext == true)
 		Stage_DrawTex(&this->tex_cut3, &redtext_src, &redtext_dst, stage.camera.bzoom);
 	}
 	
 	////Spikes////
-	float x = 0;
-	float y = 0;
-	float sizex = 0;
-	float sizey = 0;
-	float px = 0;
-	float py = 0;
-	
-	if (stage.spike == 1)
-	{
-		x = 138;
-		y = 58;
-		sizex = 118;
-		sizey = 9;
-		px = -280;
-		py = 40;
-	}
-	if (stage.spike == 2)
-	{
-		x = 138;
-		y = 0;
-		sizex = 118;
-		sizey = 50;
-		px = -280;
-		py = -50;
-	}
-	if (stage.spike == 3)
-	{
-		x = 0;
-		y = 0;
-		sizex = 136;
-		sizey = 82;
-		px = -300;
-		py = -100;
-	}
-	
-	RECT sp_src = {x, y, sizex, sizey};
+	RECT sp_src = {spikeframes[stage.spike - 1][0], spikeframes[stage.spike - 1][1], spikeframes[stage.spike - 1][2], spikeframes[stage.spike - 1][3]};
 	RECT_FIXED sp_dst = {
-		FIXED_DEC(px,1) - fx,
-		FIXED_DEC(py,1) - fy,
-		FIXED_DEC(sizex * 2,1),
-		FIXED_DEC(sizey * 2,1)
+		FIXED_DEC(spikeframes[stage.spike - 1][4],1) - fx,
+		FIXED_DEC(spikeframes[stage.spike - 1][5],1) - fy,
+		FIXED_DEC(spikeframes[stage.spike - 1][2] * 2,1),
+		FIXED_DEC(spikeframes[stage.spike - 1][3] * 2,1)
 	};
 		
 	if (stage.spike > 0)
