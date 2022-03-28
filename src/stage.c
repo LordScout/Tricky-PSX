@@ -1928,16 +1928,10 @@ void Stage_Tick(void)
 				case StageId_1_2: //Fresh GF bop
 					switch (stage.song_step)
 					{
-						case 16 << 2:
+						case 255 << 2:
 							stage.gf_speed = 2 << 2;
 							break;
-						case 48 << 2:
-							stage.gf_speed = 1 << 2;
-							break;
-						case 80 << 2:
-							stage.gf_speed = 2 << 2;
-							break;
-						case 112 << 2:
+						case 384 << 2:
 							stage.gf_speed = 1 << 2;
 							break;
 					}

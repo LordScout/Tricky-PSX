@@ -29,7 +29,9 @@
 static const char* funny_messages[][12] = {
 	{"SCREW YOU GUYS", "IM GOING HOME", "I PUT MYSELF ON PSX MORTY", "IM PSX RIIIIIIIIIIIIIIICK", "LORD SCOUT", "AWARD WINNING SONIC NERD", "lool", "inverted colours", "NO FMV CUTSCENES", "SORRY", "USE A CONTROLLER", "LOL"},
 	{"LORD SCOUT", "CHECK OUT HIS YOUTUBE", "SHOUTOUT TO ROZEBUD", "HE DID MUSIC", "SHOUTOUT TO CVAL", "HE CHARTED", "SHOUTOUT TO BANBUDS", "HE ARTED", "SHOUTOUT TO SMOKEY", "HE FARTED", "SHOUTOUT TO KADEDEV", "HE IS KADEDEV"},
+	{"HELLCLOWN", "NOT IN STORY MODE", "SORRY BRO", "VRAM ERROR", "fifty PERCENT CHANCE", "IT WOULD CRASH", "JUST PRETEND HELLCLOWN", "IS IN STORY MODE", "ITLL BE EASIER", "ON ALL OF US", "OKAY THANK YOU", "ENJOY THE PORT"},
 	{"PLAYING ON EPSXE HUH", "YOURE THE PROBLEM", "YOU DO NOT KILL CLOWN", "CLOWN KILLS YOU", "TRICKY X CAROL", "DIE", "HE DOES NOT", "SOUND LIKE WHITTY", "AVERAGE WHITTY FAN", "AVERAGE TRICKY ENJOYER", "CHECK OUT JADS", "HE DOES MUSIC"},
+	
 };
 
 #ifdef PSXF_NETWORK
@@ -402,7 +404,7 @@ void Menu_Tick(void)
 						break;
 					
 					case 13:
-						menu.font_bold.draw(&menu.font_bold, "marijuana man", SCREEN_WIDTH2, SCREEN_HEIGHT2 + 84, FontAlign_Center);
+						menu.font_bold.draw(&menu.font_bold, "lets play tetris", SCREEN_WIDTH2, SCREEN_HEIGHT2 + 80, FontAlign_Center);
 					case 12:
 						menu.font_bold.draw(&menu.font_bold, "LORD SCOUT", SCREEN_WIDTH2, SCREEN_HEIGHT2 - 64, FontAlign_Center);
 						Gfx_BlitTex(&menu.tex_ng, &src_ng, (SCREEN_WIDTH - 128) >> 1, SCREEN_HEIGHT2 - 42);
