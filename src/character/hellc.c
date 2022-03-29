@@ -39,7 +39,6 @@ enum
 	Hellc_ArcMain_Up2,
 	Hellc_ArcMain_Up3,
 	Hellc_ArcMain_Up4,
-	Hellc_ArcMain_Up5,
 	Hellc_ArcMain_Right0,
 	Hellc_ArcMain_Right1,
 	Hellc_ArcMain_Right2,
@@ -93,7 +92,7 @@ static const CharFrame char_hellc_frame[] = {
 	{Hellc_ArcMain_Up2, {  0,   0, 217, 250}, { 94, 213}}, //22 up 1
 	{Hellc_ArcMain_Up3, {  0,   0, 219, 242}, { 97, 202}}, //23 up 2
 	{Hellc_ArcMain_Up4, {  0,   0, 223, 253}, { 100, 212}}, //24 up 1
-	{Hellc_ArcMain_Up5, {  0,   0, 220, 249}, { 97, 210}}, //25 up 2
+	{Hellc_ArcMain_Up4, {  0,   0, 220, 249}, { 97, 210}}, //25 up 2
 	
 	{Hellc_ArcMain_Right0, {  0,   0, 216, 214}, { 93, 214}}, //26 right 1
 	{Hellc_ArcMain_Right1, {  0,   0, 197, 228}, { 80, 228}}, //27 right 2
@@ -109,7 +108,7 @@ static const Animation char_hellc_anim[CharAnim_Max] = {
 	{0, (const u8[]){ASCR_CHGANI, CharAnim_Idle}},   //CharAnim_LeftAlt
 	{2, (const u8[]){ 14, 15, 16, 17, 18, 19, ASCR_BACK, 1}},         //CharAnim_Down
 	{0, (const u8[]){ASCR_CHGANI, CharAnim_Idle}},   //CharAnim_DownAlt
-	{2, (const u8[]){ 20, 21, 22, 23, 24, 25, ASCR_BACK, 1}},         //CharAnim_Up
+	{2, (const u8[]){ 20, 21, 22, 23, 24, ASCR_BACK, 1}},         //CharAnim_Up
 	{0, (const u8[]){ASCR_CHGANI, CharAnim_Idle}},   //CharAnim_UpAlt
 	{2, (const u8[]){26, 27, 28, 29, 30, 31, ASCR_BACK, 1}},         //CharAnim_Right
 	{0, (const u8[]){ASCR_CHGANI, CharAnim_Idle}},   //CharAnim_RightAlt
@@ -215,7 +214,6 @@ Character *Char_Hellc_New(fixed_t x, fixed_t y)
 		"up2.tim",
 		"up3.tim",
 		"up4.tim",
-		"up5.tim",
 		"right0.tim", //Hellc_ArcMain_Right
 		"right1.tim",
 		"right2.tim",

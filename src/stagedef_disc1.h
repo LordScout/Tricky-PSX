@@ -28,7 +28,7 @@
 		1, 2,
 		XA_Madness, 2,
 
-		StageId_1_2, 0,
+		StageId_1_3, 0,
 	},
 	{ //StageId_Clwn_3 (Hellclown)
 		//Characters
