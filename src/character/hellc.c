@@ -88,9 +88,9 @@ static const CharFrame char_hellc_frame[] = {
 	{Hellc_ArcMain_Down5, {  0,   0, 202, 206}, { 72, 202}}, //19 up 2
 	
 	{Hellc_ArcMain_Up0, {  0,   0, 221, 255}, { 95, 212}}, //20 up 1
-	{Hellc_ArcMain_Up1, {  0,   0, 225, 254}, { 98, 213}}, //21 up 2
-	{Hellc_ArcMain_Up2, {  0,   0, 217, 250}, { 94, 213}}, //22 up 1
-	{Hellc_ArcMain_Up3, {  0,   0, 219, 242}, { 97, 202}}, //23 up 2
+	{Hellc_ArcMain_Up1, {  0,   0, 225, 254}, { 98, 211}}, //21 up 2
+	{Hellc_ArcMain_Up2, {  0,   0, 217, 250}, { 94, 208}}, //22 up 1
+	{Hellc_ArcMain_Up3, {  0,   0, 219, 242}, { 97, 200}}, //23 up 2
 	{Hellc_ArcMain_Up4, {  0,   0, 223, 253}, { 100, 212}}, //24 up 1
 	{Hellc_ArcMain_Up4, {  0,   0, 220, 249}, { 97, 210}}, //25 up 2
 	
