@@ -546,7 +546,7 @@ void Menu_Tick(void)
 				u8 press_b = (206 + ((press_lerp * (255 - 206)) >> 8)) >> 1;
 				
 				RECT press_src = {0, 203, 207, 18};
-				Gfx_BlitTexCol(&menu.tex_title, &press_src, 50, SCREEN_HEIGHT - 40, press_r, press_g, press_b);
+				Gfx_BlitTexCol(&menu.tex_title, &press_src, 50, SCREEN_HEIGHT - 35, press_r, press_g, press_b);
 			}
 			else
 			{
