@@ -147,8 +147,6 @@ void Back_WeekT3_DrawBG(StageBack *back)
 	count += 1;
 	if (count > 250)
 		count = 0;
-	FntPrint("sin: %d / count: %d", MUtil_Sin(count), count);
-	
 	
 	//Draw rocks
 	RECT rocksl_src = { 0, 0, 55, 53 };
