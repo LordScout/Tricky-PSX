@@ -6,8 +6,9 @@
 
 #include "weekt2.h"
 
-#include "../mem.h"
 #include "../archive.h"
+#include "../mem.h"
+#include "../stage.h"
 #include "../random.h"
 
 //Week Tricky 2 background structure
@@ -551,12 +552,16 @@ void Back_WeekT2_DrawBG(StageBack *back)
 
 	fx = stage.camera.x * 4 / 6;
 	fy = stage.camera.y * 4 / 6;
-
+	
+	stage.animcounter += 1;
+	if (stage.animcounter > 250)
+		stage.animcounter = 0;
+	
 	//Draw rocks
 	RECT rocksl_src = { 0, 8, 246, 45};
 	RECT_FIXED rocksl_dst = {
 		FIXED_DEC(-460,1) - fx,
-		FIXED_DEC(-100,1) - fy,
+		FIXED_DEC(-100 + (MUtil_Sin(stage.animcounter) / 30),1) - fy,
 		FIXED_DEC(422,1),
 		FIXED_DEC(90,1)
 	};
@@ -569,7 +574,7 @@ void Back_WeekT2_DrawBG(StageBack *back)
 	RECT rocksr_src = { 0, 0, 200, 50};
 	RECT_FIXED rocksr_dst = {
 		FIXED_DEC(-20,1) - fx,
-		FIXED_DEC(-103,1) - fy,
+		FIXED_DEC(-103 - (MUtil_Sin(stage.animcounter) / 30),1) - fy,
 		FIXED_DEC(400,1),
 		FIXED_DEC(94,1)
 	};

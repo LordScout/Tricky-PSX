@@ -89,8 +89,6 @@ void WeekT3_Henchmen_Draw(Back_WeekT3 *this, fixed_t x, fixed_t y)
 	Stage_DrawTex(&this->tex_hench, &src, &dst, stage.camera.bzoom);
 }
 
-int count = 0;
-
 void Back_WeekT3_DrawBG(StageBack *back)
 {
 	Back_WeekT3 *this = (Back_WeekT3*)back;
@@ -144,15 +142,15 @@ void Back_WeekT3_DrawBG(StageBack *back)
 	fx = stage.camera.x * 7 / 10;
 	fy = stage.camera.y * 7 / 10;
 
-	count += 1;
-	if (count > 250)
-		count = 0;
+	stage.animcounter += 1;
+	if (stage.animcounter > 250)
+		stage.animcounter = 0;
 	
 	//Draw rocks
 	RECT rocksl_src = { 0, 0, 55, 53 };
 	RECT_FIXED rocksl_dst = {
 		FIXED_DEC(-200,1) - fx,
-		FIXED_DEC(-80 + (-MUtil_Sin(count) / 30),1) - fy,
+		FIXED_DEC(-80 + (MUtil_Sin(stage.animcounter) / 30),1) - fy,
 		FIXED_DEC(82,1),
 		FIXED_DEC(80,1)
 	};
@@ -164,7 +162,7 @@ void Back_WeekT3_DrawBG(StageBack *back)
 	RECT rocksr_src = { 74, 36, 164, 46};
 	RECT_FIXED rocksr_dst = {
 		FIXED_DEC(100,1) - fx,
-		FIXED_DEC(-60 + (-MUtil_Sin(count) / 30),1) - fy,
+		FIXED_DEC(-60 + (-MUtil_Sin(stage.animcounter) / 30),1) - fy,
 		FIXED_DEC(246,1),
 		FIXED_DEC(69,1)
 	};
@@ -175,7 +173,7 @@ void Back_WeekT3_DrawBG(StageBack *back)
 	RECT rocksm_src = { 0, 0, 69, 78};
 	RECT_FIXED rocksm_dst = {
 		FIXED_DEC(-20,1) - fx,
-		FIXED_DEC(-125 + (-MUtil_Sin(count) / 40),1) - fy,
+		FIXED_DEC(-125 + (-MUtil_Sin(stage.animcounter) / 40),1) - fy,
 		FIXED_DEC(103,1),
 		FIXED_DEC(117,1)
 	};

@@ -211,7 +211,7 @@ typedef struct
 	u8 flag;
 	StageTrans trans;
 	boolean randomtext, spikes;
-	s32 spike;
+	s32 spike, animcounter;
 	
 	struct
 	{
