@@ -545,14 +545,14 @@ void Menu_Tick(void)
 				u8 press_g = (58  + ((press_lerp * (255 - 58))  >> 8)) >> 1;
 				u8 press_b = (206 + ((press_lerp * (255 - 206)) >> 8)) >> 1;
 				
-				RECT press_src = {0, 203, 207, 18};
-				Gfx_BlitTexCol(&menu.tex_title, &press_src, 50, SCREEN_HEIGHT - 40, press_r, press_g, press_b);
+				RECT press_src = {0, 203, 256, 21};
+				Gfx_BlitTexCol(&menu.tex_title, &press_src, (SCREEN_WIDTH - 256) / 2, SCREEN_HEIGHT - 32, press_r, press_g, press_b);
 			}
 			else
 			{
 				//Flash white
-				RECT press_src = {0, (animf_count & 1) ? 203 : 221, 207, 18};
-				Gfx_BlitTex(&menu.tex_title, &press_src, 50, SCREEN_HEIGHT - 40);
+				RECT press_src = {0, (animf_count & 1) ? 203 : 235, 256, 21};
+				Gfx_BlitTex(&menu.tex_title, &press_src, (SCREEN_WIDTH - 256) / 2, SCREEN_HEIGHT - 32);
 			}
 			
 			//Draw Girlfriend
