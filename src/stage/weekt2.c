@@ -574,7 +574,7 @@ void Back_WeekT2_DrawBG(StageBack *back)
 	RECT rocksr_src = { 0, 0, 200, 50};
 	RECT_FIXED rocksr_dst = {
 		FIXED_DEC(-20,1) - fx,
-		FIXED_DEC(-103 - (MUtil_Sin(stage.animcounter) / 30),1) - fy,
+		FIXED_DEC(-103 + (MUtil_Sin(stage.animcounter) / 30),1) - fy,
 		FIXED_DEC(400,1),
 		FIXED_DEC(94,1)
 	};

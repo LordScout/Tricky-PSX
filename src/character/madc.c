@@ -130,7 +130,7 @@ static const CharFrame char_madc_frame[] = {
 };
 
 static const Animation char_madc_anim[CharAnim_Max] = {
-	{1, (const u8[]) { 0, 1, 2, 3, 4, 5, ASCR_BACK, 5 }}, //CharAnim_Idle
+	{1, (const u8[]) { 0, 1, 2, 3, 4, 5, ASCR_BACK, 4 }}, //CharAnim_Idle
 	{1, (const u8[]) { 6, 7, 8, 9, 10, 11, ASCR_BACK, 3 }},         //CharAnim_Left
 	{0, (const u8[]) { ASCR_CHGANI, CharAnim_Idle }},   //CharAnim_LeftAlt
 	{1, (const u8[]) { 12, 13, 14, 15, 17, 17, ASCR_BACK, 3 }},         //CharAnim_Down
