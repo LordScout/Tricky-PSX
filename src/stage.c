@@ -148,6 +148,12 @@ static void Stage_ScrollCamera(void)
 			stage.camera.y += RandomRange(FIXED_DEC(-30, 100), FIXED_DEC(30, 100));
 		}
 
+		if (stage.stage_id == StageId_1_1 && stage.song_step >= 1488 && stage.song_step <= 1503)
+		{
+			stage.camera.x += RandomRange(FIXED_DEC(-10, 10), FIXED_DEC(10, 10));
+			stage.camera.y += RandomRange(FIXED_DEC(-30, 100), FIXED_DEC(30, 100));
+		}
+
 		//Shake in Madness
 		if (stage.stage_id == StageId_1_2 && stage.song_step >= 2412 && stage.song_step <= 3032)
 		{

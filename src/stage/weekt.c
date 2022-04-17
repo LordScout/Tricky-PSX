@@ -95,9 +95,9 @@ void Back_WeekT_DrawFG(StageBack* back)
 		RECT cutscene2_src = { 0, 0, 256, 122 };
 		RECT_FIXED cutscene2_dst = {
 			FIXED_DEC(-120,1) - fx,
-			FIXED_DEC(-77,1) - fy,
-			FIXED_DEC(350,1),
-			FIXED_DEC(175,1)
+			FIXED_DEC(-100,1) - fy,
+				FIXED_DEC(375,1),
+				FIXED_DEC(250,1)
 		};
 
 		Stage_DrawTex(&this->tex_cut2, &cutscene2_src, &cutscene2_dst, stage.camera.bzoom);
@@ -108,9 +108,9 @@ void Back_WeekT_DrawFG(StageBack* back)
 		RECT cutscene2_src = { 0, 122, 256, 134 };
 		RECT_FIXED cutscene2_dst = {
 			FIXED_DEC(-120,1) - fx,
-			FIXED_DEC(-80,1) - fy,
-			FIXED_DEC(350,1),
-			FIXED_DEC(175,1)
+			FIXED_DEC(-100,1) - fy,
+				FIXED_DEC(375,1),
+				FIXED_DEC(250,1)
 		};
 
 		Stage_DrawTex(&this->tex_cut2, &cutscene2_src, &cutscene2_dst, stage.camera.bzoom);
@@ -120,10 +120,10 @@ void Back_WeekT_DrawFG(StageBack* back)
 	{
 		RECT cutscene3_src = { 0, 0, 256, 256 };
 			RECT_FIXED cutscene3_dst = {
-				FIXED_DEC(-106,1) - fx,
-				FIXED_DEC(-85,1) - fy,
-				FIXED_DEC(350,1),
-				FIXED_DEC(275,1)
+				FIXED_DEC(-115,1) - fx,
+				FIXED_DEC(-100,1) - fy,
+				FIXED_DEC(400,1),
+				FIXED_DEC(250,1)
 		};
 
 			Stage_DrawTex(&this->tex_cut3, &cutscene3_src, &cutscene3_dst, stage.camera.bzoom);
