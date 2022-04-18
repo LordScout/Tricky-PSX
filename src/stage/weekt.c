@@ -147,9 +147,9 @@ void Back_WeekT_DrawFG(StageBack* back)
 	{
 		RECT cutscene5_src = { 0, 0, 256, 256 };
 		RECT_FIXED cutscene5_dst = {
-			FIXED_DEC(-160,1) - fx,
+			FIXED_DEC(-145,1) - fx,
 			FIXED_DEC(-160,1) - fy,
-			FIXED_DEC(425,1),
+			FIXED_DEC(400,1),
 			FIXED_DEC(350,1)
 		};
 
