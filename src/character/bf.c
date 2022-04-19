@@ -223,9 +223,9 @@ void Char_BF_Tick(Character *character)
 
 		if (stage.stage_id == StageId_1_1 && stage.song_step >= 1572)
 		{
-			this->character.focus_x = FIXED_DEC(-50, 1);
-			this->character.focus_y = FIXED_DEC(-80, 1);
-			this->character.focus_zoom = FIXED_DEC(1, 1);
+			this->character.focus_x = FIXED_DEC(-52, 1);
+			this->character.focus_y = FIXED_DEC(-77, 1);
+			this->character.focus_zoom = FIXED_DEC(12, 10);
 		}
 
 	if (stage.stage_id == StageId_1_2)

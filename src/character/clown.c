@@ -171,39 +171,6 @@ void Char_Clown_Tick(Character *character)
 	//Animate
 	Animatable_Animate(&character->animatable, (void*)this, Char_Clown_SetFrame);
 	
-	//Draw mouth if saying "...pretty good!"
-	if (this->frame == 22)
-	{
-		//Mouth mappings
-		static const u8 mouth_map[] = {
-			0, 1, 1, 2, 2, 2,       //etty
-			4, 4, 5, 5, 6, 6, 7, 7, //good!
-		};
-		
-		//Get mouth frame
-		u8 mouth_frame = mouth_map[(this->mouth_i * 24) >> FIXED_SHIFT];
-		
-		this->mouth_i += timer_dt;
-		if ((this->mouth_i * 24) >= (COUNT_OF(mouth_map) << FIXED_SHIFT))
-			this->mouth_i = ((COUNT_OF(mouth_map) - 1) << FIXED_SHIFT) / 24;
-		
-		//Draw mouth
-		RECT mouth_src = {
-			144 + (mouth_frame & 3) * 24,
-			(mouth_frame >> 2) << 4,
-			24,
-			16
-		};
-		RECT_FIXED mouth_dst = {
-			character->x - FIXED_DEC(12,1) - stage.camera.x,
-			character->y - FIXED_DEC(84,1) - stage.camera.y,
-			FIXED_DEC(24,1),
-			FIXED_DEC(16,1)
-		};
-		
-		Stage_DrawTex(&this->tex, &mouth_src, &mouth_dst, stage.camera.bzoom);
-	}
-	
 	//Draw body
 	Character_Draw(character, &this->tex, &char_clown_frame[this->frame]);
 }
