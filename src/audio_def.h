@@ -11,7 +11,7 @@ static const XA_TrackDef xa_tracks[] = {
 	{XA_Menu, XA_LENGTH(13820)}, //XA_GettinFreaky
 	{XA_Menu, XA_LENGTH(3800)},  //XA_GameOver
 	//WEEK1A.XA
-	{XA_WeekTA, XA_LENGTH(12100)}, //XA_Improbable Outset
+	{XA_WeekTA, XA_LENGTH(12050)}, //XA_Improbable Outset
 	{XA_WeekTA, XA_LENGTH(18000)}, //XA_Madness
 	//WEEK1B.XA
 	{XA_WeekTB, XA_LENGTH(22400)}, //XA_Hellclown

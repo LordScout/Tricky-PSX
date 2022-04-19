@@ -130,7 +130,7 @@ static void Stage_ScrollCamera(void)
 
 		//Shake in Improbable Cutscene
 
-		if (stage.stage_id == StageId_1_1 && stage.song_step >= 1420 && stage.song_step <= 1480)
+		if (stage.stage_id == StageId_1_1 && stage.song_step >= 1422 && stage.song_step <= 1480)
 		{
 			stage.camera.x += RandomRange(FIXED_DEC(-4, 10), FIXED_DEC(4, 10));
 			stage.camera.y += RandomRange(FIXED_DEC(-4, 100), FIXED_DEC(4, 100));
@@ -145,12 +145,12 @@ static void Stage_ScrollCamera(void)
 		if (stage.stage_id == StageId_1_1 && stage.song_step >= 1570 && stage.song_step <= 1700)
 		{
 			stage.camera.x += RandomRange(FIXED_DEC(-20, 10), FIXED_DEC(20, 10));
-			stage.camera.y += RandomRange(FIXED_DEC(-30, 100), FIXED_DEC(30, 100));
+			stage.camera.y += RandomRange(FIXED_DEC(-20, 10), FIXED_DEC(20, 10));
 		}
 
 		if (stage.stage_id == StageId_1_1 && stage.song_step >= 1488 && stage.song_step <= 1503)
 		{
-			stage.camera.x += RandomRange(FIXED_DEC(-10, 10), FIXED_DEC(10, 10));
+			stage.camera.x += RandomRange(FIXED_DEC(-30, 100), FIXED_DEC(30, 100));
 			stage.camera.y += RandomRange(FIXED_DEC(-30, 100), FIXED_DEC(30, 100));
 		}
 
