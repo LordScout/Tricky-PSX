@@ -103,7 +103,7 @@ static struct
 	} page_param;
 	
 	//Menu assets
-	Gfx_Tex tex_back, tex_ng, tex_credits0, tex_credits1, tex_story, tex_title;
+	Gfx_Tex tex_back, tex_ng, tex_credits0, tex_credits1, tex_story, tex_title, tex_menu0;
 	FontData font_bold, font_arial;
 	
 	Character *tricky; //Title Tricky
@@ -266,6 +266,7 @@ void Menu_Load(MenuPage page)
 	Gfx_LoadTex(&menu.tex_credits1, Archive_Find(menu_arc, "credits1.tim"), 0);
 	Gfx_LoadTex(&menu.tex_story, Archive_Find(menu_arc, "story.tim"), 0);
 	Gfx_LoadTex(&menu.tex_title, Archive_Find(menu_arc, "title.tim"), 0);
+	Gfx_LoadTex(&menu.tex_menu0, Archive_Find(menu_arc, "menu0.tim"), 0);
 	Mem_Free(menu_arc);
 
 	FontData_Load(&menu.font_bold, Font_Bold);
@@ -369,8 +370,8 @@ void Menu_Tick(void)
 				
 				//Draw different text depending on beat
 				RECT src_ng = {0, 0, 128, 128};
-				RECT src_credits0 = { 0, 0, 256, 107 };
-				RECT src_credits1 = { 0, 0, 256, 119 };
+				RECT src_credits0 = { 0, 0, 255, 107 };
+				RECT src_credits1 = { 0, 1, 255, 119 };
 				RECT src_credits2 = { 0, 118, 102, 102};
 				const char **funny_message = funny_messages[menu.page_state.opening.funny_message];
 				
@@ -552,7 +553,7 @@ void Menu_Tick(void)
 			{
 				//Flash white
 				RECT press_src = {0, (animf_count & 1) ? 203 : 221, 207, 18};
-				Gfx_BlitTex(&menu.tex_title, &press_src, 50, SCREEN_HEIGHT - 40);
+				Gfx_BlitTex(&menu.tex_title, &press_src, 50, SCREEN_HEIGHT - 35);
 			}
 			
 			//Draw Girlfriend
@@ -583,14 +584,6 @@ void Menu_Tick(void)
 				#else
 					FIXED_DEC(12,1);
 				#endif
-			
-			//Draw version identification
-			menu.font_bold.draw(&menu.font_bold,
-				"PSXFUNKIN BY CUCKYDEV",
-				16,
-				SCREEN_HEIGHT - 32,
-				FontAlign_Left
-			);
 			
 			//Handle option and selection
 			if (menu.trans_time > 0 && (menu.trans_time -= timer_dt) <= 0)
@@ -660,7 +653,40 @@ void Menu_Tick(void)
 					Trans_Start();
 				}
 			}
-			
+
+			//draw "mad"
+			RECT madness0_src = {0, 0, 138, 33};
+			Gfx_BlitTex(&menu.tex_menu0, &madness0_src, 10, 10);
+
+			//draw "ness"
+			RECT madness1_src = {0, 36, 103, 33};
+			Gfx_BlitTex(&menu.tex_menu0, &madness1_src, madness0_src.w + 11, 10);
+
+
+				//draw normal square
+				RECT squaren_src = {0, 84, 256, 52};
+				RECT squaren_dst = {0,166, SCREEN_WIDTH, 64};
+				Gfx_DrawTex(&menu.tex_menu0, &squaren_src, &squaren_dst);
+
+				//invert square
+				squaren_dst.y = squaren_dst.h;
+				squaren_dst.h = -squaren_dst.h;
+				Gfx_DrawTex(&menu.tex_menu0, &squaren_src, &squaren_dst);
+
+
+					//draw tab
+					RECT tab_src = {186, 0, 69, 30};
+					RECT tab_dst = {226, 155, 69, 30};
+					Gfx_DrawTex(&menu.tex_menu0, &tab_src, &tab_dst);
+
+					//invert tab 1
+					RECT tabi1_dst = {tab_dst.x += 8, tab_dst.y -= 80, 69, -30};
+					Gfx_DrawTexCol(&menu.tex_menu0, &tab_src, &tabi1_dst, 255, 0, 0);
+
+					//invert tab 2
+					RECT tabi2_dst = {tab_dst.x -= 69 + 8, tabi1_dst.y, 69, -30};
+					Gfx_DrawTexCol(&menu.tex_menu0, &tab_src, &tabi2_dst, 255, 0, 0);
+
 			//Draw options
 			s32 next_scroll = menu.select *
 			#ifndef PSXF_NETWORK
@@ -669,42 +695,11 @@ void Menu_Tick(void)
 				FIXED_DEC(12,1);
 			#endif
 			menu.scroll += (next_scroll - menu.scroll) >> 2;
-			
-			if (menu.next_page == menu.page || menu.next_page == MenuPage_Title)
-			{
-				//Draw all options
-				for (u8 i = 0; i < COUNT_OF(menu_options); i++)
-				{
-					menu.font_bold.draw(&menu.font_bold,
-						Menu_LowerIf(menu_options[i], menu.select != i),
-						SCREEN_WIDTH2,
-						SCREEN_HEIGHT2 + (i << 5) - 48 - (menu.scroll >> FIXED_SHIFT),
-						FontAlign_Center
-					);
-				}
-			}
-			else if (animf_count & 2)
-			{
-				//Draw selected option
-				menu.font_bold.draw(&menu.font_bold,
-					menu_options[menu.select],
-					SCREEN_WIDTH2,
-					SCREEN_HEIGHT2 + (menu.select << 5) - 48 - (menu.scroll >> FIXED_SHIFT),
-					FontAlign_Center
-				);
-			}
-			
-			//Draw background
-			Menu_DrawBack(
-				menu.next_page == menu.page || menu.next_page == MenuPage_Title,
-			#ifndef PSXF_NETWORK
-				menu.scroll >> (FIXED_SHIFT + 1),
-			#else
-				menu.scroll >> (FIXED_SHIFT + 3),
-			#endif
-				200 >> 1, 20 >> 1, 20 >> 1,
-				100 >> 1, 20 >> 1, 20 >> 1
-			);
+
+			//draw black square
+			RECT squareb_src = {0,137, 255,120};
+			RECT squareb_dst = {0, 0, 500, 364};
+			Gfx_DrawTex(&menu.tex_menu0, &squareb_src, &squareb_dst);
 			break;
 		}
 		case MenuPage_Story:
