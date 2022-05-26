@@ -67,7 +67,7 @@ static const Animation char_gfph3_anim[CharAnim_Max] = {
 	{0, (const u8[]) { ASCR_CHGANI, CharAnim_Left }},                           //CharAnim_DownAlt
 	{0, (const u8[]) { ASCR_CHGANI, CharAnim_Left }},                           //CharAnim_Up
 	{0, (const u8[]) { ASCR_CHGANI, CharAnim_Left }},                           //CharAnim_UpAlt
-	{1, (const u8[]) { 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, ASCR_BACK, 1 }}, //CharAnim_Right
+	{1, (const u8[]) { 9, 10, 11, 12, 13, 14, 15, 16, 17, ASCR_BACK, 1 }}, //CharAnim_Right
 	{0, (const u8[]) { ASCR_CHGANI, CharAnim_Left }},                               //CharAnim_RightAlt
 };
 
