@@ -64,9 +64,9 @@
 				<file name = "1.4n.cht" type = "data" source = "iso/chart/expurgation.json.cht"/>
 				<file name = "1.4h.cht" type = "data" source = "iso/chart/expurgation-hard.json.cht"/>
 				<!-- Cutscene charts -->
-				<file name = "1.5e.cht" type = "data" source = "iso/chart/cutscene-easy.json.cht"/>
+				<file name = "1.5e.cht" type = "data" source = "iso/chart/cutscene.json.cht"/>
 				<file name = "1.5n.cht" type = "data" source = "iso/chart/cutscene.json.cht"/>
-				<file name = "1.5h.cht" type = "data" source = "iso/chart/cutscene-hard.json.cht"/>
+				<file name = "1.5h.cht" type = "data" source = "iso/chart/cutscene.json.cht"/>
 			</dir>
 			
 			<!-- Week Tricky 2 assets -->
