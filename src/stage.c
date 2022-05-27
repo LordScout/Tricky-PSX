@@ -26,8 +26,8 @@
 #define STAGE_PERFECT //Play all notes perfectly
 //#define STAGE_NOHUD //Disable the HUD
 
-int shake = 0;
-int botthing = 0;
+boolean shake;
+boolean botthing;
 
 int spiketime = 0;
 
@@ -162,9 +162,9 @@ static void Stage_ScrollCamera(void)
 		}
 
 		//Shake in Hellclown
-		if (shake == 1)
+		if (shake)
 		{
-			shake = 0;
+			shake = false;
 			stage.camera.x += RandomRange(FIXED_DEC(-40, 10), FIXED_DEC(50, 10));
 			stage.camera.y += RandomRange(FIXED_DEC(-40, 10), FIXED_DEC(50, 10));
 		}
@@ -360,7 +360,7 @@ static void Stage_NoteCheck(PlayerState *this, u8 type)
 			this->arrow_hitan[type & 0x3] = stage.step_time;
 
 			if (this->character->spec & CHAR_SPEC_SHAKE && stage.stage_id == StageId_1_3)
-			   shake = 1;
+			   shake = true;
 			
 			#ifdef PSXF_NETWORK
 				if (stage.mode >= StageMode_Net1)
@@ -501,7 +501,7 @@ static void Stage_SustainCheck(PlayerState *this, u8 type)
 		this->health += 230;
 
 		if (this->character->spec & CHAR_SPEC_SHAKE && stage.stage_id == StageId_1_3)
-			   shake = 1;
+			   shake = true;
 
 		this->arrow_hitan[type & 0x3] = stage.step_time;
 			
@@ -537,7 +537,7 @@ static void Stage_SustainCheck(PlayerState *this, u8 type)
 static void Stage_ProcessPlayer(PlayerState *this, Pad *pad, boolean playing)
 {
 	//Handle player note presses
-	if (botthing != 1)
+	if (!(botthing ))
 	{
 		if (playing)
 		{
@@ -571,7 +571,7 @@ static void Stage_ProcessPlayer(PlayerState *this, Pad *pad, boolean playing)
 		}
 	}
 		//Do perfect note checks
-		if (botthing == 1)
+		if (botthing)
 		{
 		if (playing)
 		{
@@ -1525,15 +1525,15 @@ void Stage_Tick(void)
 
 			
             #ifdef STAGE_PERFECT
-            botthing = 1;
+            botthing = true;
 
             #else
 			{
 			if ((stage.stage_id == StageId_1_1 && stage.song_step >= 1424) || (stage.stage_id == StageId_1_2 && stage.song_step >= 2170) || (stage.stage_id == StageId_2_1))
-			botthing = 1;
+			botthing = true;
 
            else
-		    	botthing = 0;
+		    	botthing = false;
 			}
 
 			#endif
@@ -1740,7 +1740,7 @@ void Stage_Tick(void)
 
 
 				//Bump screen
-				if ((is_bump_step) && (stage.stage_id == StageId_1_1 && stage.song_step >= 1425) || (stage.stage_id == StageId_1_2 && stage.song_step >= 2161) || (stage.stage_id == StageId_2_1))
+				if (((is_bump_step && stage.stage_id == StageId_1_1 && stage.song_step >= 1425) || (stage.stage_id == StageId_1_2 && stage.song_step >= 2161) || (stage.stage_id == StageId_2_1)))
 				{
 					stage.bump = FIXED_DEC(1, 1);
 				}
@@ -1785,7 +1785,7 @@ void Stage_Tick(void)
 							Stage_StartVocal();
 
 							if (stage.mode != StageMode_Swap && stage.stage_id == StageId_1_3)
-							  shake = 1;
+							  shake = true;
 
 							 if (note->type & NOTE_FLAG_SUSTAIN)
 								opponent_snote = note_anims[note->type & 0x3][(note->type & NOTE_FLAG_ALT_ANIM) != 0];

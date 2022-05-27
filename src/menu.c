@@ -47,7 +47,7 @@ static struct
 	//Menu state
 	u8 page, next_page;
 	boolean page_swap;
-	u8 select, next_select;
+	u8 select, next_select, select_alt;
 	
 	fixed_t scroll;
 	fixed_t trans_time;
@@ -103,7 +103,7 @@ static struct
 	} page_param;
 	
 	//Menu assets
-	Gfx_Tex tex_back, tex_ng, tex_credits0, tex_credits1, tex_story, tex_title, tex_menu0;
+	Gfx_Tex tex_back, tex_ng, tex_credits0, tex_credits1, tex_story, tex_title, tex_menu0, tex_menu1;
 	FontData font_bold, font_arial;
 	
 	Character *tricky; //Title Tricky
@@ -143,6 +143,30 @@ static void MenuStr_Process(MenuStr *this, s32 x, s32 y, const char *fmt, boolea
 
 //Internal menu functions
 char menu_text_buffer[0x100];
+
+static void Menu_Tab(s8 *movetab, boolean moving, boolean flip, u16 x, u8 y)
+{
+	//move code for tab
+	if ((moving && *movetab < 12 && flip == false) || (moving && *movetab > -12 && flip == true))
+	 *movetab+= (flip) ? -1 : 1;
+
+	 else if ((moving == false && *movetab != 0))
+	 *movetab-= (flip) ? -1 : 1;
+
+	//get src and dst of tab
+	RECT tab_src = {186, 0, 69, 30};
+	RECT tab_dst = {x, y - *movetab, 69, 30};
+
+	//invert tab
+	if (flip)
+	tab_dst.h = -tab_dst.h;
+
+    FntPrint("movetab %d", *movetab);
+
+	//draw tab
+	Gfx_DrawTex(&menu.tex_menu0, &tab_src, &tab_dst);
+
+}
 
 static const char *Menu_LowerIf(const char *text, boolean lower)
 {
@@ -267,6 +291,7 @@ void Menu_Load(MenuPage page)
 	Gfx_LoadTex(&menu.tex_story, Archive_Find(menu_arc, "story.tim"), 0);
 	Gfx_LoadTex(&menu.tex_title, Archive_Find(menu_arc, "title.tim"), 0);
 	Gfx_LoadTex(&menu.tex_menu0, Archive_Find(menu_arc, "menu0.tim"), 0);
+	Gfx_LoadTex(&menu.tex_menu1, Archive_Find(menu_arc, "menu1.tim"), 0);
 	Mem_Free(menu_arc);
 
 	FontData_Load(&menu.font_bold, Font_Bold);
@@ -664,7 +689,7 @@ void Menu_Tick(void)
 
 
 				//draw normal square
-				RECT squaren_src = {0, 84, 256, 52};
+				RECT squaren_src = {0, 84, 128, 52};
 				RECT squaren_dst = {0,166, SCREEN_WIDTH, 64};
 				Gfx_DrawTex(&menu.tex_menu0, &squaren_src, &squaren_dst);
 
@@ -673,19 +698,15 @@ void Menu_Tick(void)
 				squaren_dst.h = -squaren_dst.h;
 				Gfx_DrawTex(&menu.tex_menu0, &squaren_src, &squaren_dst);
 
+				//tabs for main menu
+				s8 static tab0;
+				Menu_Tab(&tab0,menu.select == 3, false, 226, 155);
 
-					//draw tab
-					RECT tab_src = {186, 0, 69, 30};
-					RECT tab_dst = {226, 155, 69, 30};
-					Gfx_DrawTex(&menu.tex_menu0, &tab_src, &tab_dst);
-
-					//invert tab 1
-					RECT tabi1_dst = {tab_dst.x += 8, tab_dst.y -= 80, 69, -30};
-					Gfx_DrawTexCol(&menu.tex_menu0, &tab_src, &tabi1_dst, 255, 0, 0);
-
-					//invert tab 2
-					RECT tabi2_dst = {tab_dst.x -= 69 + 8, tabi1_dst.y, 69, -30};
-					Gfx_DrawTexCol(&menu.tex_menu0, &tab_src, &tabi2_dst, 255, 0, 0);
+				//invert tabs
+				s8 static tab1;
+				Menu_Tab(&tab1,menu.select == 1, true, 234,  75);
+				s8 static tab2;
+				Menu_Tab(&tab2,menu.select == 0, true, 157,  75);
 
 			//Draw options
 			s32 next_scroll = menu.select *
