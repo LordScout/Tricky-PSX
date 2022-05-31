@@ -38,3 +38,6 @@ iso/*/*.cht
 # Big Chungus
 libgcc_s_dw2-1.dll
 libstdc++-6.dll
+assets/Menu assets/spritemap1.png
+assets/Menu assets/Animation.json
+assets/Menu assets/spritemap1.json
