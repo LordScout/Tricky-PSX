@@ -208,6 +208,40 @@ static void Menu_DrawBack(boolean flash, s32 scroll, u8 r0, u8 g0, u8 b0, u8 r1,
 	else
 		Gfx_DrawTexCol(&menu.tex_back, &back_src, &back_dst, r1, g1, b1);
 }
+static void Menu_DifficultySelectorMainMenu(s32 x, s32 y)
+{
+	//Change difficulty
+	if (menu.next_page == menu.page && Trans_Idle())
+	{
+		if (pad_state.press & PAD_LEFT)
+		{
+			if (menu.page_param.stage.diff > StageDiff_Easy)
+				menu.page_param.stage.diff--;
+			else
+				menu.page_param.stage.diff = StageDiff_Hard;
+		}
+		if (pad_state.press & PAD_RIGHT)
+		{
+			if (menu.page_param.stage.diff < StageDiff_Hard)
+				menu.page_param.stage.diff++;
+			else
+				menu.page_param.stage.diff = StageDiff_Easy;
+		}
+	}
+	
+	//Draw difficulty
+	static const RECT diff_srcs[] = {
+		{  1, 60, 28, 10},
+		{ 34, 60, 47, 10},
+		{ 88, 60, 31, 10},
+	};
+	
+	for (u8 i = 0; i < 3; i++)
+	{
+	const RECT *diff_src = &diff_srcs[i];
+	Gfx_BlitTexCol(&menu.tex_menu1, diff_src, x +  (i *65), y - 9 + ((pad_state.press & (PAD_LEFT | PAD_RIGHT)) != 0), (i != menu.page_param.stage.diff) ? 255 : 0x80, (i != menu.page_param.stage.diff) ? 0 : 0x80, (i != menu.page_param.stage.diff) ? 0 : 0x80);
+	}
+}
 
 static void Menu_DifficultySelector(s32 x, s32 y)
 {
@@ -643,7 +677,6 @@ void Menu_Tick(void)
 								menu.next_page = MenuPage_Stage;
 								menu.page_param.stage.id = StageId_2_1;
 								menu.page_param.stage.story = true;
-								menu.page_param.stage.diff = StageDiff_Hard;
 								menu.trans_time = FIXED_UNIT;
 								menu.page_state.title.fade = FIXED_DEC(255, 10);
 								menu.page_state.title.fadespd = FIXED_DEC(510, 1);
@@ -698,15 +731,49 @@ void Menu_Tick(void)
 				squaren_dst.h = -squaren_dst.h;
 				Gfx_DrawTex(&menu.tex_menu0, &squaren_src, &squaren_dst);
 
+				Menu_DifficultySelectorMainMenu(100, 125);
+
 				//tabs for main menu
 				s8 static tab0;
-				Menu_Tab(&tab0,menu.select == 3, false, 226, 155);
+
+				//draw "clown"
+				RECT clown_src = {63, 7, 53, 11};
+				RECT clown_dst = {165, 52 - tab0 + 1, 53, 11};
+
+				Gfx_DrawTex(&menu.tex_menu1, &clown_src, &clown_dst);
+
+				Menu_Tab(&tab0,menu.select == 0, true, 157,  75);
 
 				//invert tabs
 				s8 static tab1;
+
+				//draw "freeplay"
+				RECT freeplay_src =  { 3, 7, 55, 10};
+				RECT freeplay_dst = {242, 52 - tab1 + 1, 53, 11};
+
+				Gfx_DrawTex(&menu.tex_menu1, &freeplay_src, &freeplay_dst);
+
 				Menu_Tab(&tab1,menu.select == 1, true, 234,  75);
+
 				s8 static tab2;
-				Menu_Tab(&tab2,menu.select == 0, true, 157,  75);
+
+				//draw "credits"
+				RECT credits_src =  {64,  78, 44, 12};
+				RECT credits_dst = {155, 165 - tab2 + 1, 58, 10};
+
+				Gfx_DrawTex(&menu.tex_menu1, &credits_src, &credits_dst);
+
+				Menu_Tab(&tab2,menu.select == 2, false, 149, 155);
+
+				s8 static tab3;
+
+				//draw "gameoptions"
+				RECT options_src =  { 1, 80, 58, 10};
+				RECT options_dst = {232, 165 - tab3 + 1, 58, 10};
+
+				Gfx_DrawTex(&menu.tex_menu1, &options_src, &options_dst);
+
+				Menu_Tab(&tab3,menu.select == 3, false, 226, 155);
 
 			//Draw options
 			s32 next_scroll = menu.select *
