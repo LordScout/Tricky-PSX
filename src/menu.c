@@ -920,15 +920,14 @@ void Menu_Tick(void)
 			static const struct
 			{
 				StageId stage;
-				u32 col;
 				const char *text;
 				boolean difficulty;
 			} menu_options[] = {
 				//{StageId_4_4, "TEST"},
-				{StageId_1_1, 0x125301, "IMPROBABLE OUTSET", true},
-				{StageId_1_2, 0xa61b00, "MADNESS", true},
-				{StageId_1_3, 0xff2021, "HELLCLOWN", true},
-				{StageId_1_4, 0x3c3a3a, "EXPURGATION", false},
+				{StageId_1_1, "IMPROBABLE OUTSET", true},
+				{StageId_1_2, "MADNESS", true},
+				{StageId_1_3, "HELLCLOWN", true},
+				{StageId_1_4, "EXPURGATION", false},
 			};
 			
 			//Initialize page
@@ -1013,13 +1012,6 @@ void Menu_Tick(void)
 			}
 			
 			//Draw background
-			fixed_t tgt_r = (fixed_t)((menu_options[menu.select].col >> 16) & 0xFF) << FIXED_SHIFT;
-			fixed_t tgt_g = (fixed_t)((menu_options[menu.select].col >> 8) & 0xFF) << FIXED_SHIFT;
-			fixed_t tgt_b = (fixed_t)((menu_options[menu.select].col >> 0) & 0xFF) << FIXED_SHIFT;
-
-			menu.page_state.freeplay.back_r += (tgt_r - menu.page_state.freeplay.back_r) >> 4;
-			menu.page_state.freeplay.back_g += (tgt_g - menu.page_state.freeplay.back_g) >> 4;
-			menu.page_state.freeplay.back_b += (tgt_b - menu.page_state.freeplay.back_b) >> 4;
 			Menu_DrawBack(
 				true,
 				8,
