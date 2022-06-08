@@ -1114,7 +1114,7 @@ void Menu_Tick(void)
 			for (u8 i = 0; i < COUNT_OF(menu_options); i++)
 			{
 				//Get position on screen
-				s32 y = (i * 24) - 8 - (menu.scroll >> FIXED_SHIFT);
+				s32 y = (i * 24) - 8; //- (menu.scroll >> FIXED_SHIFT);
 				if (y <= -SCREEN_HEIGHT2 - 8)
 					continue;
 				if (y >= SCREEN_HEIGHT2 + 8)
