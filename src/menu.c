@@ -167,7 +167,7 @@ static void Menu_Tab(s8 *movetab, boolean moving, boolean flip, u16 x, u8 y)
 	if (flip)
 	tab_dst.h = -tab_dst.h;
 
-    FntPrint("movetab %d", *movetab);
+   // FntPrint("movetab %d", *movetab);
 
 	//draw tab
 	Gfx_DrawTex(&menu.tex_menu0, &tab_src, &tab_dst);
@@ -424,7 +424,6 @@ void Menu_Tick(void)
 	{
 		case MenuPage_Opening:
 		{
-             menu.swapmusic = false;
 			u16 beat = stage.song_step >> 2;
 			
 			//Start title screen if opening ended
@@ -549,6 +548,7 @@ void Menu_Tick(void)
 	//Fallthrough
 		case MenuPage_Title:
 		{
+			 menu.swapmusic = false;
 			//Initialize page
 			if (menu.page_swap)
 			{
@@ -659,7 +659,7 @@ void Menu_Tick(void)
 			}
 
 			//Initialize page
-			if (menu.page_swap && menu.swapmusic == false || menu.page_swap && menu.swapmusic == true)
+			if (menu.page_swap && menu.swapmusic == false)
 			{
 			Audio_StopXA();
 			Audio_PlayXA_Track(XA_Nexus, 0x80, 2, true);
@@ -738,15 +738,19 @@ void Menu_Tick(void)
 
 			//draw "mad"
 			RECT madness0_src = {0, 0, 138, 33};
-			Gfx_BlitTex(&menu.tex_menu0, &madness0_src, 10, 10);
+			Gfx_BlitTex(&menu.tex_menu0, &madness0_src, 10, 15);
 
 			//draw "ness"
 			RECT madness1_src = {0, 36, 103, 33};
-			Gfx_BlitTex(&menu.tex_menu0, &madness1_src, madness0_src.w + 11, 10);
+			Gfx_BlitTex(&menu.tex_menu0, &madness1_src, madness0_src.w + 11, 15);
 
 			//draw "difficulty"
 			RECT difficulty_src = { 1, 25, 85, 20};
 			Gfx_BlitTex(&menu.tex_menu1, &difficulty_src, 170, 90);
+
+			//draw CuckyDev Credits
+			RECT ckdev_src = { 102, 153, 154, 48 };
+			Gfx_BlitTex(&menu.tex_credits1, &ckdev_src, 80, 178);
 
 			//draw "difficulty lines"
 			RECT lines_src = { 104, 41, 145, 10 };
