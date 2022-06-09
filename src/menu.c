@@ -51,6 +51,9 @@ static struct
 	boolean page_swap;
 	u8 select, next_select, select_alt;
 	
+	//stuff for music
+	boolean swapmusic;
+	
 	fixed_t scroll;
 	fixed_t trans_time;
 	
@@ -365,7 +368,11 @@ void Menu_Load(MenuPage page)
 	stage.song_step = 0;
 
 	//Play menu music
+	if (menu.swapmusic == false)
 	Audio_PlayXA_Track(XA_GettinFreaky, 0x40, 0, 1);
+	else
+	Audio_PlayXA_Track(XA_Nexus, 0x80, 2, true);
+	
 	Audio_WaitPlayXA();
 
 	//Set background colour
@@ -417,6 +424,7 @@ void Menu_Tick(void)
 	{
 		case MenuPage_Opening:
 		{
+             menu.swapmusic = false;
 			u16 beat = stage.song_step >> 2;
 			
 			//Start title screen if opening ended
@@ -468,7 +476,7 @@ void Menu_Tick(void)
 						break;
 					
 					case 13:
-						menu.font_bold.draw(&menu.font_bold, "lets play tetris", SCREEN_WIDTH2, SCREEN_HEIGHT2 + 80, FontAlign_Center);
+						menu.font_bold.draw(&menu.font_bold, "lets play worms", SCREEN_WIDTH2, SCREEN_HEIGHT2 + 80, FontAlign_Center);
 					case 12:
 						menu.font_bold.draw(&menu.font_bold, "LORD SCOUT", SCREEN_WIDTH2, SCREEN_HEIGHT2 - 64, FontAlign_Center);
 						Gfx_BlitTex(&menu.tex_ng, &src_ng, (SCREEN_WIDTH - 128) >> 1, SCREEN_HEIGHT2 - 42);
@@ -547,6 +555,7 @@ void Menu_Tick(void)
 				menu.page_state.title.logo_bump = (FIXED_DEC(7,1) / 24) - 1;
 				menu.page_state.title.fade = FIXED_DEC(255,1);
 				menu.page_state.title.fadespd = FIXED_DEC(90,1);
+
 			}
 			
 			//Draw white fade
@@ -561,6 +570,7 @@ void Menu_Tick(void)
 			//Go to main menu when start is pressed
 			if (menu.trans_time > 0 && (menu.trans_time -= timer_dt) <= 0)
 				Trans_Start();
+
 			
 			if ((pad_state.press & PAD_START) && menu.next_page == menu.page && Trans_Idle())
 			{
@@ -629,7 +639,7 @@ void Menu_Tick(void)
 		}
 		case MenuPage_Main:
 		{
-			static const char *menu_options[] = {
+			static const char* menu_options[] = {
 				"CLOWN",
 				"FREEPLAY",
 				"CREDITS",
@@ -639,16 +649,23 @@ void Menu_Tick(void)
 					"HOST SERVER",
 				#endif
 			};
-			
+
+			u16 next_step = Audio_TellXA_Milli() / 91; //100 BPM
+			if (next_step != stage.song_step)
+			{
+				if (next_step >= stage.song_step)
+					stage.flag |= STAGE_FLAG_JUST_STEP;
+				stage.song_step = next_step;
+			}
+
 			//Initialize page
-			if (menu.page_swap)
-				menu.scroll = menu.select *
-				#ifndef PSXF_NETWORK
-					FIXED_DEC(8,1);
-				#else
-					FIXED_DEC(12,1);
-				#endif
-			
+			if (menu.page_swap && menu.swapmusic == false || menu.page_swap && menu.swapmusic == true)
+			{
+			Audio_StopXA();
+			Audio_PlayXA_Track(XA_Nexus, 0x80, 2, true);
+			menu.swapmusic = true;
+		}
+
 			//Handle option and selection
 			if (menu.trans_time > 0 && (menu.trans_time -= timer_dt) <= 0)
 				Trans_Start();
@@ -713,6 +730,8 @@ void Menu_Tick(void)
 				if (pad_state.press & PAD_CIRCLE)
 				{
 					menu.next_page = MenuPage_Title;
+					Audio_StopXA();
+					Audio_PlayXA_Track(XA_GettinFreaky, 0x40, 0, false);
 					Trans_Start();
 				}
 			}
