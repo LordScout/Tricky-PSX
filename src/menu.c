@@ -109,6 +109,7 @@ static struct
 	FontData font_bold, font_arial;
 	
 	Character *tricky; //Title Tricky
+	Character* boyfriend; //Title bf
 } menu;
 
 #ifdef PSXF_NETWORK
@@ -334,6 +335,7 @@ void Menu_Load(MenuPage page)
 	FontData_Load(&menu.font_arial, Font_Arial);
 
 	menu.tricky = Char_MTicky_New(FIXED_DEC(40, 1), FIXED_DEC(80, 1));
+	menu.boyfriend = Char_BF_New(FIXED_DEC(-90, 1), FIXED_DEC(65, 1));
 	stage.camera.x = stage.camera.y = FIXED_DEC(0, 1);
 	stage.camera.bzoom = FIXED_UNIT;
 	stage.MTicky_speed = 4;
@@ -374,6 +376,7 @@ void Menu_Unload(void)
 {
 	//Free title Girlfriend
 	Character_Free(menu.tricky);
+	Character_Free(menu.boyfriend);
 }
 
 void Menu_ToStage(StageId id, StageDiff diff, boolean story)
@@ -783,6 +786,10 @@ void Menu_Tick(void)
 				Gfx_DrawTex(&menu.tex_menu1, &options_src, &options_dst);
 
 				Menu_Tab(&tab3,menu.select == 3, false, 226, 155);
+
+				menu.boyfriend->tick(menu.boyfriend);
+
+
 
 			//Draw options
 			s32 next_scroll = menu.select *
