@@ -24,6 +24,8 @@
 
 #include "stage.h"
 #include "character/mticky.h"
+#include "character/bf.h"
+#include "character/clown.h"
 
 //Menu messages
 static const char* funny_messages[][12] = {
@@ -720,6 +722,13 @@ void Menu_Tick(void)
 			RECT madness1_src = {0, 36, 103, 33};
 			Gfx_BlitTex(&menu.tex_menu0, &madness1_src, madness0_src.w + 11, 10);
 
+			//draw "difficulty"
+			RECT difficulty_src = { 1, 25, 85, 20};
+			Gfx_BlitTex(&menu.tex_menu1, &difficulty_src, 170, 90);
+
+			//draw "difficulty lines"
+			RECT lines_src = { 104, 41, 145, 10 };
+			Gfx_BlitTex(&menu.tex_menu1, &lines_src, 140, 110);
 
 				//draw normal square
 				RECT squaren_src = {0, 84, 128, 52};
@@ -731,7 +740,7 @@ void Menu_Tick(void)
 				squaren_dst.h = -squaren_dst.h;
 				Gfx_DrawTex(&menu.tex_menu0, &squaren_src, &squaren_dst);
 
-				Menu_DifficultySelectorMainMenu(100, 125);
+				Menu_DifficultySelectorMainMenu(135, 132);
 
 				//tabs for main menu
 				s8 static tab0;
@@ -786,7 +795,7 @@ void Menu_Tick(void)
 
 			//draw black square
 			RECT squareb_src = {0,137, 255,120};
-			RECT squareb_dst = {0, 0, 500, 364};
+			RECT squareb_dst = {-10, 50, 400, 120};
 			Gfx_DrawTex(&menu.tex_menu0, &squareb_src, &squareb_dst);
 			break;
 		}
@@ -1121,7 +1130,7 @@ void Menu_Tick(void)
 					break;
 				
 				//Draw text
-				menu.font_bold.draw(&menu.font_bold,
+				menu.font_arial.draw(&menu.font_arial,
 					Menu_LowerIf(menu_options[i].text, menu.select != i),
 					48 + (y >> 2),
 					SCREEN_HEIGHT2 + y - 8,
@@ -1133,7 +1142,7 @@ void Menu_Tick(void)
 			Menu_DrawBack(
 				true,
 				8,
-				50 >> 1, 50 >> 1, 50 >> 1,
+				100, 100, 100,
 				0, 0, 0
 			);
 			break;
@@ -1262,7 +1271,7 @@ void Menu_Tick(void)
 			Menu_DrawBack(
 				true,
 				8,
-				100 >> 1, 50 >> 1, 50 >> 1,
+				100, 100, 100,
 				0, 0, 0
 			);
 			break;
