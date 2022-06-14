@@ -108,7 +108,7 @@ static struct
 	} page_param;
 	
 	//Menu assets
-	Gfx_Tex tex_back, tex_ng, tex_credits0, tex_credits1, tex_story, tex_title, tex_menu0, tex_menu1;
+	Gfx_Tex tex_back, tex_ng, tex_credits0, tex_credits1, tex_story, tex_title, tex_menu0, tex_menu1, tex_credits;
 	FontData font_bold, font_arial;
 	
 	Character *tricky; //Title Tricky
@@ -167,10 +167,36 @@ static void Menu_Tab(s8 *movetab, boolean moving, boolean flip, u16 x, u8 y)
 	if (flip)
 	tab_dst.h = -tab_dst.h;
 
+
    // FntPrint("movetab %d", *movetab);
 
 	//draw tab
 	Gfx_DrawTex(&menu.tex_menu0, &tab_src, &tab_dst);
+
+}
+
+static void Menu_TabRed(s8* movetab, boolean moving, boolean flip, u16 x, u8 y)
+{
+	//move code for tab
+	if ((moving && *movetab < 12 && flip == false) || (moving && *movetab > -12 && flip == true))
+		*movetab += (flip) ? -1 : 1;
+
+	else if ((moving == false && *movetab != 0))
+		*movetab -= (flip) ? -1 : 1;
+
+	//get src and dst of tab
+	RECT tabred_src = { 186, 0, 69, 30 };
+	RECT tabred_dst = { x, y - *movetab, 69, 30 };
+
+	//invert tab
+	if (flip)
+		tabred_dst.h = -tabred_dst.h;
+
+
+	// FntPrint("movetab %d", *movetab);
+
+	 //draw tab
+	Gfx_DrawTexCol(&menu.tex_menu0, &tabred_src, &tabred_dst, 255, 0, 0);
 
 }
 
@@ -213,6 +239,7 @@ static void Menu_DrawBack(boolean flash, s32 scroll, u8 r0, u8 g0, u8 b0, u8 r1,
 		Gfx_DrawTexCol(&menu.tex_back, &back_src, &back_dst, r0, g0, b0);
 	else
 		Gfx_DrawTexCol(&menu.tex_back, &back_src, &back_dst, r1, g1, b1);
+
 }
 static void Menu_DifficultySelectorMainMenu(s32 x, s32 y)
 {
@@ -282,7 +309,7 @@ static void Menu_DifficultySelector(s32 x, s32 y)
 	//Draw difficulty
 	static const RECT diff_srcs[] = {
 		{  0, 96, 64, 18},
-		{ 64, 96, 80, 18},
+		{ 95, 138, 117, 19},
 		{144, 96, 64, 18},
 	};
 	
@@ -332,6 +359,7 @@ void Menu_Load(MenuPage page)
 	Gfx_LoadTex(&menu.tex_title, Archive_Find(menu_arc, "title.tim"), 0);
 	Gfx_LoadTex(&menu.tex_menu0, Archive_Find(menu_arc, "menu0.tim"), 0);
 	Gfx_LoadTex(&menu.tex_menu1, Archive_Find(menu_arc, "menu1.tim"), 0);
+	Gfx_LoadTex(&menu.tex_credits, Archive_Find(menu_arc, "credits.tim"), 0);
 	Mem_Free(menu_arc);
 
 	FontData_Load(&menu.font_bold, Font_Bold);
@@ -369,7 +397,7 @@ void Menu_Load(MenuPage page)
 
 	//Play menu music
 	if (menu.swapmusic == false)
-	Audio_PlayXA_Track(XA_GettinFreaky, 0x40, 0, 1);
+	Audio_PlayXA_Track(XA_GettinFreaky, 0x40, 0, true);
 	else
 	Audio_PlayXA_Track(XA_Nexus, 0x80, 2, true);
 	
@@ -673,14 +701,14 @@ void Menu_Tick(void)
 			if (menu.next_page == menu.page && Trans_Idle())
 			{
 				//Change option
-				if (pad_state.press & PAD_UP)
+				if (pad_state.press & PAD_DOWN)
 				{
 					if (menu.select > 0)
 						menu.select--;
 					else
 						menu.select = COUNT_OF(menu_options) - 1;
 				}
-				if (pad_state.press & PAD_DOWN)
+				if (pad_state.press & PAD_UP)
 				{
 					if (menu.select < COUNT_OF(menu_options) - 1)
 						menu.select++;
@@ -777,7 +805,7 @@ void Menu_Tick(void)
 
 				Gfx_DrawTex(&menu.tex_menu1, &clown_src, &clown_dst);
 
-				Menu_Tab(&tab0,menu.select == 0, true, 157,  75);
+				Menu_TabRed(&tab0,menu.select == 0, true, 157,  75);
 
 				//invert tabs
 				s8 static tab1;
@@ -788,7 +816,7 @@ void Menu_Tick(void)
 
 				Gfx_DrawTex(&menu.tex_menu1, &freeplay_src, &freeplay_dst);
 
-				Menu_Tab(&tab1,menu.select == 1, true, 234,  75);
+				Menu_TabRed(&tab1,menu.select == 1, true, 234,  75);
 
 				s8 static tab2;
 
@@ -973,23 +1001,17 @@ void Menu_Tick(void)
 			if (menu.page_swap)
 			{
 				menu.scroll = COUNT_OF(menu_options) * FIXED_DEC(SCREEN_HEIGHT2,1);
-				menu.page_param.stage.diff = StageDiff_Normal;
+				menu.page_param.stage.diff = StageDiff_Hard;
 				menu.page_state.freeplay.back_r = FIXED_DEC(255, 1);
 				menu.page_state.freeplay.back_g = FIXED_DEC(255, 1);
 				menu.page_state.freeplay.back_b = FIXED_DEC(255, 1);
 			}
-			
-			//Draw page label
-			menu.font_bold.draw(&menu.font_bold,
-				"FREEPLAY",
-				16,
-				SCREEN_HEIGHT - 32,
-				FontAlign_Left
-			);
+
 			
 			//Draw difficulty selector
 			if (menu_options[menu.select].difficulty)
-				Menu_DifficultySelector(SCREEN_WIDTH - 100, SCREEN_HEIGHT2 + 96);
+				Menu_DifficultySelector(SCREEN_WIDTH - 272, SCREEN_HEIGHT2 + 98);
+			
 			
 			//Handle option and selection
 			if (menu.next_page == menu.page && Trans_Idle())
@@ -1028,28 +1050,52 @@ void Menu_Tick(void)
 				}
 			}
 			
-			//Draw options
-			s32 next_scroll = menu.select * FIXED_DEC(24,1);
-			menu.scroll += (next_scroll - menu.scroll) >> 4;
-			
-			for (u8 i = 0; i < COUNT_OF(menu_options); i++)
-			{
-				//Get position on screen
-				s32 y = (i * 24) - 8 - (menu.scroll >> FIXED_SHIFT);
-				if (y <= -SCREEN_HEIGHT2 - 8)
-					continue;
-				if (y >= SCREEN_HEIGHT2 + 8)
-					break;
-				
-				//Draw text
-				menu.font_bold.draw(&menu.font_bold,
-					Menu_LowerIf(menu_options[i].text, menu.select != i),
-					48 + (y >> 2),
-					SCREEN_HEIGHT2 + y - 8,
-					FontAlign_Left
-				);
-			}
-			
+			RECT Improbable_src = { 0, 0, 207, 16 };
+			RECT Improbable_dst = { 30, 50, 207, 16 };
+			RECT Improbableselect_src = { 0, 116, 207, 16 };
+			RECT Improbableselect_dst = { 33, 50, 207, 16 };
+
+			if (menu.select == 0)
+				Gfx_DrawTex(&menu.tex_story, &Improbableselect_src, &Improbableselect_dst);
+			else
+			Gfx_DrawTex(&menu.tex_story, &Improbable_src, &Improbable_dst);
+
+			RECT madness_src = { 0, 18, 93, 16 };
+			RECT madness_dst = { 30, 85, 93, 16 };
+			RECT madnessselect_src = { 0, 133, 93, 16 };
+			RECT madnessselect_dst = { 33, 85, 93, 16 };
+
+			if (menu.select == 1)
+				Gfx_DrawTex(&menu.tex_story, &madnessselect_src, &madnessselect_dst);
+			else
+				Gfx_DrawTex(&menu.tex_story, &madness_src, &madness_dst);
+
+			RECT hellclown_src = { 0, 36, 118, 16 };
+			RECT hellclown_dst = { 30, 120, 118, 16 };
+			RECT hellclownselect_src = { 97, 18, 118, 16 };
+			RECT hellclownselect_dst = { 33, 120, 118, 16 };
+
+			if (menu.select == 2)
+				Gfx_DrawTex(&menu.tex_story, &hellclownselect_src, &hellclownselect_dst);
+			else
+				Gfx_DrawTex(&menu.tex_story, &hellclown_src, &hellclown_dst);
+
+			RECT expurgation_src = { 0, 55, 135, 16 };
+			RECT expurgation_dst = { 90, 160, 135, 16 };
+			RECT expurgationselect_src = { 90, 76, 136, 16 };
+			RECT expurgationselect_dst = { 90, 160, 136, 16 };
+
+			if (menu.select == 3)
+				Gfx_DrawTex(&menu.tex_story, &expurgationselect_src, &expurgationselect_dst);
+			else
+				Gfx_DrawTex(&menu.tex_story, &expurgation_src, &expurgation_dst);
+
+			RECT unfair_src = { 0, 74, 87, 21 };
+
+			if (menu.select == 3)
+				Gfx_BlitTex(&menu.tex_story, &unfair_src, 22, 208);
+
+
 			//Draw background
 			Menu_DrawBack(
 				true,
@@ -1106,14 +1152,6 @@ void Menu_Tick(void)
 				menu.page_param.stage.diff = StageDiff_Normal;
 			}
 			
-			//Draw page label
-			menu.font_bold.draw(&menu.font_bold,
-				"CREDITS",
-				16,
-				SCREEN_HEIGHT - 32,
-				FontAlign_Left
-			);
-			
 			//Draw difficulty selector
 			if (menu_options[menu.select].difficulty)
 				Menu_DifficultySelector(SCREEN_WIDTH - 100, SCREEN_HEIGHT2 - 48);
@@ -1158,21 +1196,20 @@ void Menu_Tick(void)
 					continue;
 				if (y >= SCREEN_HEIGHT2 + 8)
 					break;
-				
-				//Draw text
-				menu.font_arial.draw(&menu.font_arial,
-					Menu_LowerIf(menu_options[i].text, menu.select != i),
-					48 + (y >> 2),
-					SCREEN_HEIGHT2 + y - 8,
-					FontAlign_Left
-				);
 			}
 			
+			RECT credits_src = { 0, 0, 256, 256 };
+			RECT credits_dst = { 30, -20, 256, 256};
+
+			Gfx_DrawTex(&menu.tex_credits, &credits_src, &credits_dst);
+
 			//Draw background
 			Menu_DrawBack(
-				true,
-				8,
-				100, 100, 100,
+				false,
+				0,
+				menu.page_state.freeplay.back_r >> 0,
+				menu.page_state.freeplay.back_g >> 0,
+				menu.page_state.freeplay.back_b >> 0,
 				0, 0, 0
 			);
 			break;
@@ -1211,14 +1248,6 @@ void Menu_Tick(void)
 			//Initialize page
 			if (menu.page_swap)
 				menu.scroll = COUNT_OF(menu_options) * FIXED_DEC(24 + SCREEN_HEIGHT2,1);
-			
-			//Draw page label
-			menu.font_bold.draw(&menu.font_bold,
-				"OPTIONS",
-				16,
-				SCREEN_HEIGHT - 32,
-				FontAlign_Left
-			);
 			
 			//Handle option and selection
 			if (menu.next_page == menu.page && Trans_Idle())
@@ -1272,7 +1301,7 @@ void Menu_Tick(void)
 			for (u8 i = 0; i < COUNT_OF(menu_options); i++)
 			{
 				//Get position on screen
-				s32 y = (i * 24) - 8 - (menu.scroll >> FIXED_SHIFT);
+				s32 y = (i * 24) - 8;// -(menu.scroll >> FIXED_SHIFT);
 				if (y <= -SCREEN_HEIGHT2 - 8)
 					continue;
 				if (y >= SCREEN_HEIGHT2 + 8)
@@ -1289,14 +1318,14 @@ void Menu_Tick(void)
 						sprintf(text, "%s %s", menu_options[i].text, menu_options[i].spec.spec_enum.strs[*((s32*)menu_options[i].value)]);
 						break;
 				}
-				menu.font_bold.draw(&menu.font_bold,
+				menu.font_arial.draw_col(&menu.font_arial,
 					Menu_LowerIf(text, menu.select != i),
 					48 + (y >> 2),
-					SCREEN_HEIGHT2 + y - 8,
-					FontAlign_Left
+					SCREEN_HEIGHT2 + y - 55,
+					FontAlign_Left, 255, 0, 0
 				);
 			}
-			
+
 			//Draw background
 			Menu_DrawBack(
 				true,
