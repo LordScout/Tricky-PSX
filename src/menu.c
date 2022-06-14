@@ -1082,8 +1082,8 @@ void Menu_Tick(void)
 
 			RECT expurgation_src = { 0, 55, 135, 16 };
 			RECT expurgation_dst = { 90, 160, 135, 16 };
-			RECT expurgationselect_src = { 90, 76, 136, 16 };
-			RECT expurgationselect_dst = { 90, 160, 136, 16 };
+			RECT expurgationselect_src = { 90, 76, 135, 16 };
+			RECT expurgationselect_dst = { 89, 159, 137, 17 };
 
 			if (menu.select == 3)
 				Gfx_DrawTex(&menu.tex_story, &expurgationselect_src, &expurgationselect_dst);
