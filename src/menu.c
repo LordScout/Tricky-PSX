@@ -774,19 +774,19 @@ void Menu_Tick(void)
 
 			//draw "difficulty"
 			RECT difficulty_src = { 1, 25, 85, 20};
-			Gfx_BlitTex(&menu.tex_menu1, &difficulty_src, 170, 90);
+			Gfx_BlitTex(&menu.tex_menu1, &difficulty_src, 170, 94);
 
 			//draw CuckyDev Credits
 			RECT ckdev_src = { 102, 153, 154, 48 };
-			Gfx_BlitTex(&menu.tex_credits1, &ckdev_src, 80, 178);
+			Gfx_BlitTex(&menu.tex_credits1, &ckdev_src, 80, 180);
 
 			//draw "difficulty lines"
 			RECT lines_src = { 104, 41, 145, 10 };
-			Gfx_BlitTex(&menu.tex_menu1, &lines_src, 140, 110);
+			Gfx_BlitTex(&menu.tex_menu1, &lines_src, 140, 114);
 
 				//draw normal square
 				RECT squaren_src = {0, 84, 128, 52};
-				RECT squaren_dst = {0,166, SCREEN_WIDTH, 64};
+				RECT squaren_dst = {0,166, SCREEN_WIDTH, 74};
 				Gfx_DrawTex(&menu.tex_menu0, &squaren_src, &squaren_dst);
 
 				//invert square
@@ -794,29 +794,29 @@ void Menu_Tick(void)
 				squaren_dst.h = -squaren_dst.h;
 				Gfx_DrawTex(&menu.tex_menu0, &squaren_src, &squaren_dst);
 
-				Menu_DifficultySelectorMainMenu(135, 132);
+				Menu_DifficultySelectorMainMenu(135, 136);
 
 				//tabs for main menu
 				s8 static tab0;
 
 				//draw "clown"
 				RECT clown_src = {63, 7, 53, 11};
-				RECT clown_dst = {165, 52 - tab0 + 1, 53, 11};
+				RECT clown_dst = {165, 52 - tab0 + 10, 53, 11};
 
 				Gfx_DrawTex(&menu.tex_menu1, &clown_src, &clown_dst);
 
-				Menu_TabRed(&tab0,menu.select == 0, true, 157,  75);
+				Menu_TabRed(&tab0,menu.select == 0, true, 157,  80);
 
 				//invert tabs
 				s8 static tab1;
 
 				//draw "freeplay"
 				RECT freeplay_src =  { 3, 7, 55, 10};
-				RECT freeplay_dst = {242, 52 - tab1 + 1, 53, 11};
+				RECT freeplay_dst = {242, 52 - tab1 + 10, 53, 11};
 
 				Gfx_DrawTex(&menu.tex_menu1, &freeplay_src, &freeplay_dst);
 
-				Menu_TabRed(&tab1,menu.select == 1, true, 234,  75);
+				Menu_TabRed(&tab1,menu.select == 1, true, 234,  80);
 
 				s8 static tab2;
 
@@ -1204,14 +1204,17 @@ void Menu_Tick(void)
 			Gfx_DrawTex(&menu.tex_credits, &credits_src, &credits_dst);
 
 			//Draw background
-			Menu_DrawBack(
-				false,
-				0,
-				menu.page_state.freeplay.back_r >> 0,
-				menu.page_state.freeplay.back_g >> 0,
-				menu.page_state.freeplay.back_b >> 0,
-				0, 0, 0
-			);
+
+			RECT creditss_src = { 0, 0, 4, 256 };
+			RECT creditss_dst = { -20, -15, 128, 256 };
+			
+			Gfx_DrawTexCol(&menu.tex_credits, &creditss_src, &creditss_dst, 0, 0, 0);
+
+			RECT credits2s_src = { 0, 0, 4, 256 };
+			RECT credits2s_dst = { 100, -15, 512, 256 };
+			
+			Gfx_DrawTexCol(&menu.tex_credits, &credits2s_src, &credits2s_dst, 0, 0, 0);
+
 			break;
 		}
 		case MenuPage_Options:
